@@ -1,0 +1,9 @@
+{
+  "name": "dss",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}

@@ -1,0 +1,38 @@
+import { Meta, Subtitle } from "@storybook/addon-docs/blocks";
+import { Box, Image } from "./components";
+
+<Meta title="Foundations/Get Started/Develop" />
+
+# Getting Started — Develop
+
+**Install Yarn**, for more options see https://legacy.yarnpkg.com/en/docs/install#mac-stable
+
+```sh
+curl -o- -L https://yarnpkg.com/install.sh | bash
+```
+
+**Install Dependencies**. This project is using [Workspaces](https://legacy.yarnpkg.com/en/docs/workspaces). Yarn will install dependencies for all the packages. Make sure your node version is `>=13.2.0`.
+
+```sh
+yarn
+```
+
+_to be completed_
+
+### Project Structure
+
+_to be completed_
+
+### Continuous Integration
+
+> Continuous integration is a practice that encourages developers to integrate their code into a master branch of a shared repository early and often. Instead of building out features in isolation and integrating them at the end of a development cycle, code is integrated with the shared repository by each developer multiple times throughout the day.
+> — [Introduction to CircleCI](https://circleci.com/docs/2.0/about-circleci/#section=welcome)
+
+The project is configured to do the following:
+
+- Build the component library
+- Run all unit tests in the component library package
+- Build and test SSR for the demo app
+- Run visual tests using [Chromatic](http://chromaticqa.com)
+
+The Chromatic task reads the `CHROMATIC_APP_CODE` [environment variable](https://circleci.com/docs/2.0/env-vars/#using-bash_env-to-set-environment-variables), which must be configured in your CircleCI dashboard.
