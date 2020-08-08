@@ -12,37 +12,28 @@ export type TextProps = {
 const defaultextStyles = {
   fontFamily: "body",
   fontWeight: "regular",
-  lineHeight: "copy",
-  color: "text.primary",
+  color: "ui.color",
   mt: 0,
   mb: 0,
 };
 
-const textVariants = variant({
-  variants: {
-    body: {
-      ...defaultextStyles,
-      fontSize: 2,
-    },
-    caption: {
-      ...defaultextStyles,
-      fontSize: 1,
-    },
-    hint: {
-      ...defaultextStyles,
-      fontSize: 0,
-    },
-    label: {
-      ...defaultextStyles,
-      fontFamily: "heading",
-      fontSize: 1,
-      fontWeight: "medium",
-    },
+export const textVariants = {
+  body: {
+    ...defaultextStyles,
+    fontSize: "body",
+    lineHeight: "body",
   },
-});
+  caption: {
+    ...defaultextStyles,
+    fontSize: "caption",
+    lineHeight: "caption",
+  },
+};
+
+const v = variant({ variants: textVariants });
 
 export const Text = styled.p<TextProps>`
-  ${textVariants}
+  ${v}
   ${typographyFunctions}
 `;
 

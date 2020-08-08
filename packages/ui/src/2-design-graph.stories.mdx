@@ -1,12 +1,6 @@
 import { Meta, Subtitle, Source } from "@storybook/addon-docs/blocks";
 import { PropsTable } from "@storybook/components";
-import {
-  fonts,
-  fontSizes,
-  fontWeights,
-  lineHeights,
-  letterSpacings,
-} from "./theme";
+import { fonts, fontSizes, fontWeights, lineHeights } from "./theme";
 import { Flex, Box, Image, FormControl, Label, Input } from "./components";
 
 <Meta title="Foundations/Design Graph" />
@@ -48,7 +42,7 @@ Now, this component will have style props available to set foreground color, bac
  * background color maps to theme.colors.background[1]
  * Padding maps to theme.space[3]
  */
-<Box color="textEditorial" bg="bg.primary" p={3}>
+<Box color="textEditorial" bg="ui.background" p={3}>
   Tomato
 </Box>
 ```
@@ -77,7 +71,11 @@ There are situations where you might want to support slight stylistic variations
     title: 1.25,
     copy: 1.5,
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48]
+  fontSizes: {
+    heading: 16,
+    subHeading: 12,
+    body: 14,
+  },
 }`}</code>
   </Box>
   <Box as="pre" width="50%" my={0}>
@@ -88,19 +86,19 @@ const textVariants = variant({
       fontFamily: 'body',
       fontWeight: 'regular',
       lineHeight: 'copy',
-      fontSize: 2,
+      fontSize: 'body',
     },
     caption: {
       fontFamily: 'body',
       fontWeight: 'medium',
       lineHeight: 'copy',
-      fontSize: 2,
+      fontSize: 'subHeading',
     },
     label: {
       fontFamily: 'heading',
       fontWeight: 'regular',
       lineHeight: 'solid',
-      fontSize: 1,
+      fontSize: 'body',
     },
   }
 })`}</code>

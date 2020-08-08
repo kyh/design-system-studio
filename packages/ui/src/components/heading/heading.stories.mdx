@@ -7,8 +7,8 @@ import { Box, Text, Flex } from "../";
 export const Variant = (props) => (
   <Text
     variant="hint"
-    fontSize={1}
-    color="text.secondary"
+    fontSize="heading"
+    color="ui.color"
     width={3}
     mr={2}
     my={0}
@@ -24,24 +24,28 @@ Primitive heading component, defaults to `<h1>`. Use the `as` prop to set the co
   <Story name="heading">
     <Box>
       <Flex alignItems="baseline" mb={3}>
-        <Variant>heading-1</Variant>{" "}
-        <Heading variant="heading-1">You know nothing, Jon Snow</Heading>
+        <Variant>displayXLarge</Variant>{" "}
+        <Heading variant="displayXLarge">You know nothing, Jon Snow</Heading>
       </Flex>
       <Flex alignItems="baseline" mb={3}>
-        <Variant>heading-2</Variant>{" "}
-        <Heading variant="heading-2">You know nothing, Jon Snow</Heading>
+        <Variant>displayLarge</Variant>{" "}
+        <Heading variant="displayLarge">You know nothing, Jon Snow</Heading>
       </Flex>
       <Flex alignItems="baseline" mb={3}>
-        <Variant>heading-3</Variant>{" "}
-        <Heading variant="heading-3">You know nothing, Jon Snow</Heading>
+        <Variant>displayMedium</Variant>{" "}
+        <Heading variant="displayMedium">You know nothing, Jon Snow</Heading>
       </Flex>
       <Flex alignItems="baseline" mb={3}>
-        <Variant>heading-4</Variant>{" "}
-        <Heading variant="heading-4">You know nothing, Jon Snow</Heading>
+        <Variant>displaySmall</Variant>{" "}
+        <Heading variant="displaySmall">You know nothing, Jon Snow</Heading>
       </Flex>
       <Flex alignItems="baseline" mb={3}>
-        <Variant>heading-5</Variant>{" "}
-        <Heading variant="heading-5">You know nothing, Jon Snow</Heading>
+        <Variant>heading</Variant>{" "}
+        <Heading variant="heading">You know nothing, Jon Snow</Heading>
+      </Flex>
+      <Flex alignItems="baseline" mb={3}>
+        <Variant>subheading</Variant>{" "}
+        <Heading variant="subheading">You know nothing, Jon Snow</Heading>
       </Flex>
     </Box>
   </Story>

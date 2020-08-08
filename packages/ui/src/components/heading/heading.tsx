@@ -6,39 +6,49 @@ import {
 } from "../typography-functions";
 
 type HeadingProps = {
-  variant?: "heading-1" | "heading-2" | "heading-3" | "heading-4" | "heading-5";
+  variant?:
+    | "heading"
+    | "subheading"
+    | "displaySmall"
+    | "displayMedium"
+    | "displayLarge"
+    | "displayXLarge";
 } & TypographyFunctionsProps;
 
 const defaultHeadingStyles = {
   fontFamily: "heading",
-  fontWeight: "bold",
-  lineHeight: "title",
-  color: "text.primary",
+  fontWeight: "normal",
+  lineHeight: "heading",
+  color: "ui.color",
   mt: 0,
   mb: 0,
 };
 
 const headingVariant = variant({
   variants: {
-    "heading-1": {
-      fontSize: [7, 8, 9, 9],
+    heading: {
       ...defaultHeadingStyles,
+      fontSize: "heading",
     },
-    "heading-2": {
-      fontSize: [6, 7, 8, 8],
+    subheading: {
       ...defaultHeadingStyles,
+      fontSize: "subheading",
     },
-    "heading-3": {
-      fontSize: [5, 6, 7, 7],
+    displaySmall: {
       ...defaultHeadingStyles,
+      fontSize: "displaySmall",
     },
-    "heading-4": {
-      fontSize: [4, 5, 6, 6],
+    displayMedium: {
       ...defaultHeadingStyles,
+      fontSize: "displayMedium",
     },
-    "heading-5": {
-      fontSize: [3, 4, 5, 5],
+    displayLarge: {
       ...defaultHeadingStyles,
+      fontSize: "displayLarge",
+    },
+    displayXLarge: {
+      ...defaultHeadingStyles,
+      fontSize: "displayXLarge",
     },
   },
 });
@@ -49,5 +59,5 @@ export const Heading = styled.h1<HeadingProps>`
 `;
 
 Heading.defaultProps = {
-  variant: "heading-1",
+  variant: "heading",
 };

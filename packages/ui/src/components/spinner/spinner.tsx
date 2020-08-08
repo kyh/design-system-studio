@@ -21,7 +21,7 @@ export interface SpinnerProps extends BoxProps {
   block: boolean;
   title: string;
   color?: string;
-  size?: number;
+  size?: string;
 }
 
 export const Spinner = ({

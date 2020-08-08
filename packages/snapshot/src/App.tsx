@@ -46,9 +46,8 @@ const App: React.FC = () => {
             userProfileData={userProfileData}
           />
           <Box mb={3} p={3}>
-            <Heading variant="heading-1">This heading 1</Heading>
-            <Heading variant="heading-2">This heading 2</Heading>
-            <Heading variant="heading-3">This heading 3</Heading>
+            <Heading variant="heading">This heading 1</Heading>
+            <Heading variant="subheading">This heading 2</Heading>
           </Box>
           <Box mb={3} p={3}>
             <Text variant="body">This is body text</Text>
@@ -73,7 +72,7 @@ const App: React.FC = () => {
           <Box mb={3} p={3}>
             <Spinner size={3} mr={3} block={false} />
             <Spinner
-              color="brand.primary"
+              color="brand.blue.300"
               p={2}
               bg="brand.muted"
               block={false}
@@ -92,7 +91,7 @@ const App: React.FC = () => {
               Field Label
             </Label>
             <Label
-              adornment={<Icons.Info color="brand.primary" fontSize={2} />}
+              adornment={<Icons.Info color="brand.blue.300" fontSize={2} />}
             >
               Field Label
             </Label>
@@ -113,12 +112,12 @@ const App: React.FC = () => {
             />
             <Icons.CheckboxChecked
               title="checkbox checked"
-              fontSize={3}
-              color="brand.primary"
+              fontSize="body"
+              color="brand.blue.300"
             />
             <Icons.CheckboxChecked
               title="checkbox checked"
-              fontSize={4}
+              fontSize="body"
               color="brand.pmuted"
             />
           </Box>
@@ -128,22 +127,20 @@ const App: React.FC = () => {
           <Box mb={3} p={3}>
             <AspectRatio
               ratio={16 / 9}
-              bg="brand.primary"
+              bg="brand.blue.300"
               p={3}
               display="flex"
               alignItems="center"
               justifyContent="center"
             >
-              <Heading variant="heading-5" color="brand.muted">
-                Aspect Ratio
-              </Heading>
+              <Heading color="brand.muted">Aspect Ratio</Heading>
             </AspectRatio>
           </Box>
           <Box mb={3} p={3}>
             <Input
               value="Inputted text"
               leftIcon={<Icons.Search aria-hidden />}
-              rightIcon={<Icons.Close color="brand.primary" aria-hidden />}
+              rightIcon={<Icons.Close color="brand.blue.300" aria-hidden />}
             />
           </Box>
           <Box mb={3} p={3}>
@@ -206,7 +203,7 @@ const App: React.FC = () => {
               </Label>
               <Select
                 defaultValue="Select a city"
-                leftIcon={<Icons.Place color="text.primary" aria-hidden />}
+                leftIcon={<Icons.Place color="ui.color" aria-hidden />}
               >
                 <option>Select a city</option>
                 <option>Toronto</option>

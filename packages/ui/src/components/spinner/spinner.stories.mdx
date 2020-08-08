@@ -20,16 +20,10 @@ Control size using the `size` prop, which maps to `theme.fontSizes`
 <Preview>
   <Story name="sizing">
     <Flex alignItems="center">
-      <Spinner size={0} mr={2} />
-      <Spinner size={1} mr={2} />
-      <Spinner size={2} mr={2} />
-      <Spinner size={3} mr={2} />
-      <Spinner size={4} mr={2} />
-      <Spinner size={5} mr={2} />
-      <Spinner size={6} mr={2} />
-      <Spinner size={7} mr={2} />
-      <Spinner size={8} mr={2} />
-      <Spinner size={9} />
+      <Spinner size="displayXLarge" mr={2} />
+      <Spinner size="displayLarge" mr={2} />
+      <Spinner size="displayMedium" mr={2} />
+      <Spinner size="displaySmall" mr={2} />
     </Flex>
   </Story>
 </Preview>
@@ -39,11 +33,11 @@ Control color using the `color` prop
 <Preview>
   <Story name="color">
     <Spinner
-      color="brand.primary"
+      color="brand.blue.300"
       p={4}
       bg="brand.muted"
       block={false}
-      size={3}
+      size="displaySmall"
     />
   </Story>
 </Preview>

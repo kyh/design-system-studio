@@ -28,103 +28,96 @@ export type StyledButtonProps = SpaceProps &
     rightIcon?: JSX.Element;
     isLoading?: boolean;
     disabled?: boolean;
-    variant?: "primary" | "secondary" | "transparent";
+    variant?: "basic" | "primary" | "transparent" | "link";
   };
 
 const defaultButtonStyles = {
   position: "relative",
   fontFamily: "body",
-  fontSize: 2,
+  fontSize: "body",
   fontWeight: "regular",
-  lineHeight: "copy",
-  borderRadius: 0,
-  borderWidth: 2,
-  borderStyle: "solid",
+  lineHeight: "body",
+  borderRadius: "regular",
+  borderWidth: "regular",
+  borderStyle: "regular",
   padding: 3,
   ml: 0,
   mr: 0,
   mb: 0,
   appearance: "none",
+  cursor: "pointer",
 };
 
-const buttonVariants = variant({
-  variants: {
-    primary: {
-      ...defaultButtonStyles,
-      bg: "brand.primary",
-      color: "text.inverse",
-      borderColor: "transparent",
-      " svg": {
-        color: "text.inverse",
-      },
-      "&:hover": {
-        backgroundColor: "highlights.primaryHighlight",
-      },
-      "&:active, &:focus": {
-        backgroundColor: "highlights.primaryExtraHighlight",
-      },
-      "&:disabled": {
-        color: "text.disabled",
-        backgroundColor: "ui.disabled",
-        borderColor: "ui.disabled",
-      },
-    },
-    secondary: {
-      ...defaultButtonStyles,
-      bg: "bg.primary",
-      color: "brand.primary",
-      borderColor: "brand.primary",
-      " svg": {
-        color: "brand.primary",
-      },
-      "&:hover": {
-        borderColor: "highlights.primaryHighlight",
-      },
-      "&:active, &:focus": {
-        borderColor: "highlights.primaryExtraHighlight",
-      },
-      "&:disabled": {
-        color: "text.disabled",
-        backgroundColor: "bg.primary",
-        borderColor: "ui.disabled",
-      },
-    },
-    transparent: {
-      ...defaultButtonStyles,
-      bg: "transparent",
-      color: "brand.primary",
-      borderColor: "transparent",
-      " svg": {
-        color: "brand.primary",
-      },
-      "&:hover": {
-        backgroundColor: "highlights.bgHighlight",
-      },
-      "&:active, &:focus": {
-        backgroundColor: "highlights.bgHighlight",
-      },
-      "&:disabled": {
-        color: "text.disabled",
-        backgroundColor: "ui.disabled",
-        borderColor: "ui.disabled",
-      },
+export const buttonVariants = {
+  basic: {
+    ...defaultButtonStyles,
+    backgroundColor: "ui.neutralGradient",
+    "&:hover": {
+      backgroundColor: "highlights.primaryHighlight",
     },
   },
+  primary: {
+    ...defaultButtonStyles,
+    color: "ui.colorInverse",
+    backgroundColor: "brand.blue.300",
+    borderColor: "brand.blue.400",
+    " svg": {
+      color: "ui.colorInverse",
+    },
+    "&:hover": {
+      backgroundColor: "brand.blue.400",
+      borderColor: "brand.blue.500",
+    },
+    "&:active, &:focus": {
+      backgroundColor: "brand.blue.300",
+      borderColor: "brand.blue.500",
+    },
+    "&:disabled": {
+      color: "text.disabled",
+      backgroundColor: "ui.disabled",
+      borderColor: "ui.disabled",
+    },
+  },
+  transparent: {
+    ...defaultButtonStyles,
+    bg: "transparent",
+    color: "brand.blue.300",
+    borderColor: "transparent",
+    " svg": {
+      color: "brand.blue.300",
+    },
+    "&:hover": {
+      backgroundColor: "highlights.bgHighlight",
+    },
+    "&:active, &:focus": {
+      backgroundColor: "highlights.bgHighlight",
+    },
+    "&:disabled": {
+      color: "text.disabled",
+      backgroundColor: "ui.disabled",
+      borderColor: "ui.disabled",
+    },
+  },
+};
+
+const v = variant({
+  scale: "buttons",
+  variants: buttonVariants,
 });
 
 const ButtonIcon = styled(Box)<BoxProps & { disabled?: boolean }>`
   display: inline-block;
-  width: ${(props) => props.theme.fontSizes[4]};
-  height: ${(props) => props.theme.fontSizes[4]};
+  width: ${(props) => props.theme.fontSizes.body};
+  height: ${(props) => props.theme.fontSizes.body};
   svg {
     position: absolute;
     display: block;
-    font-size: ${(props) => props.theme.fontSizes[4]};
+    font-size: ${(props) => props.theme.fontSizes.body};
   }
 `;
 
 const StyledButton = styled.button<ButtonProps>`
-  ${buttonVariants}
+  ${v}
   ${compose(space, layout, flexbox, border, position)}
 
   &:focus {
@@ -160,7 +153,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     <StyledButton
       ref={ref}
       py={2}
-      disabled={disabled}
+      disabled={isLoading || disabled}
       isLoading={isLoading}
       {...props}
       mx={mx}
@@ -206,5 +199,5 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 );
 
 Button.defaultProps = {
-  variant: "primary",
+  variant: "basic",
 };

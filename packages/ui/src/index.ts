@@ -1,2 +1,3 @@
 export * from "./components";
-export { default as theme } from "./theme";
+export { GlobalStyle } from "./global";
+export { theme } from "./theme";

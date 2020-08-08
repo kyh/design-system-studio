@@ -17,7 +17,7 @@ export const Navigation: React.FC<{
   userProfileData: userProfileDataTypes;
 }> = ({ navbarLinks, userProfileData }) => {
   return (
-    <Box as="nav" bg="bg.primary" px={3} py={2}>
+    <Box as="nav" bg="ui.background" px={3} py={2}>
       <Flex height={3} justifyContent="space-between" alignItems="center">
         <Image
           src={logo}
