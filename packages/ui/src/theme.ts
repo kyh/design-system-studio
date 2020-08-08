@@ -1,8 +1,8 @@
 import { lighten, darken } from "polished";
 
 export const fonts = {
-  heading: '"Roboto", sans-serif',
-  body: '"Helvetica Neue", Roboto, sans-serif',
+  heading: '"Inter", sans-serif',
+  body: '"Inter", sans-serif',
   monospace: "Menlo, monospace",
 };
 

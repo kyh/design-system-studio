@@ -18,7 +18,6 @@ import {
   FormControl,
   Select,
   Radio,
-  Stack,
   theme,
 } from "@dss/ui";
 import { Navigation } from "./Navigation";
@@ -227,12 +226,6 @@ const App: React.FC = () => {
             <FormControl.Hint id="helper-text">Hint text</FormControl.Hint>
             <FormControl.Error id="error-text">Error text</FormControl.Error>
           </FormControl.FieldSet>
-          <Stack mx={3} mb={3} p={3} bg="bg.secondary" space={[4, 5, 6]}>
-            <Box bg="ui.primary" width={3} height={3} />
-            <Box bg="ui.primary" width={3} height={3} />
-            <Box bg="ui.primary" width={3} height={3} />
-            <Box bg="ui.primary" width={3} height={3} />
-          </Stack>
         </Box>
       </div>
     </ThemeProvider>
