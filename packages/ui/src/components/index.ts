@@ -17,3 +17,4 @@ export * from "./text";
 export * from "./button";
 // export * from "./form-control";
 // export * from "./select";
+export * from "./global";

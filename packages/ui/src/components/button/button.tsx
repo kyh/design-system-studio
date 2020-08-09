@@ -33,6 +33,7 @@ const variants = variant({ scale: "components.buttons.variants" });
 const StyledButton = styled.button<ButtonProps>`
   position: relative;
   cursor: pointer;
+  appearance: button;
   ${base}
   ${variants}
   ${compose(space, layout, flexbox, position)}

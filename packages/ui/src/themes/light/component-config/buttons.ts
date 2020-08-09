@@ -1,6 +1,8 @@
 import * as sharedTokens from "../../shared-tokens";
 
 export const buttons = {
+  stateTypes: ["hover", "active", "focus", "disabled", "loading"],
+  variantTypes: ["basic", "primary"],
   base: {
     // Fonts
     fontFamily: sharedTokens.fonts.body,
