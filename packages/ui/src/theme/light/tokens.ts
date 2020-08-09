@@ -1,9 +1,10 @@
-import { palette } from "../shared-tokens";
+import * as sharedTokens from "../shared-tokens";
 
 export const colors = {
+  ...sharedTokens.colors,
   page: {
-    background: palette.neutrals["10"],
-    color: palette.neutrals["800"],
-    colorInverse: palette.neutrals["10"],
+    background: sharedTokens.palette.neutrals["10"],
+    color: sharedTokens.palette.neutrals["800"],
+    colorInverse: sharedTokens.palette.neutrals["10"],
   },
 };
