@@ -17,7 +17,7 @@ export const GlobalStyle = createGlobalStyle<any>`
   body {
     color: ${({ theme }) => theme.colors.page.color};
     background-color: ${({ theme }) => theme.colors.page.background};
-    font-family: ${({ theme }) => theme.fonts};
+    font-family: ${({ theme }) => theme.fonts.body};
     text-rendering: optimizeLegibility;
   }
 

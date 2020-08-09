@@ -1,5 +1,5 @@
 /**
- * Base tokens.
+ * Shared tokens between themes.
  */
 
 // Color Tokens
@@ -81,13 +81,7 @@ export const palette = {
   },
 };
 
-export const gradients = {
-  default: {
-    light: `linear-gradient(180deg, ${palette.neutrals["10"]} 0%, ${palette.neutrals["20"]} 100%)`,
-    base: `linear-gradient(180deg, ${palette.neutrals["10"]} 0%, ${palette.neutrals["40"]} 100%)`,
-    dark: `linear-gradient(180deg, ${palette.neutrals["10"]} 0%, ${palette.neutrals["60"]} 100%)`,
-  },
-};
+export const colors = {};
 
 // Typography Tokens
 export const fonts = {

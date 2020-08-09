@@ -27,86 +27,8 @@ export type StyledButtonProps = SpaceProps &
   PositionProps &
   DefaultProps;
 
-/** Generated code */
-const buttonBaseStyles = {
-  position: "relative",
-  fontFamily: "body",
-  fontSize: "body",
-  fontWeight: "regular",
-  lineHeight: "body",
-  borderRadius: "regular",
-  borderWidth: "regular",
-  borderStyle: "regular",
-  pt: 2,
-  pb: 2,
-  pl: 3,
-  pr: 3,
-  cursor: "pointer",
-};
-
-export const buttonVariants = {
-  basic: {
-    ...buttonBaseStyles,
-    color: "page.colorInverse",
-    backgroundColor: "default.gradients.base",
-    borderColor: "default.base",
-    "&.hover, &:hover": {
-      backgroundColor: "default.light",
-      borderColor: "default.base",
-    },
-    "&.active, &:active": {
-      backgroundColor: "default.light",
-      borderColor: "default.dark",
-    },
-    "&.focus, &:focus": {
-      backgroundColor: "default.gradients.base",
-      borderColor: "primary.base",
-    },
-    "&.disabled, &:disabled": {
-      backgroundColor: "default.gradients.light",
-      borderColor: "default.base",
-      cursor: "not-allowed",
-    },
-    "&.loading, &:loading": {
-      backgroundColor: "default.gradients.light",
-      borderColor: "default.base",
-      cursor: "not-allowed",
-    },
-  },
-  primary: {
-    ...buttonBaseStyles,
-    color: "page.colorInverse",
-    backgroundColor: "primary.base",
-    borderColor: "primary.dark",
-    "&.hover, &:hover": {
-      backgroundColor: "primary.dark",
-      borderColor: "primary.border",
-    },
-    "&.active, &:active": {
-      backgroundColor: "primary.border",
-      borderColor: "primary.border",
-    },
-    "&.focus, &:focus": {
-      backgroundColor: "primary.base",
-      borderColor: "primary.border",
-    },
-    "&.disabled, &:disabled": {
-      backgroundColor: "primary.background",
-      borderColor: "primary.light",
-      cursor: "not-allowed",
-    },
-    "&.loading, &:loading": {
-      backgroundColor: "primary.background",
-      borderColor: "primary.light",
-      cursor: "not-allowed",
-    },
-  },
-};
-/** End generated code */
-
 const variants = variant({
   scale: "buttons",
-  variants: buttonVariants,
 });
 
 const StyledButton = styled.button<ButtonProps>`

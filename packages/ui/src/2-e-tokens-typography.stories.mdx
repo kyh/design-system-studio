@@ -6,7 +6,7 @@ import {
   fontWeights,
   lineHeights,
   letterSpacings,
-} from "./theme/tokens";
+} from "./theme/shared-tokens";
 import { Flex } from "./components";
 
 <Meta title="Foundations/Design Tokens/Typography" />
@@ -17,9 +17,17 @@ import { Flex } from "./components";
   Base font size is <code>16px</code> and using {fonts.heading.split(',')[0]} font families.
 </Subtitle>
 <p>
-  <b>Font Weights:</b>{" "}
+  <b>Fonts:</b>{" "}
   <span>
-    {Object.keys(fontWeights).map((k) => (
+    {Object.keys(fonts).map((k) => (
+      <code>{k}</code>
+    ))}
+  </span>
+</p>
+<p>
+  <b>Font Sizes:</b>{" "}
+  <span>
+    {Object.keys(fontSizes).map((k) => (
       <code>{k}</code>
     ))}
   </span>
@@ -28,6 +36,14 @@ import { Flex } from "./components";
   <b>Line Heights:</b>{" "}
   <span>
     {Object.keys(lineHeights).map((k) => (
+      <code>{k}</code>
+    ))}
+  </span>
+</p>
+<p>
+  <b>Font Weights:</b>{" "}
+  <span>
+    {Object.keys(fontWeights).map((k) => (
       <code>{k}</code>
     ))}
   </span>

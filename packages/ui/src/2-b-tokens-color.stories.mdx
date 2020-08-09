@@ -4,16 +4,19 @@ import {
   ColorPalette,
   ColorItem,
 } from "@storybook/addon-docs/blocks";
-import { palette } from "./theme/tokens";
+import { palette } from "./theme/shared-tokens";
 
 <Meta title="Foundations/Design Tokens/Color" />
 
-export const createPalette = (colors) =>
-  Object.keys(colors).map((colorKey) => ({
+export const createPalette = (palette) => {
+  delete palette.displayName;
+  delete palette.__docgenInfo;
+  return Object.keys(palette).map((colorKey) => ({
     title: colorKey,
     subtitle: `theme.palette.${colorKey}`,
-    colors: Object.values(colors[colorKey]),
+    colors: Object.values(palette[colorKey]),
   }));
+};
 
 # Color Tokens
 
