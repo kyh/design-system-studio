@@ -1,38 +1,4 @@
-import {
-  space,
-  sizes,
-  fonts,
-  fontSizes,
-  fontWeights,
-  lineHeights,
-  letterSpacings,
-  radii,
-  borderWidths,
-  borderStyles,
-  shadows,
-  breakpoints,
-  brand,
-  ui,
-} from "./light/tokens";
-
-const light = {
-  space,
-  sizes,
-  fonts,
-  fontSizes,
-  fontWeights,
-  lineHeights,
-  letterSpacings,
-  radii,
-  borderWidths,
-  borderStyles,
-  shadows,
-  breakpoints,
-  colors: {
-    brand,
-    ui,
-  },
-};
+import * as light from "./light";
 
 export const theme = {
   light,

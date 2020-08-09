@@ -8,13 +8,14 @@ const CoverImage = styled(Image)<ImageProps>({
   objectPosition: "center",
 });
 
+type DefaultProps = {
+  ratio?: number;
+};
+
 type CoverImageProps = StyledComponentProps<
   "img",
   any,
-  {
-    /** The ratio to apply */
-    ratio?: number;
-  } & ImageProps,
+  DefaultProps & ImageProps,
   never
 >;
 

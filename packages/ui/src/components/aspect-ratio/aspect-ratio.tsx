@@ -2,13 +2,14 @@ import React, { forwardRef } from "react";
 import { StyledComponentProps } from "styled-components";
 import { Box, BoxProps } from "../box";
 
+type DefaultProps = {
+  ratio?: number;
+};
+
 type AspectRatioProps = StyledComponentProps<
   "div",
   any,
-  {
-    /** The ratio to apply */
-    ratio?: number;
-  } & BoxProps,
+  DefaultProps & BoxProps,
   never
 >;
 

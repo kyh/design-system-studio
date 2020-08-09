@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { CSSObject } from "styled-components";
 import {
   compose,
   space,
@@ -22,10 +22,12 @@ export type BoxProps = SpaceProps &
   BorderProps &
   PositionProps;
 
+const baseStyles: CSSObject = {
+  boxSizing: "border-box",
+  minWidth: 0,
+};
+
 export const Box = styled.div<BoxProps>(
-  {
-    boxSizing: "border-box",
-    minWidth: 0,
-  },
+  baseStyles,
   compose(space, color, layout, flexbox, border, position)
 );

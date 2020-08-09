@@ -1,37 +1,34 @@
 import React, { forwardRef } from "react";
 import styled, { StyledComponentProps } from "styled-components";
 import {
-  border,
   compose,
-  flexbox,
-  layout,
-  position,
-  space,
   variant,
-  BorderProps,
+  flexbox,
   FlexboxProps,
+  layout,
   LayoutProps,
+  position,
   PositionProps,
+  space,
   SpaceProps,
 } from "styled-system";
-import { Box, BoxProps } from "../box";
 import { Flex } from "../flex";
 import { Spinner } from "../spinner";
-import { focusRing } from "../shared-styles";
+
+type DefaultProps = {
+  isLoading?: boolean;
+  disabled?: boolean;
+  variant?: "basic" | "primary" | "transparent" | "link";
+};
 
 export type StyledButtonProps = SpaceProps &
   LayoutProps &
   FlexboxProps &
-  BorderProps &
-  PositionProps & {
-    leftIcon?: JSX.Element;
-    rightIcon?: JSX.Element;
-    isLoading?: boolean;
-    disabled?: boolean;
-    variant?: "basic" | "primary" | "transparent" | "link";
-  };
+  PositionProps &
+  DefaultProps;
 
-const defaultButtonStyles = {
+/** Generated code */
+const buttonBaseStyles = {
   position: "relative",
   fontFamily: "body",
   fontSize: "body",
@@ -40,89 +37,65 @@ const defaultButtonStyles = {
   borderRadius: "regular",
   borderWidth: "regular",
   borderStyle: "regular",
-  padding: 3,
-  ml: 0,
-  mr: 0,
-  mb: 0,
-  appearance: "button",
+  pt: 2,
+  pb: 2,
+  pl: 3,
+  pr: 3,
   cursor: "pointer",
 };
 
 export const buttonVariants = {
   basic: {
-    ...defaultButtonStyles,
-    backgroundColor: "ui.neutralGradient",
-    "&:hover": {
-      backgroundColor: "highlights.primaryHighlight",
-    },
-  },
-  primary: {
-    ...defaultButtonStyles,
-    color: "ui.colorInverse",
+    ...buttonBaseStyles,
+    color: "ui.color",
     backgroundColor: "brand.blue.300",
     borderColor: "brand.blue.400",
-    " svg": {
-      color: "ui.colorInverse",
-    },
+  },
+  primary: {
+    ...buttonBaseStyles,
+    color: "brand.neutrals.10",
+    backgroundColor: "brand.blue.300",
+    borderColor: "brand.blue.400",
     "&:hover": {
       backgroundColor: "brand.blue.400",
       borderColor: "brand.blue.500",
     },
-    "&:active, &:focus": {
+    "&:active": {
+      backgroundColor: "brand.blue.500",
+      borderColor: "brand.blue.500",
+    },
+    "&:focus": {
       backgroundColor: "brand.blue.300",
       borderColor: "brand.blue.500",
     },
     "&:disabled": {
-      color: "text.disabled",
-      backgroundColor: "ui.disabled",
-      borderColor: "ui.disabled",
+      backgroundColor: "brand.blue.75",
+      borderColor: "brand.blue.100",
+      cursor: "not-allowed",
+    },
+    "&:loading": {
+      backgroundColor: "brand.blue.75",
+      borderColor: "brand.blue.100",
+      cursor: "not-allowed",
     },
   },
   transparent: {
-    ...defaultButtonStyles,
-    bg: "transparent",
+    ...buttonBaseStyles,
     color: "brand.blue.300",
+    backgroundColor: "transparent",
     borderColor: "transparent",
-    " svg": {
-      color: "brand.blue.300",
-    },
-    "&:hover": {
-      backgroundColor: "highlights.bgHighlight",
-    },
-    "&:active, &:focus": {
-      backgroundColor: "highlights.bgHighlight",
-    },
-    "&:disabled": {
-      color: "text.disabled",
-      backgroundColor: "ui.disabled",
-      borderColor: "ui.disabled",
-    },
   },
 };
+/** End generated code */
 
-const v = variant({
+const variants = variant({
   scale: "buttons",
   variants: buttonVariants,
 });
 
-const ButtonIcon = styled(Box)<BoxProps & { disabled?: boolean }>`
-  display: inline-block;
-  width: ${(props) => props.theme.fontSizes.heading}px;
-  height: ${(props) => props.theme.fontSizes.heading}px;
-  svg {
-    position: absolute;
-    display: block;
-    font-size: ${(props) => props.theme.fontSizes.heading}px;
-  }
-`;
-
 const StyledButton = styled.button<ButtonProps>`
-  ${v}
-  ${compose(space, layout, flexbox, border, position)}
-
-  &:focus {
-    ${focusRing}
-  }
+  ${variants}
+  ${compose(space, layout, flexbox, position)}
 `;
 
 export type ButtonProps = StyledComponentProps<
@@ -133,35 +106,12 @@ export type ButtonProps = StyledComponentProps<
 >;
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      leftIcon,
-      rightIcon,
-      disabled,
-      isLoading,
-      children,
-      mb,
-      mt,
-      mx,
-      my,
-      ml,
-      mr,
-      ...props
-    },
-    ref
-  ) => (
+  ({ disabled, isLoading, children, ...props }, ref) => (
     <StyledButton
       ref={ref}
-      py={2}
       disabled={isLoading || disabled}
       isLoading={isLoading}
       {...props}
-      mx={mx}
-      my={my}
-      mb={mb}
-      mt={mt}
-      ml={ml}
-      mr={mr}
     >
       {isLoading && (
         <Spinner
@@ -182,17 +132,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         justifyContent="center"
         opacity={isLoading ? 0 : 1}
       >
-        {leftIcon && (
-          <ButtonIcon disabled={disabled} mr={2}>
-            {leftIcon}
-          </ButtonIcon>
-        )}
         {children}
-        {rightIcon && (
-          <ButtonIcon disabled={disabled} ml={2}>
-            {rightIcon}
-          </ButtonIcon>
-        )}
       </Flex>
     </StyledButton>
   )

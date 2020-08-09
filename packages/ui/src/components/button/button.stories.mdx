@@ -5,11 +5,11 @@ import { Box, Icons, Flex } from "../";
 
 <Meta title="Components/Button" component={Button} />
 
-# Basic button component
+# Button component
 
 Primitive button component with primary, secondary & transparent variants
 
-### Primary
+### Variants
 
 <Preview withToolbar>
   <Story name="primary">
@@ -36,126 +36,17 @@ Primitive button component with primary, secondary & transparent variants
       <Flex mb={3}>
         <Button
           variant="primary"
-          leftIcon={<Icons.Visibility aria-hidden />}
           mr={3}
         >
+        <Icons.Visibility aria-hidden mr={1} />
           Left Icon
         </Button>
         <Button
           variant="primary"
           mr={3}
-          rightIcon={<Icons.Visibility aria-hidden />}
         >
           Right Icon
-        </Button>
-        <Button
-          variant="primary"
-          leftIcon={<Icons.Info aria-hidden />}
-          rightIcon={<Icons.Info aria-hidden />}
-        >
-          Both Icons
-        </Button>
-      </Flex>
-    </Box>
-  </Story>
-</Preview>
-
-### Secondary
-
-<Preview withToolbar>
-  <Story name="secondary">
-    <Box>
-      <Flex mb={3}>
-        <Button variant="secondary" mr={3}>
-          Secondary
-        </Button>
-        <Button variant="secondary" mr={3} disabled>
-          Disabled
-        </Button>
-        <Button variant="secondary" isLoading>
-          Loading
-        </Button>
-      </Flex>
-      <Flex mb={3}>
-        <Button variant="secondary" mr={3}>
-          Flexible Width
-        </Button>
-        <Button variant="secondary" width={200}>
-          Fixed Width
-        </Button>
-      </Flex>
-      <Flex mb={3}>
-        <Button
-          variant="secondary"
-          mr={3}
-          leftIcon={<Icons.Visibility aria-hidden />}
-        >
-          Left Icon
-        </Button>
-        <Button
-          variant="secondary"
-          mr={3}
-          rightIcon={<Icons.Search aria-hidden />}
-        >
-          Right Icon
-        </Button>
-        <Button
-          variant="secondary"
-          leftIcon={<Icons.Info aria-hidden />}
-          rightIcon={<Icons.Info aria-hidden />}
-        >
-          Both Icons
-        </Button>
-      </Flex>
-    </Box>
-  </Story>
-</Preview>
-
-### Transparent
-
-<Preview withToolbar>
-  <Story name="transparent">
-    <Box>
-      <Flex mb={3}>
-        <Button variant="transparent" mr={3}>
-          Transparent
-        </Button>
-        <Button variant="transparent" mr={3} disabled>
-          Disabled
-        </Button>
-        <Button variant="transparent" isLoading>
-          Loading
-        </Button>
-      </Flex>
-      <Flex mb={3}>
-        <Button variant="transparent" mr={3}>
-          Flexible Width
-        </Button>
-        <Button variant="transparent" width={200}>
-          Fixed Width
-        </Button>
-      </Flex>
-      <Flex mb={3}>
-        <Button
-          variant="transparent"
-          mr={3}
-          leftIcon={<Icons.Visibility aria-hidden />}
-        >
-          Left Icon
-        </Button>
-        <Button
-          variant="transparent"
-          mr={3}
-          rightIcon={<Icons.Search aria-hidden />}
-        >
-          Right Icon
-        </Button>
-        <Button
-          variant="transparent"
-          leftIcon={<Icons.Info aria-hidden />}
-          rightIcon={<Icons.Info aria-hidden />}
-        >
-          Both Icons
+          <Icons.Visibility aria-hidden ml={1} />
         </Button>
       </Flex>
     </Box>

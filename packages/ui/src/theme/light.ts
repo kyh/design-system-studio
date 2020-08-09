@@ -1,41 +1,6 @@
-// Typography Tokens
-export const fonts = {
-  heading: '"Inter", sans-serif',
-  body: '"Inter", sans-serif',
-  monospace: "Menlo, monospace",
-};
-
-export const fontSizes = {
-  displayXLarge: 42,
-  displayLarge: 28,
-  displayMedium: 26,
-  displaySmall: 20,
-  heading: 16,
-  body: 14,
-  caption: 12,
-};
-
-export const fontWeights = {
-  regular: 400,
-  medium: 500,
-  bold: 700,
-};
-
-export const lineHeights = {
-  displayXLarge: "44px",
-  displayLarge: "32px",
-  displayMedium: "32px",
-  displaySmall: "24px",
-  heading: "24px",
-  subHeading: "16px",
-  caption: "16px",
-  body: "20px",
-};
-
-export const letterSpacings = {
-  default: "normal",
-  tracked: "0.04em",
-};
+/**
+ * Generated theme tokens.
+ */
 
 // Color Tokens
 export const brand = {
@@ -116,13 +81,61 @@ export const brand = {
   },
 };
 
-export const ui = {};
+export const colors = {
+  brand,
+  ui: {
+    background: brand.neutrals["10"],
+    color: brand.neutrals["800"],
+    colorInverse: brand.neutrals["10"],
+  },
+};
+
+// Typography Tokens
+export const fonts = {
+  heading: '"Inter", sans-serif',
+  body: '"Inter", sans-serif',
+  monospace: "Menlo, monospace",
+};
+
+export const fontSizes = {
+  displayXLarge: "42px",
+  displayLarge: "28px",
+  displayMedium: "26px",
+  displaySmall: "20px",
+  heading: "16px",
+  body: "14px",
+  caption: "12px",
+};
+
+export const fontWeights = {
+  regular: 400,
+  medium: 500,
+  bold: 700,
+};
+
+export const lineHeights = {
+  displayXLarge: "44px",
+  displayLarge: "32px",
+  displayMedium: "32px",
+  displaySmall: "24px",
+  heading: "24px",
+  subHeading: "16px",
+  caption: "16px",
+  body: "20px",
+};
+
+export const letterSpacings = {
+  default: "normal",
+  tracked: "2px",
+};
 
 // Border tokens
 export const radii = {
+  none: 0,
   regular: 3,
 };
 export const borderWidths = {
+  none: 0,
   regular: 1,
 };
 export const borderStyles = {
