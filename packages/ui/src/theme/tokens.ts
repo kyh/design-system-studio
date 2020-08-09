@@ -116,12 +116,7 @@ export const brand = {
   },
 };
 
-export const ui = {
-  background: brand.neutrals["10"],
-  color: brand.neutrals["800"],
-  colorInverse: brand.neutrals["10"],
-  focusColor: brand.blue["300"],
-};
+export const ui = {};
 
 // Border tokens
 export const radii = {
