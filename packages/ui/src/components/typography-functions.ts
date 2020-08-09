@@ -1,18 +1,16 @@
 import {
   compose,
   space,
-  layout,
-  flexbox,
-  border,
-  position,
-  color,
-  typography,
   SpaceProps,
-  ColorProps,
+  layout,
   LayoutProps,
+  flexbox,
   FlexboxProps,
-  BorderProps,
+  position,
   PositionProps,
+  color,
+  ColorProps,
+  typography,
   TypographyProps,
 } from "styled-system";
 
@@ -20,7 +18,6 @@ export type TypographyFunctionsProps = SpaceProps &
   ColorProps &
   LayoutProps &
   FlexboxProps &
-  BorderProps &
   PositionProps &
   TypographyProps;
 
@@ -29,7 +26,6 @@ export const typographyFunctions = compose(
   color,
   layout,
   flexbox,
-  border,
   position,
   typography
 );

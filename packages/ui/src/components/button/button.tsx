@@ -27,11 +27,13 @@ export type StyledButtonProps = SpaceProps &
   PositionProps &
   DefaultProps;
 
-const variants = variant({
-  scale: "buttons",
-});
+const base = ({ theme }: any) => theme.components.buttons.base;
+const variants = variant({ scale: "components.buttons.variants" });
 
 const StyledButton = styled.button<ButtonProps>`
+  position: relative;
+  cursor: pointer;
+  ${base}
   ${variants}
   ${compose(space, layout, flexbox, position)}
 `;

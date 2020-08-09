@@ -1,16 +1,16 @@
 import * as sharedTokens from "../shared-tokens";
-
-// Overrides
-import * as tokens from "./tokens";
+import * as overrideTokens from "./override-tokens";
 
 // Components
-import { buttons } from "./buttons";
+import { buttons } from "./component-config/buttons";
 
 /**
  * Theme specific overrides
  */
 export const light = {
   ...sharedTokens,
-  ...tokens,
-  buttons,
+  ...overrideTokens,
+  components: {
+    buttons,
+  },
 };
