@@ -203,7 +203,7 @@ const App: React.FC = () => {
               </Label>
               <Select
                 defaultValue="Select a city"
-                leftIcon={<Icons.Place color="ui.color" aria-hidden />}
+                leftIcon={<Icons.Place color="page.color" aria-hidden />}
               >
                 <option>Select a city</option>
                 <option>Toronto</option>

@@ -27,7 +27,7 @@ The components support `space`, `color`, `layout` & `typography` styled-system p
         return (
           <Flex key={name} alignItems="center">
             <Component
-              color="ui.color"
+              color="page.color"
               fontSize="heading"
               justifySelf="center"
               aria-hidden
@@ -52,7 +52,7 @@ import { Icons } from "@dss/ui";
 
 <Preview withSource="open">
   <Story name="usage">
-    <Icons.CheckboxChecked title="checkbox checked" color="ui.color" />
+    <Icons.CheckboxChecked title="checkbox checked" color="page.color" />
   </Story>
 </Preview>
 
@@ -61,8 +61,8 @@ The icon generator script replaces the SVG `width` and `height` values by `1em` 
 <Preview>
   <Story name="sizing with font-size">
     <Flex alignItems="center">
-      <Icons.Loader fontSize="body" mr={2} color="ui.color" aria-hidden />
-      <Icons.Loader fontSize="heading" mr={2} color="ui.color" aria-hidden />
+      <Icons.Loader fontSize="body" mr={2} color="page.color" aria-hidden />
+      <Icons.Loader fontSize="heading" mr={2} color="page.color" aria-hidden />
     </Flex>
   </Story>
 </Preview>
@@ -71,7 +71,7 @@ However, you can still control the size of the icon using the `width` and `heigh
 
 <Preview>
   <Story name="sizing with layout props">
-    <Icons.Loader width={3} height={3} color="ui.color" aria-hidden />
+    <Icons.Loader width={3} height={3} color="page.color" aria-hidden />
   </Story>
 </Preview>
 
@@ -109,7 +109,7 @@ When used for **decorative** purposes, ensure that it is ignored by screen reade
 
 <Preview withSource="open">
   <Story name="as decorative">
-    <Icons.RadioChecked color="ui.color" aria-hidden />
+    <Icons.RadioChecked color="page.color" aria-hidden />
   </Story>
 </Preview>
 
@@ -117,6 +117,6 @@ When used for **non-decorative** purposes, it must have a proper alternative tex
 
 <Preview withSource="open">
   <Story name="as non-decorative">
-    <Icons.Loader color="ui.color" title="waiting for content to load" />
+    <Icons.Loader color="page.color" title="waiting for content to load" />
   </Story>
 </Preview>

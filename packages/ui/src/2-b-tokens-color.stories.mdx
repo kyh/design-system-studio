@@ -4,14 +4,14 @@ import {
   ColorPalette,
   ColorItem,
 } from "@storybook/addon-docs/blocks";
-import { brand } from "./theme/tokens";
+import { palette } from "./theme/tokens";
 
 <Meta title="Foundations/Design Tokens/Color" />
 
 export const createPalette = (colors) =>
   Object.keys(colors).map((colorKey) => ({
     title: colorKey,
-    subtitle: `theme.colors.brand.${colorKey}`,
+    subtitle: `theme.palette.${colorKey}`,
     colors: Object.values(colors[colorKey]),
   }));
 
@@ -27,7 +27,7 @@ export const createPalette = (colors) =>
 ### Palette
 
 <ColorPalette>
-  {createPalette(brand).map((colorItem) => (
+  {createPalette(palette).map((colorItem) => (
     <ColorItem key={colorItem.title} {...colorItem} />
   ))}
 </ColorPalette>

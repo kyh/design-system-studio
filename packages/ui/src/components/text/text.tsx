@@ -12,7 +12,7 @@ export type TextProps = {
 const defaultextStyles = {
   fontFamily: "body",
   fontWeight: "regular",
-  color: "ui.color",
+  color: "page.color",
   mt: 0,
   mb: 0,
 };

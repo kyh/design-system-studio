@@ -1,9 +1,9 @@
 /**
- * Generated theme tokens.
+ * Base tokens.
  */
 
 // Color Tokens
-export const brand = {
+export const palette = {
   neutrals: {
     0: "#FFFFFF",
     10: "#FAFBFC",
@@ -81,12 +81,11 @@ export const brand = {
   },
 };
 
-export const colors = {
-  brand,
-  ui: {
-    background: brand.neutrals["10"],
-    color: brand.neutrals["800"],
-    colorInverse: brand.neutrals["10"],
+export const gradients = {
+  default: {
+    light: `linear-gradient(180deg, ${palette.neutrals["10"]} 0%, ${palette.neutrals["20"]} 100%)`,
+    base: `linear-gradient(180deg, ${palette.neutrals["10"]} 0%, ${palette.neutrals["40"]} 100%)`,
+    dark: `linear-gradient(180deg, ${palette.neutrals["10"]} 0%, ${palette.neutrals["60"]} 100%)`,
   },
 };
 
@@ -107,12 +106,6 @@ export const fontSizes = {
   caption: "12px",
 };
 
-export const fontWeights = {
-  regular: 400,
-  medium: 500,
-  bold: 700,
-};
-
 export const lineHeights = {
   displayXLarge: "44px",
   displayLarge: "32px",
@@ -124,9 +117,14 @@ export const lineHeights = {
   body: "20px",
 };
 
+export const fontWeights = {
+  regular: 400,
+  medium: 500,
+  bold: 700,
+};
+
 export const letterSpacings = {
   default: "normal",
-  tracked: "2px",
 };
 
 // Border tokens
@@ -137,6 +135,7 @@ export const radii = {
 export const borderWidths = {
   none: 0,
   regular: 1,
+  thick: 2,
 };
 export const borderStyles = {
   regular: "solid",

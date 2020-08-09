@@ -47,43 +47,59 @@ const buttonBaseStyles = {
 export const buttonVariants = {
   basic: {
     ...buttonBaseStyles,
-    color: "ui.color",
-    backgroundColor: "brand.blue.300",
-    borderColor: "brand.blue.400",
+    color: "page.colorInverse",
+    backgroundColor: "default.gradients.base",
+    borderColor: "default.base",
+    "&.hover, &:hover": {
+      backgroundColor: "default.light",
+      borderColor: "default.base",
+    },
+    "&.active, &:active": {
+      backgroundColor: "default.light",
+      borderColor: "default.dark",
+    },
+    "&.focus, &:focus": {
+      backgroundColor: "default.gradients.base",
+      borderColor: "primary.base",
+    },
+    "&.disabled, &:disabled": {
+      backgroundColor: "default.gradients.light",
+      borderColor: "default.base",
+      cursor: "not-allowed",
+    },
+    "&.loading, &:loading": {
+      backgroundColor: "default.gradients.light",
+      borderColor: "default.base",
+      cursor: "not-allowed",
+    },
   },
   primary: {
     ...buttonBaseStyles,
-    color: "brand.neutrals.10",
-    backgroundColor: "brand.blue.300",
-    borderColor: "brand.blue.400",
-    "&:hover": {
-      backgroundColor: "brand.blue.400",
-      borderColor: "brand.blue.500",
+    color: "page.colorInverse",
+    backgroundColor: "primary.base",
+    borderColor: "primary.dark",
+    "&.hover, &:hover": {
+      backgroundColor: "primary.dark",
+      borderColor: "primary.border",
     },
-    "&:active": {
-      backgroundColor: "brand.blue.500",
-      borderColor: "brand.blue.500",
+    "&.active, &:active": {
+      backgroundColor: "primary.border",
+      borderColor: "primary.border",
     },
-    "&:focus": {
-      backgroundColor: "brand.blue.300",
-      borderColor: "brand.blue.500",
+    "&.focus, &:focus": {
+      backgroundColor: "primary.base",
+      borderColor: "primary.border",
     },
-    "&:disabled": {
-      backgroundColor: "brand.blue.75",
-      borderColor: "brand.blue.100",
+    "&.disabled, &:disabled": {
+      backgroundColor: "primary.background",
+      borderColor: "primary.light",
       cursor: "not-allowed",
     },
-    "&:loading": {
-      backgroundColor: "brand.blue.75",
-      borderColor: "brand.blue.100",
+    "&.loading, &:loading": {
+      backgroundColor: "primary.background",
+      borderColor: "primary.light",
       cursor: "not-allowed",
     },
-  },
-  transparent: {
-    ...buttonBaseStyles,
-    color: "brand.blue.300",
-    backgroundColor: "transparent",
-    borderColor: "transparent",
   },
 };
 /** End generated code */

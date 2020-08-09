@@ -19,7 +19,7 @@ const defaultHeadingStyles = {
   fontFamily: "heading",
   fontWeight: "medium",
   lineHeight: "heading",
-  color: "ui.color",
+  color: "page.color",
   mt: 0,
   mb: 0,
 };

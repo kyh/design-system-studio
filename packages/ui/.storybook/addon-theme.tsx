@@ -10,7 +10,7 @@ export const withTheme = (storyFn: any) => {
         <ThemeProvider theme={theme[t]}>
           <GlobalStyle />
           <Box
-            bg="ui.background"
+            bg="page.background"
             px={4}
             py={5}
             width="100%"
