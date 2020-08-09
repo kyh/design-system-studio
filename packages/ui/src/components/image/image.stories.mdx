@@ -1,7 +1,5 @@
 import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
 import { Image } from "./image";
-import sampleImg from "../../imgs/img.png";
-import userImg from "../../imgs/user.png";
 
 <Meta title="Components/Image" component={Image} />
 
@@ -11,13 +9,13 @@ Image creates an image with two variants, `default` or `avatar`.
 
 <Preview withToolbar>
   <Story name="default">
-    <Image src={sampleImg} maxWidth={600} />
+    <Image src="https://via.placeholder.com/1500" maxWidth={600} />
   </Story>
 </Preview>
 
 <Preview withToolbar>
   <Story name="avatar">
-    <Image src={userImg} variant="avatar" />
+    <Image src="https://i.pravatar.cc/300" variant="avatar" />
   </Story>
 </Preview>
 

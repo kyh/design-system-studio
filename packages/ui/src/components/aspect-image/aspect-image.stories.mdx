@@ -1,7 +1,6 @@
 import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
 import { AspectImage } from "./aspect-image";
 import { Heading } from "../heading";
-import sampleImg from "../../imgs/img.png";
 
 <Meta title="Components/AspectImage" component={AspectImage} />
 
@@ -11,7 +10,7 @@ Extension of the `Image` component that constrains the image within a desired ra
 
 <Preview withToolbar>
   <Story name="AspectImage">
-    <AspectImage ratio={16 / 9} src={sampleImg} />
+    <AspectImage ratio={16 / 9} src="https://via.placeholder.com/1500" />
   </Story>
 </Preview>
 
