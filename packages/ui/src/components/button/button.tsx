@@ -44,7 +44,7 @@ const defaultButtonStyles = {
   ml: 0,
   mr: 0,
   mb: 0,
-  appearance: "none",
+  appearance: "button",
   cursor: "pointer",
 };
 
@@ -107,12 +107,12 @@ const v = variant({
 
 const ButtonIcon = styled(Box)<BoxProps & { disabled?: boolean }>`
   display: inline-block;
-  width: ${(props) => props.theme.fontSizes.body};
-  height: ${(props) => props.theme.fontSizes.body};
+  width: ${(props) => props.theme.fontSizes.heading}px;
+  height: ${(props) => props.theme.fontSizes.heading}px;
   svg {
     position: absolute;
     display: block;
-    font-size: ${(props) => props.theme.fontSizes.body};
+    font-size: ${(props) => props.theme.fontSizes.heading}px;
   }
 `;
 
@@ -173,7 +173,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           right={0}
           bottom={0}
           left={0}
-          size={4}
+          size="body"
         />
       )}
       <Flex

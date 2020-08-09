@@ -1,0 +1,26 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { Box, Flex, Text, Heading } from "../components";
+import { space as spaceScale } from "../theme/tokens";
+
+<Meta title="Foundations/Design Tokens" />
+
+# Space Tokens
+
+> Intended for use with margin, padding, grid gaps, positioning and other layout-related CSS properties. A space scale can be defined as either a plain object or an array, but by convention an array is preferred. This is an intentional constraint that makes it difficult to add _one-off_ or _in-between_ sizes that could lead to unwanted and rippling affects to layout.
+>
+> — [Theme Specification - space](https://styled-system.com/theme-specification#space)
+
+<Preview withSource="none">
+  <Story name="Space">
+    <Box>
+      {spaceScale.map((v, idx) => (
+        <Flex key={v + idx} mb={4} alignItems="center">
+          <Text variant="body" minWidth={4}>
+            {idx} <Text as="span" variant="body">{`(${v}px)`}</Text>
+          </Text>
+          <Box bg="ui.color" height={2} style={{ width: v }} />
+        </Flex>
+      ))}
+    </Box>
+  </Story>
+</Preview>

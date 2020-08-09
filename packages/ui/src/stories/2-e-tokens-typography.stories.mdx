@@ -1,4 +1,4 @@
-import { Meta, Typeset, Title, Subtitle } from "@storybook/addon-docs/blocks";
+import { Meta, Typeset, Subtitle } from "@storybook/addon-docs/blocks";
 import { PropsTable } from "@storybook/components";
 import {
   fonts,
@@ -6,15 +6,15 @@ import {
   fontWeights,
   lineHeights,
   letterSpacings,
-} from "./theme";
-import { Flex } from "./components";
+} from "../theme/tokens";
+import { Flex } from "../components";
 
-<Meta title="Foundations/Typography Tokens" />
+<Meta title="Foundations/Design Tokens/Typography" />
 
 # Typography Tokens
 
 <Subtitle>
-  Base font size is <code>16px</code> and using {fonts.heading.split(',')[0]} and {fonts.body.split(',')[0]} font families.
+  Base font size is <code>16px</code> and using {fonts.heading.split(',')[0]} font families.
 </Subtitle>
 <p>
   <b>Font Weights:</b>{" "}

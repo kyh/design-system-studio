@@ -17,7 +17,7 @@ type HeadingProps = {
 
 const defaultHeadingStyles = {
   fontFamily: "heading",
-  fontWeight: "normal",
+  fontWeight: "medium",
   lineHeight: "heading",
   color: "ui.color",
   mt: 0,

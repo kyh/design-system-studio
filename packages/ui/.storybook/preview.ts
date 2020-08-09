@@ -1,9 +1,9 @@
 import { addDecorator, addParameters } from "@storybook/react";
-import ThemeDecorator from "./theme-decorator";
 import { withKnobs } from "@storybook/addon-knobs";
 import { withA11y } from "@storybook/addon-a11y";
+import { withTheme } from "./addon-theme";
 
-addDecorator(ThemeDecorator);
+addDecorator(withTheme);
 addDecorator(withKnobs);
 addDecorator(withA11y);
 
@@ -45,6 +45,5 @@ addParameters({
         },
       },
     },
-    defaultViewport: "Small Mobile",
   },
 });

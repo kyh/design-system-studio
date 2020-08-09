@@ -1,3 +1,4 @@
+// Typography Tokens
 export const fonts = {
   heading: '"Inter", sans-serif',
   body: '"Inter", sans-serif',
@@ -10,7 +11,6 @@ export const fontSizes = {
   displayMedium: 26,
   displaySmall: 20,
   heading: 16,
-  subHeading: 12,
   body: 14,
   caption: 12,
 };
@@ -37,6 +37,7 @@ export const letterSpacings = {
   tracked: "0.04em",
 };
 
+// Color Tokens
 export const brand = {
   neutrals: {
     0: "#FFFFFF",
@@ -115,17 +116,26 @@ export const brand = {
   },
 };
 
-const radii = {
+export const ui = {
+  background: brand.neutrals["10"],
+  color: brand.neutrals["800"],
+  colorInverse: brand.neutrals["10"],
+  focusColor: brand.blue["300"],
+};
+
+// Border tokens
+export const radii = {
   regular: 3,
 };
-const borderWidths = {
+export const borderWidths = {
   regular: 1,
 };
-const borderStyles = {
+export const borderStyles = {
   regular: "solid",
 };
 
-const shadows = {
+// Shadow tokens
+export const shadows = {
   100: "0px 0px 2px rgba(23, 43, 77, 0.04), 0px 3px 2px rgba(23, 43, 77, 0.08)",
   200: "0px 3px 2px rgba(23, 43, 77, 0.04), 0px 5px 3px rgba(23, 43, 77, 0.08)",
   300: "0px 5px 3px rgba(23, 43, 77, 0.04), 0px 8px 5px rgba(23, 43, 77, 0.08)",
@@ -134,53 +144,7 @@ const shadows = {
   600: "0px 24px 18px rgba(23, 43, 77, 0.04), 0px 35px 24px rgba(23, 43, 77, 0.08)",
 };
 
+// Spacing Tokens
 export const space = [0, 4, 8, 16, 32, 64, 128, 256, 512];
 export const sizes = [8, 16, 32, 64, 128, 256, 512, 768, 1024, 1536];
 export const breakpoints = ["40em", "56em", "64em"];
-
-export const theme = {
-  light: {
-    space,
-    sizes,
-    fonts,
-    fontSizes,
-    fontWeights,
-    lineHeights,
-    letterSpacings,
-    radii,
-    borderWidths,
-    borderStyles,
-    shadows,
-    breakpoints,
-    colors: {
-      brand,
-      ui: {
-        background: brand.neutrals["10"],
-        color: brand.neutrals["800"],
-        colorInverse: brand.neutrals["10"],
-        focusColor: brand.blue["300"],
-      },
-    },
-  },
-  dark: {
-    space,
-    sizes,
-    fonts,
-    fontSizes,
-    fontWeights,
-    lineHeights,
-    letterSpacings,
-    breakpoints,
-    shadows,
-    radii,
-    colors: {
-      brand,
-      ui: {
-        background: brand.neutrals["900"],
-        color: brand.neutrals["10"],
-        colorInverse: brand.neutrals["800"],
-        focusColor: brand.blue["200"],
-      },
-    },
-  },
-};

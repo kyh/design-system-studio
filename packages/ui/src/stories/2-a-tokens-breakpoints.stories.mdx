@@ -1,0 +1,55 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { Box, Flex, Text, Heading } from "../components";
+
+<Meta title="Foundations/Design Tokens" />
+
+# Breakpoints
+
+> Breakpoints are CSS lengths intended for use in media queries. In Styled System the breakpoints scale is used to create mobile-first responsive media queries based on array values.
+>
+> — [Theme Specification - breakpoints](https://styled-system.com/theme-specification/#breakpoints)
+
+<Preview withSource="none">
+  <Story name="Breakpoints">
+    <Box>
+      <Flex alignItems="baseline" mb={4}>
+        <Text variant="body" minWidth={4} mr={3}>
+          Small Breakpoint
+        </Text>
+        <Heading variant="displayLarge">&lt; 40em</Heading>
+      </Flex>
+      <Flex alignItems="baseline" mb={4}>
+        <Text variant="body" minWidth={4} mr={3}>
+          Medium Breakpoint
+        </Text>
+        <Heading variant="displayLarge">40em - 56em</Heading>
+      </Flex>
+      <Flex alignItems="baseline" mb={4}>
+        <Text variant="body" minWidth={4} mr={3}>
+          Large Breakpoint
+        </Text>
+        <Heading variant="displayLarge">56em - 64em</Heading>
+      </Flex>
+      <Flex alignItems="baseline">
+        <Text variant="body" minWidth={4} mr={3}>
+          Extra Large Breakpoint
+        </Text>
+        <Heading variant="displayLarge">64em+</Heading>
+      </Flex>
+    </Box>
+  </Story>
+</Preview>
+
+For example, using a margin value of `[ 2, 3, 4 ]` creates styles with multiple mobile-first min-width media queries.
+
+```js
+ {
+   margin: '8px',
+   '@media screen and (min-width: 40em)': {
+     margin: '16px',
+   },
+   '@media screen and (min-width: 56em)': {
+     margin: '32px',
+   },
+ }
+```
