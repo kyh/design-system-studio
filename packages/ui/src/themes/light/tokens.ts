@@ -1,7 +1,6 @@
 /**
- * Shared tokens between themes.
+ * Theme tokens.
  */
-
 // Color Tokens
 export const palette = {
   neutrals: {
@@ -81,7 +80,16 @@ export const palette = {
   },
 };
 
-export const colors = {};
+export const page = {
+  background: palette.neutrals["10"],
+  color: palette.neutrals["800"],
+  colorInverse: palette.neutrals["10"],
+};
+
+export const colors = {
+  palette,
+  page,
+};
 
 // Typography Tokens
 export const fonts = {
@@ -143,6 +151,12 @@ export const shadows = {
   400: "0px 8px 5px rgba(23, 43, 77, 0.04), 0px 15px 12px rgba(23, 43, 77, 0.08)",
   500: "0px 18px 12px rgba(23, 43, 77, 0.04), 0px 24px 18px rgba(23, 43, 77, 0.08)",
   600: "0px 24px 18px rgba(23, 43, 77, 0.04), 0px 35px 24px rgba(23, 43, 77, 0.08)",
+};
+
+// Gradient tokens
+export const gradients = {
+  light: `linear-gradient(180deg, ${palette.neutrals[10]} 0%, ${palette.neutrals[20]} 100%)`,
+  base: `linear-gradient(180deg, ${palette.neutrals[10]} 0%, ${palette.neutrals[40]} 100%)`,
 };
 
 // Spacing Tokens
