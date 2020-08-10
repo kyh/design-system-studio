@@ -1,17 +1,13 @@
 import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { useTheme } from "styled-components";
 import { Box, Flex, Text, Heading } from "./components";
-import { sizes as sizeScale } from "./theme/shared-tokens";
 
 <Meta title="Foundations/Design Tokens" />
 
-# Size Tokens
-
-> Intended for use with layout-related CSS properties such as width and height. A size scale can be defined as either a plain object or an array, but by convention an array is preferred. This is an intentional constraint that makes it difficult to add _one-off_ or _in-between_ sizes that could lead to unwanted and rippling affects to layout.
->
-> — [Theme Specification - sizes](https://styled-system.com/table#layout)
-
-<Preview withSource="none">
-  <Story name="Size">
+export const Size = () => {
+  const theme = useTheme();
+  const sizeScale = theme.sizes;
+  return (
     <Box>
       {sizeScale.map((v, idx) => (
         <Flex key={v + idx} mb={4} alignItems="center">
@@ -22,5 +18,17 @@ import { sizes as sizeScale } from "./theme/shared-tokens";
         </Flex>
       ))}
     </Box>
+  );
+};
+
+# Size Tokens
+
+> Intended for use with layout-related CSS properties such as width and height. A size scale can be defined as either a plain object or an array, but by convention an array is preferred. This is an intentional constraint that makes it difficult to add _one-off_ or _in-between_ sizes that could lead to unwanted and rippling affects to layout.
+>
+> — [Theme Specification - sizes](https://styled-system.com/table#layout)
+
+<Preview withSource="none">
+  <Story name="Size">
+    <Size />
   </Story>
 </Preview>

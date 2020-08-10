@@ -1,5 +1,5 @@
 import React, { forwardRef } from "react";
-import styled, { StyledComponentProps } from "styled-components";
+import styled, { css, StyledComponentProps } from "styled-components";
 import {
   compose,
   variant,
@@ -17,7 +17,7 @@ import { Flex } from "../flex";
 type DefaultProps = {
   isLoading?: boolean;
   disabled?: boolean;
-  variant?: "basic" | "primary" | "transparent" | "link";
+  variant?: string;
 };
 
 export type StyledButtonProps = SpaceProps &
@@ -26,13 +26,36 @@ export type StyledButtonProps = SpaceProps &
   PositionProps &
   DefaultProps;
 
-const base = ({ theme }: any) => theme.components.buttons.base;
-const variants = variant({ scale: "components.buttons.variants" });
+const base = ({ theme }: any) =>
+  css`
+    position: relative;
+    white-space: nowrap;
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+      text-decoration: none;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:disabled {
+      cursor: default;
+    }
+    &:disabled svg {
+      opacity: 0.6;
+    }
+
+    ${theme.skins.buttons.base}
+  `;
+const variants = variant({ scale: "skins.buttons.variants" });
 
 const StyledButton = styled.button<ButtonProps>`
-  position: relative;
-  cursor: pointer;
-  appearance: button;
   ${base}
   ${variants}
   ${compose(space, layout, flexbox, position)}
@@ -78,7 +101,3 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     </StyledButton>
   )
 );
-
-Button.defaultProps = {
-  variant: "basic",
-};

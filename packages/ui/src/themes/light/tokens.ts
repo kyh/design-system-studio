@@ -2,7 +2,7 @@
  * Theme tokens.
  */
 // Color Tokens
-export const palette = {
+const palette = {
   neutrals: {
     0: "#FFFFFF",
     10: "#FAFBFC",
@@ -80,7 +80,7 @@ export const palette = {
   },
 };
 
-export const page = {
+const page = {
   background: palette.neutrals["10"],
   color: palette.neutrals["800"],
   colorInverse: palette.neutrals["10"],

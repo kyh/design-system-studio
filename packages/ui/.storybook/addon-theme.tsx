@@ -3,24 +3,11 @@ import { ThemeProvider } from "styled-components";
 import { theme, GlobalStyle, Box } from "../src";
 
 export const withTheme = (storyFn: any) => {
-  const themes = Object.keys(theme);
+  const [firstTheme] = Object.keys(theme);
   return (
-    <>
-      {themes.map((t) => (
-        <ThemeProvider theme={theme[t]}>
-          <GlobalStyle />
-          <Box
-            bg="page.background"
-            px={4}
-            py={5}
-            width="100%"
-            height="100%"
-            mb={4}
-          >
-            {storyFn({ id: (id) => theme[t] + id })}
-          </Box>
-        </ThemeProvider>
-      ))}
-    </>
+    <ThemeProvider theme={theme[firstTheme]}>
+      <GlobalStyle />
+      <Box mb={4}>{storyFn({ id: (id) => theme[firstTheme] + id })}</Box>
+    </ThemeProvider>
   );
 };

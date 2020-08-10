@@ -1,66 +1,74 @@
-import { Meta, Typeset, Subtitle } from "@storybook/addon-docs/blocks";
+import { Meta, Typeset, Story, Preview } from "@storybook/addon-docs/blocks";
 import { PropsTable } from "@storybook/components";
-import {
-  fonts,
-  fontSizes,
-  fontWeights,
-  lineHeights,
-  letterSpacings,
-} from "./theme/shared-tokens";
+import { useTheme } from "styled-components";
 import { Flex } from "./components";
 
-<Meta title="Foundations/Design Tokens/Typography" />
+<Meta title="Foundations/Design Tokens" />
+
+export const Typography = () => {
+  const theme = useTheme();
+  const { fonts, fontSizes, fontWeights, lineHeights, letterSpacings } = theme;
+  return (
+    <>
+      <p>
+        <b>Fonts:</b>{" "}
+        <span>
+          {Object.keys(fonts).map((k) => (
+            <code>{k}</code>
+          ))}
+        </span>
+      </p>
+      <p>
+        <b>Font Sizes:</b>{" "}
+        <span>
+          {Object.keys(fontSizes).map((k) => (
+            <code>{k}</code>
+          ))}
+        </span>
+      </p>
+      <p>
+        <b>Line Heights:</b>{" "}
+        <span>
+          {Object.keys(lineHeights).map((k) => (
+            <code>{k}</code>
+          ))}
+        </span>
+      </p>
+      <p>
+        <b>Font Weights:</b>{" "}
+        <span>
+          {Object.keys(fontWeights).map((k) => (
+            <code>{k}</code>
+          ))}
+        </span>
+      </p>
+      <p style={{ marginBottom: "4rem" }}>
+        <b>Letter Spacings:</b>{" "}
+        <span>
+          {Object.keys(letterSpacings).map((k) => (
+            <code>{k}</code>
+          ))}
+        </span>
+      </p>
+      <TypographyPreview />
+    </>
+  );
+};
+
+export const TypographyPreview = () => {
+  const theme = useTheme();
+  const { fonts, fontSizes, fontWeights } = theme;
+  return (
+    <Typeset
+      fontSizes={Object.values(fontSizes)}
+      fontFamily={fonts.body}
+      fontWeight={fontWeights.bold}
+    />
+  );
+};
 
 # Typography Tokens
 
-<Subtitle>
-  Base font size is <code>16px</code> and using {fonts.heading.split(',')[0]} font families.
-</Subtitle>
-<p>
-  <b>Fonts:</b>{" "}
-  <span>
-    {Object.keys(fonts).map((k) => (
-      <code>{k}</code>
-    ))}
-  </span>
-</p>
-<p>
-  <b>Font Sizes:</b>{" "}
-  <span>
-    {Object.keys(fontSizes).map((k) => (
-      <code>{k}</code>
-    ))}
-  </span>
-</p>
-<p>
-  <b>Line Heights:</b>{" "}
-  <span>
-    {Object.keys(lineHeights).map((k) => (
-      <code>{k}</code>
-    ))}
-  </span>
-</p>
-<p>
-  <b>Font Weights:</b>{" "}
-  <span>
-    {Object.keys(fontWeights).map((k) => (
-      <code>{k}</code>
-    ))}
-  </span>
-</p>
-<p style={{ marginBottom: "4rem" }}>
-  <b>Letter Spacings:</b>{" "}
-  <span>
-    {Object.keys(letterSpacings).map((k) => (
-      <code>{k}</code>
-    ))}
-  </span>
-</p>
-
-### Typography Scale
-
-<Typeset
-  fontSizes={Object.values(fontSizes)}
-  fontFamily={fonts.body}
-  fontWeight={fontWeights.bold}
-/>
+<Story name="Typography">
+  <Typography />
+</Story>
