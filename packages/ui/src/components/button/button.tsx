@@ -13,7 +13,6 @@ import {
   SpaceProps,
 } from "styled-system";
 import { Flex } from "../flex";
-import { Spinner } from "../spinner";
 
 type DefaultProps = {
   isLoading?: boolean;
@@ -55,8 +54,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       {...props}
     >
       {isLoading && (
-        <Spinner
-          display="flex"
+        <Flex
           alignItems="center"
           justifyContent="center"
           position="absolute"
@@ -65,7 +63,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           bottom={0}
           left={0}
           size="body"
-        />
+        >
+          Loading...
+        </Flex>
       )}
       <Flex
         alignItems="center"
