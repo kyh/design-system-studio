@@ -33,13 +33,21 @@ export const theme = {
 
   // components
   text: {
-    base: {},
-    sizes: {},
+    base: {
+      fontFamily: tokens.fonts.body,
+      fontSize: tokens.fontSizes.body,
+      fontWeight: tokens.fontWeights.regular,
+      color: tokens.palette.neutrals["800"],
+    },
     variants: {},
   },
   heading: {
-    base: {},
-    sizes: {},
+    base: {
+      fontSize: tokens.fontSizes.heading,
+      fontFamily: tokens.fonts.heading,
+      fontWeight: tokens.fontWeights.medium,
+      color: tokens.palette.neutrals["800"],
+    },
     variants: {},
   },
   buttons: {

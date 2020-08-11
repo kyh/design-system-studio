@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { variant } from "styled-system";
 import {
   TypographyFunctionsProps,
@@ -6,58 +6,19 @@ import {
 } from "util/system-functions";
 
 type HeadingProps = {
-  variant?:
-    | "heading"
-    | "subheading"
-    | "displaySmall"
-    | "displayMedium"
-    | "displayLarge"
-    | "displayXLarge";
+  variant?: string;
 } & TypographyFunctionsProps;
 
-const defaultHeadingStyles = {
-  fontFamily: "heading",
-  fontWeight: "medium",
-  lineHeight: "heading",
-  color: "page.color",
-  mt: 0,
-  mb: 0,
-};
+const base = ({ theme }: any) =>
+  css`
+    margin: 0;
+    ${theme.heading.base}
+  `;
 
-const headingVariant = variant({
-  variants: {
-    heading: {
-      ...defaultHeadingStyles,
-      fontSize: "heading",
-    },
-    subheading: {
-      ...defaultHeadingStyles,
-      fontSize: "subheading",
-    },
-    displaySmall: {
-      ...defaultHeadingStyles,
-      fontSize: "displaySmall",
-    },
-    displayMedium: {
-      ...defaultHeadingStyles,
-      fontSize: "displayMedium",
-    },
-    displayLarge: {
-      ...defaultHeadingStyles,
-      fontSize: "displayLarge",
-    },
-    displayXLarge: {
-      ...defaultHeadingStyles,
-      fontSize: "displayXLarge",
-    },
-  },
-});
+const variants = variant({ scale: "heading.variants" });
 
 export const Heading = styled.h1<HeadingProps>`
-  ${headingVariant}
+  ${base}
+  ${variants}
   ${typographyFunctions}
 `;
-
-Heading.defaultProps = {
-  variant: "heading",
-};

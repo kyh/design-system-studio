@@ -16,6 +16,6 @@ export type FlexProps = SpaceProps &
   BorderProps &
   PositionProps;
 
-export const Flex = styled(Box)<FlexProps>({
-  display: "flex",
-});
+export const Flex = styled(Box)<FlexProps>`
+  display: flex;
+`;

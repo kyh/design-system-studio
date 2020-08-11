@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { variant } from "styled-system";
 import {
   TypographyFunctionsProps,
@@ -6,37 +6,19 @@ import {
 } from "util/system-functions";
 
 export type TextProps = {
-  variant?: "body" | "caption" | "hint" | "label";
+  variant?: string;
 } & TypographyFunctionsProps;
 
-const defaultextStyles = {
-  fontFamily: "body",
-  fontWeight: "regular",
-  color: "page.color",
-  mt: 0,
-  mb: 0,
-};
+const base = ({ theme }: any) =>
+  css`
+    margin: 0;
+    ${theme.text.base}
+  `;
 
-export const textVariants = {
-  body: {
-    ...defaultextStyles,
-    fontSize: "body",
-    lineHeight: "body",
-  },
-  caption: {
-    ...defaultextStyles,
-    fontSize: "caption",
-    lineHeight: "caption",
-  },
-};
-
-const v = variant({ variants: textVariants });
+const variants = variant({ scale: "text.variants" });
 
 export const Text = styled.p<TextProps>`
-  ${v}
+  ${base}
+  ${variants}
   ${typographyFunctions}
 `;
-
-Text.defaultProps = {
-  variant: "body",
-};
