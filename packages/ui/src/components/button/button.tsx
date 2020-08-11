@@ -15,7 +15,7 @@ import {
 import { Flex } from "../flex";
 
 type DefaultProps = {
-  isLoading?: boolean;
+  loading?: boolean;
   disabled?: boolean;
   variant?: string;
 };
@@ -51,13 +51,16 @@ const base = ({ theme }: any) =>
       opacity: 0.6;
     }
 
-    ${theme.skins.buttons.base}
+    ${theme.buttons.base}
   `;
-const variants = variant({ scale: "skins.buttons.variants" });
+
+const variants = variant({ scale: "buttons.variants" });
+const sizes = variant({ scale: "buttons.sizes " });
 
 const StyledButton = styled.button<ButtonProps>`
   ${base}
   ${variants}
+  ${sizes}
   ${compose(space, layout, flexbox, position)}
 `;
 
@@ -69,14 +72,14 @@ export type ButtonProps = StyledComponentProps<
 >;
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ disabled, isLoading, children, ...props }, ref) => (
+  ({ disabled, loading, children, ...props }, ref) => (
     <StyledButton
       ref={ref}
-      disabled={isLoading || disabled}
-      isLoading={isLoading}
+      disabled={loading || disabled}
+      loading={loading}
       {...props}
     >
-      {isLoading && (
+      {loading && (
         <Flex
           alignItems="center"
           justifyContent="center"
@@ -94,7 +97,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         alignItems="center"
         position="relative"
         justifyContent="center"
-        opacity={isLoading ? 0 : 1}
+        opacity={loading ? 0 : 1}
       >
         {children}
       </Flex>

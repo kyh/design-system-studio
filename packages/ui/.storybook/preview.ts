@@ -1,9 +1,10 @@
 import { addDecorator, addParameters } from "@storybook/react";
+import { withContexts } from "@storybook/addon-contexts/react";
 import { withKnobs } from "@storybook/addon-knobs";
 import { withA11y } from "@storybook/addon-a11y";
-import { withTheme } from "./addon-theme";
+import { contexts } from "./contexts";
 
-addDecorator(withTheme);
+addDecorator(withContexts(contexts));
 addDecorator(withKnobs);
 addDecorator(withA11y);
 

@@ -1,39 +1,44 @@
 import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { useTheme } from "styled-components";
+import { getVariantScales } from 'util/theme-helpers';
 import { Button } from "./button";
-import { Heading } from "../heading";
-import { Box, Icons, Flex } from "../";
+import { Box, Heading, Flex } from "../";
 
 <Meta title="Components/Button" component={Button} />
+
+export const ButtonStories = () => {
+  const theme = useTheme();
+  const scales = getVariantScales(theme, "buttons");
+  return scales.map((scale) => (
+    <Flex flexDirection="column" key={scale.name} mb={3}>
+      <Heading mb={2}>{scale.name}</Heading>
+      <Flex flexDirection="column">
+        {scale.variants.map((v) => (
+          <Flex mb={2}>
+            <Button variant={v} mr={2}>
+              {v} - default
+            </Button>
+            {scale.states.map((s) => {
+              return (
+                <Button className={s} variant={v} mr={2}>
+                  {v} - {s}
+                </Button>
+              );
+            })}
+          </Flex>
+        ))}
+      </Flex>
+    </Flex>
+  ));
+};
 
 # Button component
 
 Primitive button component
 
-### Variants
-
 <Preview withToolbar>
-  <Story name="primary">
-    <Box>
-      <Flex mb={3}>
-        <Button variant="primary" mr={3}>
-          Primary
-        </Button>
-        <Button variant="primary" mr={3} disabled>
-          Disabled
-        </Button>
-        <Button variant="primary" isLoading>
-          Loading
-        </Button>
-      </Flex>
-      <Flex mb={3}>
-        <Button variant="primary" mr={3}>
-          Flexible Width
-        </Button>
-        <Button variant="primary" width={200}>
-          Fixed Width
-        </Button>
-      </Flex>
-    </Box>
+  <Story name="variants">
+    <ButtonStories />
   </Story>
 </Preview>
 

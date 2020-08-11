@@ -10,6 +10,6 @@ module.exports = {
     "@storybook/addon-docs",
     "@storybook/addon-a11y",
     "@storybook/addon-viewport/register",
-    "@storybook/addon-google-analytics/register",
+    "@storybook/addon-contexts/register",
   ],
 };

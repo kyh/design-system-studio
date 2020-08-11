@@ -12,9 +12,9 @@ export const theme = {
   colors: {
     palette: tokens.palette,
     page: {
-      background: tokens.palette.neutrals["10"],
-      color: tokens.palette.neutrals["800"],
-      colorInverse: tokens.palette.neutrals["10"],
+      background: tokens.palette.neutrals["800"],
+      color: tokens.palette.neutrals["10"],
+      colorInverse: tokens.palette.neutrals["800"],
     },
   },
   shadows: tokens.shadows,
@@ -71,19 +71,19 @@ export const theme = {
         color: tokens.palette.neutrals[800],
         backgroundColor: tokens.gradients.base,
         borderColor: tokens.palette.neutrals[40],
-        "&.hover, &:hover": {
+        "&:hover": {
           backgroundColor: tokens.palette.neutrals[20],
           borderColor: tokens.palette.neutrals[40],
         },
-        "&.active, &:active": {
+        "&:active": {
           backgroundColor: tokens.palette.neutrals[20],
           borderColor: tokens.palette.neutrals[50],
         },
-        "&.focus, &:focus": {
+        "&:focus": {
           backgroundColor: tokens.gradients.base,
           borderColor: tokens.palette.blue[300],
         },
-        "&.disabled, &:disabled": {
+        "&:disabled": {
           backgroundColor: tokens.gradients.light,
           borderColor: tokens.palette.neutrals[40],
           cursor: "not-allowed",
@@ -93,19 +93,19 @@ export const theme = {
         color: tokens.palette.neutrals[10],
         backgroundColor: tokens.palette.blue[300],
         borderColor: tokens.palette.blue[400],
-        "&.hover, &:hover": {
+        "&:hover": {
           backgroundColor: tokens.palette.blue[400],
           borderColor: tokens.palette.blue[500],
         },
-        "&.active, &:active": {
+        "&:active": {
           backgroundColor: tokens.palette.blue[500],
           borderColor: tokens.palette.blue[500],
         },
-        "&.focus, &:focus": {
+        "&:focus": {
           backgroundColor: tokens.palette.blue[300],
           borderColor: tokens.palette.blue[500],
         },
-        "&.disabled, &:disabled": {
+        "&:disabled": {
           backgroundColor: tokens.palette.blue[75],
           borderColor: tokens.palette.blue[100],
           cursor: "not-allowed",

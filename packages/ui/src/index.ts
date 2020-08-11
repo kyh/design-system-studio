@@ -1,2 +1,2 @@
 export * from "./components";
-export { theme } from "./themes";
+export { themes } from "./themes";
