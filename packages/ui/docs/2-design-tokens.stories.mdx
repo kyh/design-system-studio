@@ -1,0 +1,196 @@
+import {
+  Meta,
+  ColorPalette,
+  ColorItem,
+  Typeset,
+  Story,
+  Props,
+  Preview,
+} from "@storybook/addon-docs/blocks";
+import { PropsTable } from "@storybook/components";
+import { useTheme } from "styled-components";
+import { Box, Flex, Text, Heading } from "../src/components";
+
+<Meta title="Foundations/Design Tokens" />
+
+export const capitalize = (s) => {
+  if (typeof s !== "string") return "";
+  return s.charAt(0).toUpperCase() + s.slice(1);
+};
+
+export const Palette = () => {
+  const theme = useTheme();
+  const palette = Object.keys(theme.colors.palette).map((colorKey) => ({
+    title: colorKey,
+    subtitle: `theme.colors.palette.${colorKey}`,
+    colors: Object.values(theme.colors.palette[colorKey]),
+  }));
+  return (
+    <ColorPalette>
+      {palette.map((colorItem) => (
+        <ColorItem key={colorItem.title} {...colorItem} />
+      ))}
+    </ColorPalette>
+  );
+};
+
+export const Typography = () => {
+  const theme = useTheme();
+  const themeValues = [
+    "fonts",
+    "fontSizes",
+    "fontWeights",
+    "lineHeights",
+    "letterSpacings",
+  ];
+  return (
+    <>
+      {themeValues.map((v) => (
+        <Text mb={2}>
+          <strong>{capitalize(v)}:</strong>{" "}
+          <span>
+            {Object.keys(theme[v]).map((k) => (
+              <code>{k}</code>
+            ))}
+          </span>
+        </Text>
+      ))}
+      <TypographyPreview />
+    </>
+  );
+};
+
+export const TypographyPreview = () => {
+  const theme = useTheme();
+  const { fonts, fontSizes, fontWeights } = theme;
+  return (
+    <Typeset
+      fontSizes={Object.values(fontSizes)}
+      fontFamily={fonts.body}
+      fontWeight={fontWeights.bold}
+    />
+  );
+};
+
+export const Layout = ({ type }) => {
+  const theme = useTheme();
+  const scale = theme[type];
+  return (
+    <Box>
+      {scale.map((v, idx) => (
+        <Flex key={v + idx} mb={4} alignItems="center">
+          <Text minWidth={4}>
+            {idx} <Text as="span">{`(${v}px)`}</Text>
+          </Text>
+          <Box bg="page.color" height={2} style={{ width: v }} />
+        </Flex>
+      ))}
+    </Box>
+  );
+};
+
+export const Breakpoints = () => {
+  const theme = useTheme();
+  return (
+    <Box>
+      {theme.breakpoints.map((bp, index) => {
+        let headingText;
+        const bpText = typeof bp === "number" ? `${bp}px` : bp;
+        if (index === 0) {
+          headingText = `< ${bpText}`;
+        } else if (index === theme.breakpoints.length - 1) {
+          headingText = `${bpText} +`;
+        } else {
+          const prevBp = theme.breakpoints[index - 1];
+          const prevBpText =
+            typeof prevBp === "number" ? `${prevBp}px` : prevBp;
+          headingText = `${prevBpText} - ${bpText}`;
+        }
+        return (
+          <Flex alignItems="center" justifyContent="space-between" mb={4}>
+            <Text minWidth={4} mr={3}>
+              Breakpoint {index}
+            </Text>
+            <Heading>{headingText}</Heading>
+          </Flex>
+        );
+      })}
+    </Box>
+  );
+};
+
+# Design Tokens
+
+Design Tokens define the visual characteristics of a brand or a product such as typography, colors, icons, and spacing. They make it easier to maintain a scalable, consistent system for UI development. DSS UI maintains all design tokens in the `themes/tokens.ts` file.
+
+### Color Tokens
+
+> Colors are designed to communicate actions, state and direction within the interface.
+
+<Preview withSource="none">
+  <Story name="Colors">
+    <Palette />
+  </Story>
+</Preview>
+
+Resources:
+
+- Lyft Color Box - https://design.lyft.com/re-approaching-color-9e604ba22c88
+
+### Typography Tokens
+
+> _to be completed_
+
+<Story name="Typography">
+  <Typography />
+</Story>
+
+### Space Tokens
+
+> Intended for use with margin, padding, grid gaps, positioning and other layout-related CSS properties. A space scale can be defined as either a plain object or an array, but by convention an array is preferred. This is an intentional constraint that makes it difficult to add _one-off_ or _in-between_ sizes that could lead to unwanted and rippling affects to layout.
+>
+> — [Theme Specification - space](https://styled-system.com/theme-specification#space)
+
+<Preview withSource="none">
+  <Story name="Space">
+    <Layout type="space" />
+  </Story>
+</Preview>
+
+# Size Tokens
+
+> Intended for use with layout-related CSS properties such as width and height. A size scale can be defined as either a plain object or an array, but by convention an array is preferred. This is an intentional constraint that makes it difficult to add _one-off_ or _in-between_ sizes that could lead to unwanted and rippling affects to layout.
+>
+> — [Theme Specification - sizes](https://styled-system.com/table#layout)
+
+<Preview withSource="none">
+  <Story name="Size">
+    <Layout type="sizes" />
+  </Story>
+</Preview>
+
+# Breakpoints
+
+> Breakpoints are CSS lengths intended for use in media queries. In Styled System the breakpoints scale is used to create mobile-first responsive media queries based on array values.
+>
+> — [Theme Specification - breakpoints](https://styled-system.com/theme-specification/#breakpoints)
+
+<Preview withSource="none">
+  <Story name="Breakpoints">
+    <Breakpoints />
+  </Story>
+</Preview>
+
+For example, using a margin value of `[ 2, 3, 4 ]` creates styles with multiple mobile-first min-width media queries.
+
+```js
+ {
+   margin: <space[2]>,
+   '@media screen and (min-width: <breakpoint[1]>)': {
+     margin: <space[3]>,
+   },
+   '@media screen and (min-width: <breakpoint[2]>)': {
+     margin: <space[4]>,
+   },
+ }
+```
