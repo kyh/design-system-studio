@@ -7,3 +7,4 @@ export const themes = {
 };
 
 export { tokens } from "./tokens";
+export { ThemeProvider } from "styled-components";

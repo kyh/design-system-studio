@@ -1,7 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
-import { themes, GlobalStyle } from "@dss/ui";
+import { themes, GlobalStyle, ThemeProvider } from "@dss/ui";
 
 import { useApp } from "./appSlice";
 import { Discover } from "features/systems/Discover";
