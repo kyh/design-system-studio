@@ -10,17 +10,20 @@ Flex component helps you create flexbox layouts.
 
 <Preview withToolbar>
   <Story name="flex">
-    <Flex flexDirection="column" pb={4} pt={4}>
-      <Box bg="page.color" p={3} mb={4}>
-        <Text variant="body" color="page.colorInverse">
+    <Flex flexDirection="column" p={4}>
+      <Box bg="page.backgroundInverse" p={3} mb={2}>
+        <Text color="page.colorInverse" textAlign="center">
           This is a flex box item
         </Text>
       </Box>
-      <Box bg="page.color" p={3}>
-        <Text variant="body" color="page.colorInverse">
-          This is a flex box item
-        </Text>
-      </Box>
+      <Flex justifyContent="space-between">
+        <Box bg="page.backgroundInverse" p={3}>
+          <Text color="page.colorInverse">Left Side</Text>
+        </Box>
+        <Box bg="page.backgroundInverse" p={3}>
+          <Text color="page.colorInverse">Right Side</Text>
+        </Box>
+      </Flex>
     </Flex>
   </Story>
 </Preview>

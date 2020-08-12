@@ -13,6 +13,7 @@ export const theme = {
     palette: tokens.palette,
     page: {
       background: tokens.palette.neutrals["10"],
+      backgroundInverse: tokens.palette.neutrals["800"],
       color: tokens.palette.neutrals["800"],
       colorInverse: tokens.palette.neutrals["10"],
     },

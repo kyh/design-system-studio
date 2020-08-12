@@ -23,7 +23,5 @@ export type BoxProps = SpaceProps &
   PositionProps;
 
 export const Box = styled.div<BoxProps>`
-  box-sizing: border-box;
-  min-width: 0;
   ${compose(space, color, layout, flexbox, border, position)}
 `;

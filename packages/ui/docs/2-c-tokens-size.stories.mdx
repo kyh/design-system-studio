@@ -11,8 +11,8 @@ export const Size = () => {
     <Box>
       {sizeScale.map((v, idx) => (
         <Flex key={v + idx} mb={4} alignItems="center">
-          <Text variant="body" minWidth={4}>
-            {idx} <Text as="span" variant="body">{`(${v}px)`}</Text>
+          <Text minWidth={4}>
+            {idx} <Text as="span">{`(${v}px)`}</Text>
           </Text>
           <Box bg="page.color" height={2} style={{ width: v }} />
         </Flex>

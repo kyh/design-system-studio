@@ -143,5 +143,5 @@ export const tokens = {
   // Spacing Tokens
   space: [0, 4, 8, 12, 16, 20, 24, 28, 32],
   sizes: [8, 16, 32, 64, 128, 256, 512, 768, 1024, 1536],
-  breakpoints: ["40em", "56em", "64em"],
+  breakpoints: [576, 768, 1200],
 };

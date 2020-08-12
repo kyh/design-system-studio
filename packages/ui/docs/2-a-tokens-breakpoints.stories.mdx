@@ -1,7 +1,38 @@
 import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { useTheme } from "styled-components";
 import { Box, Flex, Text, Heading } from "../src/components";
 
 <Meta title="Foundations/Design Tokens" />
+
+export const Breakpoints = () => {
+  const theme = useTheme();
+  return (
+    <Box>
+      {theme.breakpoints.map((bp, index) => {
+        let headingText;
+        const bpText = typeof bp === "number" ? `${bp}px` : bp;
+        if (index === 0) {
+          headingText = `< ${bpText}`;
+        } else if (index === theme.breakpoints.length - 1) {
+          headingText = `${bpText} +`;
+        } else {
+          const prevBp = theme.breakpoints[index - 1];
+          const prevBpText =
+            typeof prevBp === "number" ? `${prevBp}px` : prevBp;
+          headingText = `${prevBpText} - ${bpText}`;
+        }
+        return (
+          <Flex alignItems="center" justifyContent="space-between" mb={4}>
+            <Text minWidth={4} mr={3}>
+              Breakpoint {index}
+            </Text>
+            <Heading>{headingText}</Heading>
+          </Flex>
+        );
+      })}
+    </Box>
+  );
+};
 
 # Breakpoints
 
@@ -11,32 +42,7 @@ import { Box, Flex, Text, Heading } from "../src/components";
 
 <Preview withSource="none">
   <Story name="Breakpoints">
-    <Box>
-      <Flex alignItems="baseline" mb={4}>
-        <Text variant="body" minWidth={4} mr={3}>
-          Small Breakpoint
-        </Text>
-        <Heading variant="displayLarge">&lt; 40em</Heading>
-      </Flex>
-      <Flex alignItems="baseline" mb={4}>
-        <Text variant="body" minWidth={4} mr={3}>
-          Medium Breakpoint
-        </Text>
-        <Heading variant="displayLarge">40em - 56em</Heading>
-      </Flex>
-      <Flex alignItems="baseline" mb={4}>
-        <Text variant="body" minWidth={4} mr={3}>
-          Large Breakpoint
-        </Text>
-        <Heading variant="displayLarge">56em - 64em</Heading>
-      </Flex>
-      <Flex alignItems="baseline">
-        <Text variant="body" minWidth={4} mr={3}>
-          Extra Large Breakpoint
-        </Text>
-        <Heading variant="displayLarge">64em+</Heading>
-      </Flex>
-    </Box>
+    <Breakpoints />
   </Story>
 </Preview>
 
@@ -44,12 +50,12 @@ For example, using a margin value of `[ 2, 3, 4 ]` creates styles with multiple 
 
 ```js
  {
-   margin: '8px',
-   '@media screen and (min-width: 40em)': {
-     margin: '16px',
+   margin: <space[2]>,
+   '@media screen and (min-width: <breakpoint[1]>)': {
+     margin: <space[3]>,
    },
-   '@media screen and (min-width: 56em)': {
-     margin: '32px',
+   '@media screen and (min-width: <breakpoint[2]>)': {
+     margin: <space[4]>,
    },
  }
 ```

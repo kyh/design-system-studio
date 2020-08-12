@@ -3,7 +3,7 @@ import { variant } from "styled-system";
 import {
   TypographyFunctionsProps,
   typographyFunctions,
-} from "utils/system-functions";
+} from "../../utils/system-functions";
 
 export type TextProps = {
   variant?: string;
