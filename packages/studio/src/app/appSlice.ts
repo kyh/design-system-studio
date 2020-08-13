@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { useSelector, useDispatch } from "react-redux";
-import { themes } from "@dss/ui";
+import { themes } from "@dss/proto";
 import { RootState } from "./rootReducer";
 
 type ThemeType = keyof typeof themes;

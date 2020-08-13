@@ -33,9 +33,9 @@ _to be completed_
 1.  **Run UI in Storybook**
 
     ```sh
-    yarn workspace @dss/ui start
+    yarn workspace @dss/proto start
     // in a new tab
-    yarn workspace @dss/ui storybook
+    yarn workspace @dss/proto storybook
     ```
 
     The UI is now running at `http://localhost:6006/`
