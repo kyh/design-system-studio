@@ -2684,7 +2684,7 @@
     "@storybook/node-logger" "5.3.19"
     "@storybook/router" "5.3.19"
     "@storybook/theming" "5.3.19"
-    "@storybook/ui" "5.3.19"
+    "@storybook/proto" "5.3.19"
     airbnb-js-shims "^2.2.1"
     ansi-to-html "^0.6.11"
     autoprefixer "^9.7.2"
@@ -2846,9 +2846,9 @@
     resolve-from "^5.0.0"
     ts-dedent "^1.1.0"
 
-"@storybook/ui@5.3.19":
+"@storybook/proto@5.3.19":
   version "5.3.19"
-  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-5.3.19.tgz#ac03b67320044a3892ee784111d4436b61874332"
+  resolved "https://registry.yarnpkg.com/@storybook/proto/-/proto-5.3.19.tgz#ac03b67320044a3892ee784111d4436b61874332"
   integrity sha512-r0VxdWab49nm5tzwvveVDnsHIZHMR76veYOu/NHKDUZ5hnQl1LMG1YyMCFFa7KiwD/OrZxRWr6/Ma7ep9kR4Gw==
   dependencies:
     "@emotion/core" "^10.0.20"

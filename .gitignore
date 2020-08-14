@@ -7,7 +7,7 @@
 /coverage
 
 # production
-/packages/ui/build
+/packages/proto/build
 
 # misc
 .DS_Store

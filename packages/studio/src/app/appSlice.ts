@@ -19,7 +19,8 @@ const getTheme = (): ThemeType => {
 };
 
 export const initialState: CurrentAppState = {
-  theme: getTheme(),
+  // TODO: replace with getTheme
+  theme: "light",
 };
 
 const appSlice = createSlice({

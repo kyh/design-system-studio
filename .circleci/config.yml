@@ -30,22 +30,22 @@ jobs:
 
       - run:
           name: Build Component Library
-          command: yarn workspace ui build
+          command: yarn workspace @dss/proto build
 
       - save_cache:
           paths:
             - node_modules
-            - packages/app/node_modules
-            - packages/ui/node_modules
+            - packages/studio/node_modules
+            - packages/proto/node_modules
           key: yarn-packages-{{ checksum "yarn.lock" }}
 
       - run:
           name: Lint Component Library
-          command: yarn workspace ui lint
+          command: yarn workspace @dss/proto lint
 
       - run:
           name: Test Component Library
-          command: yarn workspace ui test
+          command: yarn workspace @dss/proto test
 
       - run:
           name: Build Demo App
@@ -53,4 +53,4 @@ jobs:
 
       - run:
           name: Run Visual Tests
-          command: yarn workspace ui run chromatic
+          command: yarn workspace @dss/proto run chromatic

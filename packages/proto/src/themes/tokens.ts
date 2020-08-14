@@ -128,13 +128,13 @@ export const tokens = {
 
   // Border tokens
   radii: {
-    none: 0,
-    regular: 3,
+    none: "0px",
+    regular: "3px",
   },
   borderWidths: {
-    none: 0,
-    regular: 1,
-    thick: 2,
+    none: "0px",
+    regular: "1px",
+    thick: "2px",
   },
   borderStyles: {
     regular: "solid",

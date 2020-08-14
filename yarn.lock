@@ -2370,7 +2370,7 @@
     "@storybook/router" "6.0.5"
     "@storybook/semver" "^7.3.2"
     "@storybook/theming" "6.0.5"
-    "@storybook/ui" "6.0.5"
+    "@storybook/proto" "6.0.5"
     "@types/glob-base" "^0.3.0"
     "@types/micromatch" "^4.0.1"
     "@types/node-fetch" "^2.5.4"
@@ -2572,9 +2572,9 @@
     resolve-from "^5.0.0"
     ts-dedent "^1.1.1"
 
-"@storybook/ui@6.0.5":
+"@storybook/proto@6.0.5":
   version "6.0.5"
-  resolved "https://registry.yarnpkg.com/@storybook/ui/-/ui-6.0.5.tgz#081ef102473dda03850fef400480f94d01045fd2"
+  resolved "https://registry.yarnpkg.com/@storybook/proto/-/proto-6.0.5.tgz#081ef102473dda03850fef400480f94d01045fd2"
   integrity sha512-clSxcqSuhZjLi73SLyBMrLBo83A18BP0MqN1o1NXueB3FQ3DA/6Xnsz11I46HsPordnpB6Lobpzbgq9wp9JPtQ==
   dependencies:
     "@emotion/core" "^10.0.20"

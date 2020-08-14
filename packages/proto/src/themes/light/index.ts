@@ -16,6 +16,7 @@ export const theme = {
       backgroundInverse: tokens.palette.neutrals["800"],
       color: tokens.palette.neutrals["800"],
       colorInverse: tokens.palette.neutrals["10"],
+      borderColor: tokens.palette.neutrals["40"],
     },
   },
   shadows: tokens.shadows,
