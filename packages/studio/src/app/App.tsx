@@ -3,8 +3,8 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { themes, GlobalStyle, ThemeProvider } from "@dss/proto";
 
 import { useApp } from "./appSlice";
-import { Discover } from "features/discover/Discover";
-import { Editor } from "features/systems/Editor";
+import { DiscoverPage } from "features/discover/DiscoverPage";
+import { EditorPage } from "features/editor/EditorPage";
 
 export const App: React.FC = () => {
   const { state } = useApp();
@@ -13,13 +13,10 @@ export const App: React.FC = () => {
       <GlobalStyle />
       <Switch>
         <Route exact path="/">
-          <Discover />
+          <DiscoverPage />
         </Route>
-        <Route exact path="/s/new">
-          <Editor />
-        </Route>
-        <Route exact path="/s/:id">
-          <Editor />
+        <Route exact path="/new">
+          <EditorPage />
         </Route>
         <Redirect to="/" />
       </Switch>

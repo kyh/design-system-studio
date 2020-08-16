@@ -16,26 +16,19 @@ export const Navigation = styled.nav`
   background-color: ${({ theme }) => theme.colors.page.backgroundInverse};
 `;
 
-export const LSidebar = styled.section`
+export const Sidebar = styled.section<{ side: "left" | "right" }>`
   display: flex;
   flex-direction: column;
-  grid-area: lSidebar;
-  border-right: ${({ theme }) =>
-    `${theme.borderWidths.regular} ${theme.borderStyles.regular} ${theme.colors.page.borderColor}`};
-`;
-
-export const RSidebar = styled.section`
-  display: flex;
-  flex-direction: column;
-  grid-area: rSidebar;
-  border-left: ${({ theme }) =>
-    `${theme.borderWidths.regular} ${theme.borderStyles.regular} ${theme.colors.page.borderColor}`};
+  grid-area: ${({ side }) => (side === "left" ? "lSidebar" : "rSidebar")};
+  ${({ side, theme }) => {
+    return side === "left"
+      ? `border-left: ${theme.borderWidths.regular} ${theme.borderStyles.regular} ${theme.colors.page.borderColor};`
+      : `border-right: ${theme.borderWidths.regular} ${theme.borderStyles.regular} ${theme.colors.page.borderColor};`;
+  }}
 `;
 
 export const Content = styled.main`
-  display: flex;
   grid-area: content;
-  justify-content: center;
-  align-items: center;
   background-color: ${({ theme }) => theme.colors.palette.neutrals[30]};
+  overflow: auto;
 `;
