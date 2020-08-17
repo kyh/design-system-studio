@@ -9,14 +9,14 @@ export const initialState: any = {
 };
 
 const themesSlice = createSlice({
-  name: "theme",
+  name: "themes",
   initialState,
   reducers: {},
 });
 
 export const themesActions = themesSlice.actions;
 export const themesReducer = themesSlice.reducer;
-export const useTheme = () => {
+export const useThemes = () => {
   const state = useSelector((state: RootState) => state.themes);
   const dispatch = useDispatch();
   return { state, dispatch };

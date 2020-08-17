@@ -3,11 +3,18 @@ import { Link } from "react-router-dom";
 import { Flex } from "@dss/proto";
 import { useQueryParams } from "utils/queryUtils";
 import { useTokens, tokensActions } from "features/tokens/tokensSlice";
+import { useThemes, themesActions } from "features/themes/themesSlice";
 import { Sidebar } from "./components/PageLayout";
 
 export const LeftSidebar = () => {
-  const { state, dispatch } = useTokens();
+  const { state: tokensState, dispatch } = useTokens();
+  const {
+    state: {
+      currentTheme: { components },
+    },
+  } = useThemes();
   const params = useQueryParams();
+
   const currentTokenKey = params.get("t");
   const currentComponentKey = params.get("c");
 
@@ -15,26 +22,33 @@ export const LeftSidebar = () => {
     dispatch(tokensActions.add_new_token_set());
   };
 
-  const tokenKeys = Object.keys(state);
+  const tokenKeys = Object.keys(tokensState);
+  const componentKeys = Object.keys(components);
 
   return (
     <Sidebar side="left">
       <Flex>
         <Link to={{ search: `?t=${tokenKeys[0]}` }}>Tokens</Link>
-        <Link to={{ search: `?c=1` }}>Components</Link>
+        <Link to={{ search: `?c=${componentKeys[0]}` }}>Components</Link>
       </Flex>
-      {!!currentTokenKey ? (
+      {!!currentTokenKey && (
         <>
           {tokenKeys.map((tokenKey) => (
             <Link to={{ search: `?t=${tokenKey}` }} key={tokenKey}>
-              {state[tokenKey].name}
+              {tokensState[tokenKey].name}
             </Link>
           ))}
           <button onClick={addNewTokenSet}>Add new token set</button>
         </>
-      ) : (
+      )}
+      {!!currentComponentKey && (
         <>
-          <Link to={{ search: `?c=1` }}>Typography</Link>
+          {componentKeys.map((componentKey) => (
+            <Link to={{ search: `?c=${componentKey}` }} key={componentKey}>
+              {components[componentKey].name}
+            </Link>
+          ))}
+          <button>Add new component</button>
         </>
       )}
     </Sidebar>
