@@ -5,23 +5,23 @@ export const defaultThemeState = {
       name: "Typography - Heading",
       key: "heading",
       base: {
-        fontSize: "tokens.fontSizes.values.heading",
-        fontFamily: "tokens.fonts.values.heading",
-        fontWeight: "tokens.fontWeights.values.medium",
-        color: "tokens.colors.values.neutrals.800",
+        fontSize: "fontSizes.values.heading",
+        fontFamily: "fonts.values.heading",
+        fontWeight: "fontWeights.values.medium",
+        color: "colors.values.neutrals.800",
       },
       variants: {
         xLarge: {
-          fontSize: "tokens.fontSizes.values.displayXLarge",
+          fontSize: "fontSizes.values.displayXLarge",
         },
         large: {
-          fontSize: "tokens.fontSizes.values.displayLarge",
+          fontSize: "fontSizes.values.displayLarge",
         },
         medium: {
-          fontSize: "tokens.fontSizes.values.displayMedium",
+          fontSize: "fontSizes.values.displayMedium",
         },
         small: {
-          fontSize: "tokens.fontSizes.values.displaySmall",
+          fontSize: "fontSizes.values.displaySmall",
         },
       },
     },
@@ -29,10 +29,10 @@ export const defaultThemeState = {
       name: "Typography - Text",
       key: "text",
       base: {
-        fontFamily: "tokens.fonts.values.body",
-        fontSize: "tokens.fontSizes.values.body",
-        fontWeight: "tokens.fontWeights.values.regular",
-        color: "tokens.colors.values.neutrals.800",
+        fontFamily: "fonts.values.body",
+        fontSize: "fontSizes.values.body",
+        fontWeight: "fontWeights.values.regular",
+        color: "colors.values.neutrals.800",
       },
       variants: {},
     },

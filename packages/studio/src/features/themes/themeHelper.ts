@@ -1,3 +1,5 @@
+import { cloneDeep } from "lodash";
+
 const get = (obj: any, path: string) => {
   const paths = path.split(".");
   let current = obj;
@@ -13,6 +15,21 @@ const get = (obj: any, path: string) => {
   return current;
 };
 
+const iterate = (obj: any, cb: any) => {
+  Object.keys(obj).forEach((key) => {
+    if (typeof obj[key] === "object") {
+      iterate(obj[key], cb);
+    } else {
+      obj[key] = cb(obj[key]);
+    }
+  });
+};
+
 export const parseTheme = (tokens: any, theme: any) => {
-  return {};
+  const out = cloneDeep(theme);
+  iterate(out, (path: string) => {
+    if (path.includes(".")) return get(tokens, path);
+    return path;
+  });
+  return out;
 };
