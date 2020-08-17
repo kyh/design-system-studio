@@ -1,5 +1,3 @@
-import { defaultTokensState as tokens } from "features/tokens/defaultTokens";
-
 export const defaultThemeState = {
   name: "Default Theme",
   components: {
@@ -7,23 +5,23 @@ export const defaultThemeState = {
       name: "Typography - Heading",
       key: "heading",
       base: {
-        fontSize: tokens.fontSizes.values.heading,
-        fontFamily: tokens.fonts.values.heading,
-        fontWeight: tokens.fontWeights.values.medium,
-        color: tokens.colors.values.neutrals["800"],
+        fontSize: "tokens.fontSizes.values.heading",
+        fontFamily: "tokens.fonts.values.heading",
+        fontWeight: "tokens.fontWeights.values.medium",
+        color: "tokens.colors.values.neutrals.800",
       },
       variants: {
         xLarge: {
-          fontSize: tokens.fontSizes.values.displayXLarge,
+          fontSize: "tokens.fontSizes.values.displayXLarge",
         },
         large: {
-          fontSize: tokens.fontSizes.values.displayLarge,
+          fontSize: "tokens.fontSizes.values.displayLarge",
         },
         medium: {
-          fontSize: tokens.fontSizes.values.displayMedium,
+          fontSize: "tokens.fontSizes.values.displayMedium",
         },
         small: {
-          fontSize: tokens.fontSizes.values.displaySmall,
+          fontSize: "tokens.fontSizes.values.displaySmall",
         },
       },
     },
@@ -31,10 +29,10 @@ export const defaultThemeState = {
       name: "Typography - Text",
       key: "text",
       base: {
-        fontFamily: tokens.fonts.values.body,
-        fontSize: tokens.fontSizes.values.body,
-        fontWeight: tokens.fontWeights.values.regular,
-        color: tokens.colors.values.neutrals["800"],
+        fontFamily: "tokens.fonts.values.body",
+        fontSize: "tokens.fontSizes.values.body",
+        fontWeight: "tokens.fontWeights.values.regular",
+        color: "tokens.colors.values.neutrals.800",
       },
       variants: {},
     },

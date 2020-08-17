@@ -27,7 +27,8 @@ export const EditorContent = () => {
       {!!componentKey && (
         <ComponentContent
           componentKey={componentKey}
-          components={themesState.currentTheme.components}
+          tokens={tokensState}
+          themeComponents={themesState.currentTheme.components}
           dispatch={dispatch}
         />
       )}

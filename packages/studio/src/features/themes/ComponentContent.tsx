@@ -1,25 +1,28 @@
 import React from "react";
 import { ThemeProvider, Box, Heading, Text } from "@dss/proto";
 import { themesActions } from "features/themes/themesSlice";
+import { parseTheme } from "./themeHelper";
 
 export const ComponentContent = ({
   componentKey,
-  components,
+  tokens,
+  themeComponents,
   dispatch,
 }: any) => {
+  const theme = parseTheme(tokens, themeComponents);
   switch (componentKey) {
-    case components.heading.key:
+    case themeComponents.heading.key:
       return (
         <HeadingContent
-          variants={Object.keys(components.heading.variants)}
-          theme={components}
+          variants={Object.keys(themeComponents.heading.variants)}
+          theme={theme}
         />
       );
-    case components.text.key:
+    case themeComponents.text.key:
       return (
         <TextContent
-          variants={Object.keys(components.text.variants)}
-          theme={components}
+          variants={Object.keys(themeComponents.text.variants)}
+          theme={theme}
         />
       );
     default:
