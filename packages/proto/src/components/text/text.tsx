@@ -19,6 +19,6 @@ const variants = variant({ scale: "text.variants" });
 
 export const Text = styled.p<TextProps>`
   ${base}
-  ${variants}
   ${typographyFunctions}
+  ${variants}
 `;

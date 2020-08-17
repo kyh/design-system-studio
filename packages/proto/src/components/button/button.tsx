@@ -59,9 +59,9 @@ const sizes = variant({ scale: "buttons.sizes " });
 
 const StyledButton = styled.button<ButtonProps>`
   ${base}
+  ${compose(space, layout, flexbox, position)}
   ${variants}
   ${sizes}
-  ${compose(space, layout, flexbox, position)}
 `;
 
 export type ButtonProps = StyledComponentProps<

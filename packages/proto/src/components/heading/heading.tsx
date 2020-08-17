@@ -19,6 +19,6 @@ const variants = variant({ scale: "heading.variants" });
 
 export const Heading = styled.h1<HeadingProps>`
   ${base}
-  ${variants}
   ${typographyFunctions}
+  ${variants}
 `;
