@@ -22,7 +22,7 @@ const tokensSlice = createSlice({
       state[tokenKey] = {
         name: "Custom Token",
         description: "",
-        value: {},
+        values: {},
       };
     },
     update_token_meta: (

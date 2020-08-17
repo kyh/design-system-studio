@@ -1,13 +1,16 @@
-import React, { useState } from "react";
-import { Box, Heading, Text } from "@dss/proto";
+import React from "react";
 import { useQueryParams } from "utils/queryUtils";
-import { useTokens, tokensActions } from "features/tokens/tokensSlice";
-import { Content } from "./components/PageLayout";
+import { Content } from "features/editor/components/PageLayout";
+
+import { useTokens } from "features/tokens/tokensSlice";
+import { TokenContent } from "features/tokens/TokenContent";
+import { ComponentContent } from "features/themes/ComponentContent";
 
 export const EditorContent = () => {
+  const { state, dispatch } = useTokens();
   const params = useQueryParams();
   const tokenKey = params.get("t");
-  const { state, dispatch } = useTokens();
+  const componentKey = params.get("c");
 
   return (
     <Content>
@@ -18,88 +21,9 @@ export const EditorContent = () => {
           dispatch={dispatch}
         />
       )}
+      {!!componentKey && (
+        <ComponentContent componentKey={componentKey} dispatch={dispatch} />
+      )}
     </Content>
-  );
-};
-
-const TokenContent = ({ tokenKey, token, dispatch }: any) => {
-  return (
-    <Box>
-      <Box>
-        <Heading>{token.name}</Heading>
-        <Text>{token.description}</Text>
-      </Box>
-      <Box>
-        <TokenValues
-          tokenKey={tokenKey}
-          values={token.values}
-          dispatch={dispatch}
-        />
-      </Box>
-    </Box>
-  );
-};
-
-const TokenValues = ({ tokenKey, values, dispatch }: any) => {
-  const updateToken = (key: string, value: string) => {
-    dispatch(
-      tokensActions.update_token_set_values({
-        tokenKey,
-        values: {
-          ...values,
-          [key]: value,
-        },
-      })
-    );
-  };
-
-  return (
-    <>
-      {Object.keys(values).map((valueKey) => {
-        if (typeof values[valueKey] !== "object") {
-          return (
-            <TokenValue
-              key={`${tokenKey}-${valueKey}`}
-              valueKey={valueKey}
-              value={values[valueKey]}
-              updateToken={updateToken}
-            />
-          );
-        } else {
-          return (
-            <Box key={`${tokenKey}-${valueKey}`}>
-              <Heading>{valueKey}</Heading>
-              <TokenValues
-                tokenKey={tokenKey}
-                values={values[valueKey]}
-                dispatch={dispatch}
-              />
-            </Box>
-          );
-        }
-      })}
-    </>
-  );
-};
-
-const TokenValue = ({ valueKey, value, updateToken }: any) => {
-  const [valueKeyState, setValueKeyState] = useState(valueKey);
-  const [valueState, setValueState] = useState(value);
-  return (
-    <Box>
-      <input
-        type="text"
-        value={valueKey}
-        onChange={(e) => setValueKeyState(e.target.value)}
-        onBlur={() => updateToken(valueKeyState, valueState)}
-      />{" "}
-      -{" "}
-      <input
-        type="text"
-        value={valueState}
-        onChange={(e) => setValueState(e.target.value)}
-        onBlur={() => updateToken(valueKeyState, valueState)}
-      />
-    </Box>
   );
 };

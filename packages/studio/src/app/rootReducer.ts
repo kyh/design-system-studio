@@ -2,14 +2,14 @@ import { combineReducers } from "@reduxjs/toolkit";
 
 import { appReducer } from "./appSlice";
 import { tokensReducer } from "features/tokens/tokensSlice";
+import { themesReducer } from "features/themes/themesSlice";
 // import { systemsReducer } from "features/systems/systemsSlice";
-// import { themesReducer } from "features/themes/themesSlice";
 
 const rootReducer = combineReducers({
   app: appReducer,
   tokens: tokensReducer,
+  themes: themesReducer,
   // systems: systemsReducer,
-  // themes: themesReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
