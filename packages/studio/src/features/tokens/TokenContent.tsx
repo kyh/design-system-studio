@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { Box, Heading, Text } from "@dss/proto";
+import { Box, Text } from "@dss/proto";
 import { tokensActions } from "features/tokens/tokensSlice";
 
 export const TokenContent = ({ tokenKey, token, dispatch }: any) => {
   return (
     <Box>
       <Box>
-        <Heading>{token.name}</Heading>
+        <Text variant="heading" as="h1">
+          {token.name}
+        </Text>
         <Text>{token.description}</Text>
       </Box>
       <Box>
@@ -48,7 +50,9 @@ const TokenValues = ({ tokenKey, values, dispatch }: any) => {
         } else {
           return (
             <Box key={`${tokenKey}-${valueKey}`}>
-              <Heading>{valueKey}</Heading>
+              <Text variant="heading" as="h1">
+                {valueKey}
+              </Text>
               <TokenValues
                 tokenKey={tokenKey}
                 values={values[valueKey]}

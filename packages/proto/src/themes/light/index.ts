@@ -41,16 +41,14 @@ export const theme = {
       fontWeight: tokens.fontWeights.regular,
       color: tokens.palette.neutrals["800"],
     },
-    variants: {},
-  },
-  heading: {
-    base: {
-      fontSize: tokens.fontSizes.heading,
-      fontFamily: tokens.fonts.heading,
-      fontWeight: tokens.fontWeights.medium,
-      color: tokens.palette.neutrals["800"],
+    variants: {
+      heading: {
+        fontSize: tokens.fontSizes.heading,
+        fontFamily: tokens.fonts.heading,
+        fontWeight: tokens.fontWeights.medium,
+        color: tokens.palette.neutrals["800"],
+      },
     },
-    variants: {},
   },
   buttons: {
     base: {

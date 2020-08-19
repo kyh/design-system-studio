@@ -9,7 +9,7 @@ import {
 } from "@storybook/addon-docs/blocks";
 import { PropsTable } from "@storybook/components";
 import { useTheme } from "styled-components";
-import { Box, Flex, Text, Heading } from "../src/components";
+import { Box, Flex, Text } from "../src/components";
 
 <Meta title="Foundations/Design Tokens" />
 
@@ -111,7 +111,9 @@ export const Breakpoints = () => {
             <Text minWidth={4} mr={3}>
               Breakpoint {index}
             </Text>
-            <Heading>{headingText}</Heading>
+            <Text variant="heading" as="h1">
+              {headingText}
+            </Text>
           </Flex>
         );
       })}

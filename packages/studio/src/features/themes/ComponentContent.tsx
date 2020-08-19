@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemeProvider, Box, Heading, Text } from "@dss/proto";
+import { ThemeProvider, Box, Text } from "@dss/proto";
 import { themesActions } from "features/themes/themesSlice";
 import { parseTheme } from "./themeHelper";
 
@@ -11,13 +11,6 @@ export const ComponentContent = ({
 }: any) => {
   const theme = parseTheme(tokens, themeComponents);
   switch (componentKey) {
-    case themeComponents.heading.key:
-      return (
-        <HeadingContent
-          variants={Object.keys(themeComponents.heading.variants)}
-          theme={theme}
-        />
-      );
     case themeComponents.text.key:
       return (
         <TextContent
@@ -30,34 +23,16 @@ export const ComponentContent = ({
   }
 };
 
-const HeadingContent = ({ theme, variants }: any) => {
-  return (
-    <Box>
-      <Box>
-        <Heading>Typography - Heading</Heading>
-      </Box>
-      <Box>
-        <Heading>Variants</Heading>
-        <ThemeProvider theme={theme}>
-          {variants.map((variantKey: string) => (
-            <Heading key={variantKey} variant={variantKey}>
-              You know nothing, Jon Snow
-            </Heading>
-          ))}
-        </ThemeProvider>
-      </Box>
-    </Box>
-  );
-};
-
 const TextContent = ({ theme, variants }: any) => {
   return (
     <Box>
+      <Text variant="heading" as="h1">
+        Typography
+      </Text>
       <Box>
-        <Heading>Typography - Text</Heading>
-      </Box>
-      <Box>
-        <Heading>Variants</Heading>
+        <Text variant="heading" as="h2">
+          Variants
+        </Text>
         <ThemeProvider theme={theme}>
           {variants.map((variantKey: string) => (
             <Text key={variantKey} variant={variantKey}>

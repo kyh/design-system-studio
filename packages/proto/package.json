@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "start": "tsdx watch",
+    "dev": "npm start",
     "prebuild": "yarn icons",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
