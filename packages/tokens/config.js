@@ -1,5 +1,6 @@
 // Just build for DSS in SystemUI for now
 const StyleDictionary = require("style-dictionary");
+const JsonToTS = require("json-to-ts");
 
 const createPath = (obj, path, value = null) => {
   path = typeof path === "string" ? path.split(".") : path;
@@ -23,23 +24,27 @@ StyleDictionary.registerFormat({
     dictionary.allProperties.forEach((prop) => {
       object = createPath(object, prop.path, prop.value);
     });
-    return `export const tokens = ${JSON.stringify(object, null, 2)};`;
+    return `const tokens = ${JSON.stringify(object, null, 2)};
+module.exports = { tokens };
+`;
   },
 });
 
 StyleDictionary.registerFormat({
   name: "typescript/system-ui-definitions",
   formatter: (dictionary) => {
+    let response = "";
     let object = {};
     dictionary.allProperties.forEach((prop) => {
       object = createPath(object, prop.path, "string");
     });
-    const json = JSON.stringify(object, null, 2);
-    const regex = /"string"/gi;
-    const tokens = json.replace(regex, "string");
-    return `
-declare namespace DSSTokens {
-  type tokens = ${tokens};
+    JsonToTS(object).forEach((tokensInterface) => {
+      response += tokensInterface;
+    });
+
+    response = response.replace(/RootObject/gi, "tokens");
+    return `declare namespace DSSTokens {
+  ${response}
 }
 export = DSSTokens;
 export as namespace DSSTokens;

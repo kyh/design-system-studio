@@ -15,6 +15,7 @@
     "clean": "rm -rf dist"
   },
   "devDependencies": {
+    "json-to-ts": "^1.7.0",
     "lodash": "^4.17.20",
     "style-dictionary": "^2.10.1"
   }
