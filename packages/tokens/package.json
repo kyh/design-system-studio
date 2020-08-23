@@ -1,0 +1,17 @@
+{
+  "name": "@dss/tokens",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "style-dictionary build"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.20",
+    "style-dictionary": "^2.10.1"
+  }
+}
