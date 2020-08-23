@@ -36,7 +36,7 @@ module.exports = {
       buildPath: "./dist/",
       files: [
         {
-          destination: "dss-tokens.js",
+          destination: "index.js",
           format: "javascript/system-ui",
         },
       ],

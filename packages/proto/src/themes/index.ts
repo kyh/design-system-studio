@@ -6,5 +6,4 @@ export const themes = {
   dark,
 };
 
-export { tokens } from "./tokens";
 export { ThemeProvider } from "styled-components";
