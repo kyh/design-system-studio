@@ -5,7 +5,7 @@ import componentHierarchy from "./component-hierarchy.svg";
 
 # Creating Components
 
-Components allow you to split the UI into independent and reusable pieces. However, not all components are built the same way. A component might be created using styled-components or a combination of styled-components and Styled System or as a composition of other components. DS uses the following hierarchy to reason as to what technique to use for creating components.
+Components allow you to split the UI into independent and reusable pieces. However, not all components are built the same way. A component might be created using styled-components or a combination of styled-components and Styled System or as a composition of other components. Proto uses the following hierarchy to reason as to what technique to use for creating components.
 
 <img style={{ margin: 32 }} src={componentHierarchy} />
 
@@ -29,7 +29,7 @@ Note, this is a framework for guiding architectural choices. We _do not_ recomme
 >
 > — [Forwarding Refs](https://reactjs.org/docs/forwarding-refs.html)
 
-Each DSS UI component returns a single HTML element that accepts all HTML props, including className, style and accessibility attributes.
+Each Proto component returns a single HTML element that accepts all HTML props, including className, style and accessibility attributes.
 
 ### Elements
 
@@ -57,7 +57,7 @@ export const Text = styled.p(
 
 ### Patterns
 
-DSS UI comes with many patterns that you can use in your application either standalone or as part of your feature. In the case you'd like to create a new pattern using DSS UI' approach, here is a sample breakdown of a DSS UI pattern
+Proto comes with many patterns that you can use in your application either standalone or as part of your feature. In the case you'd like to create a new pattern using Proto' approach, here is a sample breakdown of a Proto pattern
 
 Patterns are comprised of elements. Therefore, we have to pick which component to `forwardRef` from.
 

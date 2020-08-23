@@ -2,43 +2,24 @@
 
 _to be completed_
 
-### Building This Repo
-
-1.  **Install Yarn**
-
-    for more options see https://legacy.yarnpkg.com/en/docs/install#mac-stable
-
-    ```sh
-    curl -o- -L https://yarnpkg.com/install.sh | bash
-    ```
-
-1.  **Install Dependencies**
-
-    This project is using [Workspaces](https://legacy.yarnpkg.com/en/docs/workspaces). Yarn will install dependencies for all the packages.
-
-    ```sh
-    yarn
-    ```
-
 ### Development
 
-1.  **Run Studio in development mode**
+**Install Dependencies**
 
-    ```sh
-    yarn workspace @dss/app start
-    ```
+This project is using [lerna](https://github.com/lerna/lerna). Lerna will install dependencies for all the packages with:
 
-    The Studio is now running at `http://localhost:3000/`
+```sh
+npx lerna bootstrap
+```
 
-1.  **Run UI in Storybook**
+**Run in development mode**
 
-    ```sh
-    yarn workspace @dss/proto start
-    // in a new tab
-    yarn workspace @dss/proto storybook
-    ```
+```sh
+lerna run start
+```
 
-    The UI is now running at `http://localhost:6006/`
+`Studio` is now running at `http://localhost:3000/`
+`Proto` Storybook is now running at `http://localhost:6006/`
 
 ### Resources
 
