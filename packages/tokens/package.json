@@ -4,12 +4,15 @@
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist/index.js",
+    "dist/index.d.ts"
   ],
   "scripts": {
-    "prepare": "npm run build",
-    "build": "style-dictionary build"
+    "prepare": "npm run clean && npm run build",
+    "build": "style-dictionary build",
+    "clean": "rm -rf dist"
   },
   "devDependencies": {
     "lodash": "^4.17.20",

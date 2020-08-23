@@ -36,7 +36,14 @@ StyleDictionary.registerFormat({
     });
     const json = JSON.stringify(object, null, 2);
     const regex = /"string"/gi;
-    return `export type tokens = ${json.replace(regex, "string")};`;
+    const tokens = json.replace(regex, "string");
+    return `
+declare namespace DSSTokens {
+  type tokens = ${tokens};
+}
+export = DSSTokens;
+export as namespace DSSTokens;
+`;
   },
 });
 
