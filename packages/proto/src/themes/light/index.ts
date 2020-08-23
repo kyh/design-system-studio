@@ -1,5 +1,4 @@
-// import { tokens } from "@dss/tokens";
-const { tokens } = require("@dss/tokens");
+import { tokens } from "@dss/tokens";
 
 export const theme = {
   // typography
@@ -11,20 +10,19 @@ export const theme = {
 
   // skins
   colors: {
-    palette: tokens.palette,
+    colors: tokens.colors,
     page: {
-      background: tokens.palette.neutrals["10"],
-      backgroundInverse: tokens.palette.neutrals["800"],
-      color: tokens.palette.neutrals["800"],
-      colorInverse: tokens.palette.neutrals["10"],
-      borderColor: tokens.palette.neutrals["40"],
+      background: tokens.colors.neutrals[10],
+      backgroundInverse: tokens.colors.neutrals[800],
+      color: tokens.colors.neutrals[800],
+      colorInverse: tokens.colors.neutrals[10],
+      borderColor: tokens.colors.neutrals[40],
     },
   },
   shadows: tokens.shadows,
 
   // layout
   space: tokens.space,
-  sizes: tokens.sizes,
 
   // borders
   borderWidths: tokens.borderWidths,
@@ -40,14 +38,14 @@ export const theme = {
       fontFamily: tokens.fonts.body,
       fontSize: tokens.fontSizes.body,
       fontWeight: tokens.fontWeights.regular,
-      color: tokens.palette.neutrals["800"],
+      color: tokens.colors.neutrals[800],
     },
     variants: {
       heading: {
         fontSize: tokens.fontSizes.heading,
         fontFamily: tokens.fonts.heading,
         fontWeight: tokens.fontWeights.medium,
-        color: tokens.palette.neutrals["800"],
+        color: tokens.colors.neutrals[800],
       },
     },
   },
@@ -69,54 +67,54 @@ export const theme = {
       borderRightWidth: tokens.borderWidths.regular,
       borderBottomWidth: tokens.borderWidths.regular,
       // Spacing
-      paddingTop: tokens.space[2],
-      paddingBottom: tokens.space[2],
-      paddingLeft: tokens.space[3],
-      paddingRight: tokens.space[3],
+      paddingTop: tokens.space.sm,
+      paddingBottom: tokens.space.sm,
+      paddingLeft: tokens.space.md,
+      paddingRight: tokens.space.md,
     },
     sizes: {},
     variants: {
       basic: {
-        color: tokens.palette.neutrals[800],
+        color: tokens.colors.neutrals[800],
         backgroundColor: tokens.gradients.base,
-        borderColor: tokens.palette.neutrals[40],
+        borderColor: tokens.colors.neutrals[40],
         "&.hover, &:hover": {
-          backgroundColor: tokens.palette.neutrals[20],
-          borderColor: tokens.palette.neutrals[40],
+          backgroundColor: tokens.colors.neutrals[20],
+          borderColor: tokens.colors.neutrals[40],
         },
         "&.active, &:active": {
-          backgroundColor: tokens.palette.neutrals[20],
-          borderColor: tokens.palette.neutrals[50],
+          backgroundColor: tokens.colors.neutrals[20],
+          borderColor: tokens.colors.neutrals[50],
         },
         "&.focus, &:focus": {
           backgroundColor: tokens.gradients.base,
-          borderColor: tokens.palette.blue[300],
+          borderColor: tokens.colors.blue[300],
         },
         "&.disabled, &:disabled": {
           backgroundColor: tokens.gradients.light,
-          borderColor: tokens.palette.neutrals[40],
+          borderColor: tokens.colors.neutrals[40],
           cursor: "not-allowed",
         },
       },
       primary: {
-        color: tokens.palette.neutrals[10],
-        backgroundColor: tokens.palette.blue[300],
-        borderColor: tokens.palette.blue[400],
+        color: tokens.colors.neutrals[10],
+        backgroundColor: tokens.colors.blue[300],
+        borderColor: tokens.colors.blue[400],
         "&.hover, &:hover": {
-          backgroundColor: tokens.palette.blue[400],
-          borderColor: tokens.palette.blue[500],
+          backgroundColor: tokens.colors.blue[400],
+          borderColor: tokens.colors.blue[500],
         },
         "&.active, &:active": {
-          backgroundColor: tokens.palette.blue[500],
-          borderColor: tokens.palette.blue[500],
+          backgroundColor: tokens.colors.blue[500],
+          borderColor: tokens.colors.blue[500],
         },
         "&.focus, &:focus": {
-          backgroundColor: tokens.palette.blue[300],
-          borderColor: tokens.palette.blue[500],
+          backgroundColor: tokens.colors.blue[300],
+          borderColor: tokens.colors.blue[500],
         },
         "&.disabled, &:disabled": {
-          backgroundColor: tokens.palette.blue[75],
-          borderColor: tokens.palette.blue[100],
+          backgroundColor: tokens.colors.blue[75],
+          borderColor: tokens.colors.blue[100],
           cursor: "not-allowed",
         },
       },

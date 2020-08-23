@@ -24,9 +24,7 @@ StyleDictionary.registerFormat({
     dictionary.allProperties.forEach((prop) => {
       object = createPath(object, prop.path, prop.value);
     });
-    return `const tokens = ${JSON.stringify(object, null, 2)};
-module.exports = { tokens };
-`;
+    return `export const tokens = ${JSON.stringify(object, null, 2)};`;
   },
 });
 
@@ -39,16 +37,10 @@ StyleDictionary.registerFormat({
       object = createPath(object, prop.path, "string");
     });
     JsonToTS(object).forEach((tokensInterface) => {
-      response += tokensInterface;
+      response += `${tokensInterface}\n`;
     });
 
-    response = response.replace(/RootObject/gi, "tokens");
-    return `declare namespace DSSTokens {
-  ${response}
-}
-export = DSSTokens;
-export as namespace DSSTokens;
-`;
+    return `${response} \n export declare const tokens: RootObject;`;
   },
 });
 
