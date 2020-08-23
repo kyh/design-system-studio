@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "main": "dist/index.js",
+  "module": "dist/index.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
@@ -32,7 +33,6 @@
       "pre-commit": "tsdx lint"
     }
   },
-  "module": "dist/proto.esm.js",
   "devDependencies": {
     "@dss/tokens": "^1.0.0",
     "@babel/core": "^7.8.4",

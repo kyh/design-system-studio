@@ -27,6 +27,19 @@ StyleDictionary.registerFormat({
   },
 });
 
+StyleDictionary.registerFormat({
+  name: "typescript/system-ui-definitions",
+  formatter: (dictionary) => {
+    let object = {};
+    dictionary.allProperties.forEach((prop) => {
+      object = createPath(object, prop.path, "string");
+    });
+    const json = JSON.stringify(object, null, 2);
+    const regex = /"string"/gi;
+    return `export type tokens = ${json.replace(regex, "string")};`;
+  },
+});
+
 // We will need to change this as more tokens are created
 module.exports = {
   source: ["./properties/dss/**/*.json"],
@@ -38,6 +51,10 @@ module.exports = {
         {
           destination: "index.js",
           format: "javascript/system-ui",
+        },
+        {
+          destination: "index.d.ts",
+          format: "typescript/system-ui-definitions",
         },
       ],
     },
