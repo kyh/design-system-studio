@@ -1,6 +1,6 @@
 {
   "name": "@dss/proto",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/proto.esm.js",
@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
-    "@dss/tokens": "^1.0.0",
+    "@dss/tokens": "^0.0.1",
     "@storybook/addon-a11y": "^6.0.25",
     "@storybook/addon-actions": "^6.0.25",
     "@storybook/addon-contexts": "^5.3.21",

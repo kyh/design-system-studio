@@ -1,6 +1,6 @@
 {
   "name": "@dss/studio",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
@@ -25,7 +25,7 @@
     ]
   },
   "dependencies": {
-    "@dss/proto": "^1.0.0",
+    "@dss/proto": "^0.0.1",
     "@reduxjs/toolkit": "^1.4.0",
     "lodash": "^4.17.20",
     "react": "^16.13.1",
