@@ -1,5 +1,5 @@
 import React from "react";
-import { Text } from "@dss/proto";
+import { Text } from "@dsstudio/proto";
 
 export const DiscoverPage: React.FC = () => {
   return (

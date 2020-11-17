@@ -1,4 +1,4 @@
-import { tokens } from "@dss/tokens";
+import { tokens } from "@dsstudio/tokens";
 
 export const theme = {
   // typography

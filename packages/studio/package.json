@@ -1,5 +1,5 @@
 {
-  "name": "@dss/studio",
+  "name": "@dsstudio/studio",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -25,7 +25,7 @@
     ]
   },
   "dependencies": {
-    "@dss/proto": "^0.0.1",
+    "@dsstudio/proto": "^0.0.1",
     "@reduxjs/toolkit": "^1.4.0",
     "lodash": "^4.17.20",
     "react": "^16.13.1",

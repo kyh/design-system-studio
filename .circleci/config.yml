@@ -30,7 +30,7 @@ jobs:
 
       - run:
           name: Build Component Library
-          command: yarn workspace @dss/proto build
+          command: yarn workspace @dsstudio/proto build
 
       - save_cache:
           paths:
@@ -41,11 +41,11 @@ jobs:
 
       - run:
           name: Lint Component Library
-          command: yarn workspace @dss/proto lint
+          command: yarn workspace @dsstudio/proto lint
 
       - run:
           name: Test Component Library
-          command: yarn workspace @dss/proto test
+          command: yarn workspace @dsstudio/proto test
 
       - run:
           name: Build Demo App
@@ -53,4 +53,4 @@ jobs:
 
       - run:
           name: Run Visual Tests
-          command: yarn workspace @dss/proto run chromatic
+          command: yarn workspace @dsstudio/proto run chromatic
