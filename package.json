@@ -9,7 +9,7 @@
   "scripts": {
     "postinstall": "npx lerna bootstrap",
     "dev": "npx lerna run start",
-    "clean": "npx lerna clean",
+    "clean": "npx lerna clean && npx lerna run clean",
     "update": "npx lerna exec -- npm update",
     "publish": "npx lerna publish -- --access public"
   },
