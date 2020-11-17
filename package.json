@@ -10,9 +10,8 @@
     "postinstall": "npx lerna bootstrap",
     "dev": "npx lerna run start",
     "clean": "npx lerna clean",
-    "outdated": "npx lerna exec -- npm outdated",
     "update": "npx lerna exec -- npm update",
-    "publish": "npx lerna publish"
+    "publish": "npx lerna publish --access public"
   },
   "devDependencies": {
     "lerna": "^3.22.1"
