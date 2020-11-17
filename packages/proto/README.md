@@ -1,6 +1,6 @@
-# DSS Proto
+# DS Studio - Proto
 
-Proto is a primitive component library built on [styled-system](https://styled-system.com/) and DSS. Studio is set up to export design tokens that Proto naturally inherits from.
+Proto is a primitive component library built on [styled-system](https://styled-system.com/) and with the DS Studio ecosystem. From the DS Studio web interface, you can export design tokens that Proto inherits from.
 
 ## Development
 
