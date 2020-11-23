@@ -1,5 +1,6 @@
 import React from "react";
-import { ThemeProvider, Box, Text } from "@dsstudio/proto";
+import { ThemeProvider } from "styled-components";
+import { Box, Text } from "@dsstudio/proto";
 import { themesActions } from "features/themes/themesSlice";
 import { parseTheme } from "./themeHelper";
 
