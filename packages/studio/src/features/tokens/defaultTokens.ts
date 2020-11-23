@@ -99,6 +99,7 @@ export const defaultTokensState = {
       displayMedium: "26px",
       displaySmall: "20px",
       heading: "16px",
+      subHeading: "16px",
       body: "14px",
       caption: "12px",
     },
@@ -113,15 +114,15 @@ export const defaultTokensState = {
       displaySmall: "24px",
       heading: "24px",
       subHeading: "16px",
-      caption: "16px",
       body: "20px",
+      caption: "16px",
     },
   },
   fontWeights: {
     name: "Font Weights",
     description: "",
     values: {
-      regular: 400,
+      normal: 400,
       medium: 500,
       bold: 700,
     },
@@ -130,7 +131,7 @@ export const defaultTokensState = {
     name: "Letter Spacings",
     description: "",
     values: {
-      default: "normal",
+      normal: "normal",
     },
   },
   // Border tokens
@@ -139,7 +140,7 @@ export const defaultTokensState = {
     description: "",
     values: {
       none: "0px",
-      regular: "3px",
+      normal: "3px",
     },
   },
   borderWidths: {
@@ -147,7 +148,7 @@ export const defaultTokensState = {
     description: "",
     values: {
       none: "0px",
-      regular: "1px",
+      normal: "1px",
       thick: "2px",
     },
   },
@@ -155,7 +156,7 @@ export const defaultTokensState = {
     name: "Border Styles",
     description: "",
     values: {
-      regular: "solid",
+      solid: "solid",
     },
   },
 };

@@ -10,13 +10,10 @@ export const theme = {
 
   // skins
   colors: {
-    palette: tokens.colors,
-    page: {
-      background: tokens.colors.neutrals["800"],
-      backgroundInverse: tokens.colors.neutrals["10"],
-      color: tokens.colors.neutrals["10"],
-      colorInverse: tokens.colors.neutrals["800"],
-    },
+    background: tokens.colors.neutrals["800"],
+    backgroundInverse: tokens.colors.neutrals["10"],
+    text: tokens.colors.neutrals["10"],
+    textInverse: tokens.colors.neutrals["800"],
   },
   shadows: tokens.shadows,
 

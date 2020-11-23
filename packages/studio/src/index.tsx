@@ -2,30 +2,23 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider as ReduxProvider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-
 import { store } from "app/store";
-import * as serviceWorker from "./serviceWorker";
+import { App } from "app/App";
 
-const render = () => {
-  const { App } = require("./app/App");
+import reportWebVitals from "./reportWebVitals";
 
-  ReactDOM.render(
+ReactDOM.render(
+  <React.StrictMode>
     <BrowserRouter>
       <ReduxProvider store={store}>
         <App />
       </ReduxProvider>
-    </BrowserRouter>,
-    document.getElementById("root")
-  );
-};
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
 
-render();
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
-
-if (process.env.NODE_ENV === "development" && module.hot) {
-  module.hot.accept("./app/App", render);
-}
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

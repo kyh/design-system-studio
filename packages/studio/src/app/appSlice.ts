@@ -29,7 +29,7 @@ const appSlice = createSlice({
   reducers: {
     change_theme: (state, { payload }: PayloadAction<{ theme: ThemeType }>) => {
       state.theme = payload.theme;
-      localStorage.setItem("theme", state.theme);
+      // localStorage.setItem("theme", state.theme);
     },
   },
 });

@@ -10,14 +10,10 @@ export const theme = {
 
   // skins
   colors: {
-    colors: tokens.colors,
-    page: {
-      background: tokens.colors.neutrals[10],
-      backgroundInverse: tokens.colors.neutrals[800],
-      color: tokens.colors.neutrals[800],
-      colorInverse: tokens.colors.neutrals[10],
-      borderColor: tokens.colors.neutrals[40],
-    },
+    background: tokens.colors.neutrals["800"],
+    backgroundInverse: tokens.colors.neutrals["10"],
+    text: tokens.colors.neutrals["10"],
+    textInverse: tokens.colors.neutrals["800"],
   },
   shadows: tokens.shadows,
 
@@ -38,14 +34,14 @@ export const theme = {
       fontFamily: tokens.fonts.body,
       fontSize: tokens.fontSizes.body,
       fontWeight: tokens.fontWeights.regular,
-      color: tokens.colors.neutrals[800],
+      color: tokens.colors.neutrals["10"],
     },
     variants: {
       heading: {
         fontSize: tokens.fontSizes.heading,
         fontFamily: tokens.fonts.heading,
         fontWeight: tokens.fontWeights.medium,
-        color: tokens.colors.neutrals[800],
+        color: tokens.colors.neutrals["10"],
       },
     },
   },

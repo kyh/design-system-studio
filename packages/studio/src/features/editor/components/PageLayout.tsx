@@ -13,7 +13,7 @@ export const Page = styled.section`
 export const Navigation = styled.nav`
   display: flex;
   grid-area: header;
-  background-color: ${({ theme }) => theme.colors.page.backgroundInverse};
+  background-color: ${({ theme }) => theme.colors.backgroundInverse};
 `;
 
 export const Sidebar = styled.section<{ side: "left" | "right" }>`
@@ -22,13 +22,13 @@ export const Sidebar = styled.section<{ side: "left" | "right" }>`
   grid-area: ${({ side }) => (side === "left" ? "lSidebar" : "rSidebar")};
   ${({ side, theme }) => {
     return side === "left"
-      ? `border-left: ${theme.borderWidths.regular} ${theme.borderStyles.regular} ${theme.colors.page.borderColor};`
-      : `border-right: ${theme.borderWidths.regular} ${theme.borderStyles.regular} ${theme.colors.page.borderColor};`;
+      ? `border-left: ${theme.borderWidths.regular} ${theme.borderStyles.regular} ${theme.colors.borderColor};`
+      : `border-right: ${theme.borderWidths.regular} ${theme.borderStyles.regular} ${theme.colors.borderColor};`;
   }}
 `;
 
 export const Content = styled.main`
   grid-area: content;
-  background-color: ${({ theme }) => theme.colors.palette.neutrals[30]};
+  background-color: ${({ theme }) => theme.colors.background};
   overflow: auto;
 `;
