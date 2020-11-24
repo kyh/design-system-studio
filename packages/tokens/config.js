@@ -1,4 +1,3 @@
-// Just build for DSS in SystemUI for now
 const StyleDictionary = require("style-dictionary");
 const JsonToTS = require("json-to-ts");
 
@@ -46,7 +45,7 @@ StyleDictionary.registerFormat({
 
 // We will need to change this as more tokens are created
 module.exports = {
-  source: ["./properties/dss/**/*.json"],
+  source: ["./properties/**/*.json"],
   platforms: {
     web: {
       transformGroup: "js",
