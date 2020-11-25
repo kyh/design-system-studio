@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { ThemeProvider } from "styled-components";
+import { DefaultTheme, ThemeProvider } from "styled-components";
 
 import { DiscoverPage } from "features/discover/DiscoverPage";
 import { EditorPage } from "features/editor/EditorPage";
@@ -11,9 +11,10 @@ import { useApp } from "app/appSlice";
 
 export const App: React.FC = () => {
   const { state } = useApp();
+  const currentTheme = themes[state.theme] as DefaultTheme;
 
   return (
-    <ThemeProvider theme={themes[state.theme]}>
+    <ThemeProvider theme={currentTheme}>
       <GlobalStyle />
       <Switch>
         <Route exact path="/">

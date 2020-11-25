@@ -20,6 +20,7 @@ export const theme = {
 
   // layout
   space: tokens.space,
+  size: tokens.size,
 
   // borders
   borderWidths: tokens.borderWidths,
@@ -34,7 +35,7 @@ export const theme = {
     base: {
       fontFamily: tokens.fonts.body,
       fontSize: tokens.fontSizes.body,
-      fontWeight: tokens.fontWeights.regular,
+      fontWeight: tokens.fontWeights.normal,
       color: tokens.colors.neutrals[800],
     },
     variants: {
@@ -52,17 +53,17 @@ export const theme = {
       fontFamily: tokens.fonts.body,
       fontSize: tokens.fontSizes.body,
       lineHeight: tokens.lineHeights.body,
-      fontWeight: tokens.fontWeights.regular,
+      fontWeight: tokens.fontWeights.normal,
       // Borders
-      borderStyle: tokens.borderStyles.regular,
-      borderTopLeftRadius: tokens.radii.regular,
-      borderTopRightRadius: tokens.radii.regular,
-      borderBottomLeftRadius: tokens.radii.regular,
-      borderBottomRightRadius: tokens.radii.regular,
-      borderTopWidth: tokens.borderWidths.regular,
-      borderLeftWidth: tokens.borderWidths.regular,
-      borderRightWidth: tokens.borderWidths.regular,
-      borderBottomWidth: tokens.borderWidths.regular,
+      borderStyle: tokens.borderStyles.solid,
+      borderTopLeftRadius: tokens.radii.sm,
+      borderTopRightRadius: tokens.radii.sm,
+      borderBottomLeftRadius: tokens.radii.sm,
+      borderBottomRightRadius: tokens.radii.sm,
+      borderTopWidth: tokens.borderWidths.normal,
+      borderLeftWidth: tokens.borderWidths.normal,
+      borderRightWidth: tokens.borderWidths.normal,
+      borderBottomWidth: tokens.borderWidths.normal,
       // Spacing
       paddingTop: tokens.space.sm,
       paddingBottom: tokens.space.sm,

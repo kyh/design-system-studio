@@ -5,3 +5,5 @@ export const themes = {
   light,
   dark,
 };
+
+export type ThemeType = typeof light;
