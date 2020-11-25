@@ -44,7 +44,7 @@ StyleDictionary.registerFormat({
 });
 
 StyleDictionary.registerTransformGroup({
-  name: "system-ui",
+  name: "dss-transform",
   transforms: ["attribute/cti", "name/cti/pascal"],
 });
 
@@ -53,7 +53,7 @@ module.exports = {
   source: ["./properties/**/*.json"],
   platforms: {
     web: {
-      transformGroup: "system-ui",
+      transformGroup: "dss-transform",
       buildPath: "./dist/",
       files: [
         {

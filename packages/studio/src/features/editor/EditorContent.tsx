@@ -1,4 +1,3 @@
-import React from "react";
 import { useQueryParams } from "utils/queryUtils";
 import { Content } from "features/editor/components/PageLayout";
 

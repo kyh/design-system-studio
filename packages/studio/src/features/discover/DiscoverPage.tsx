@@ -1,4 +1,3 @@
-import React from "react";
 import { Text } from "@dsstudio/proto";
 import styled from "styled-components";
 

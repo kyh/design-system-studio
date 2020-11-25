@@ -2,7 +2,8 @@
 .DS_Store
 node_modules
 .cache
+.eslintcache
 dist
-storybook-static
 build
+storybook-static
 src/components/icons/*.tsx

@@ -1,15 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { useSelector, useDispatch } from "react-redux";
-import { themes } from "@dsstudio/proto";
+import { Themes } from "./themes";
 import { RootState } from "./rootReducer";
 
-type ThemeType = keyof typeof themes;
 type CurrentAppState = {
-  theme: ThemeType;
+  theme: Themes;
 };
 
-const getTheme = (): ThemeType => {
-  const theme = localStorage.getItem("theme") as ThemeType;
+const getTheme = (): Themes => {
+  const theme = localStorage.getItem("theme") as Themes;
   if (theme) return theme;
   if (window.matchMedia) {
     const darkTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -27,9 +26,9 @@ const appSlice = createSlice({
   name: "app",
   initialState,
   reducers: {
-    change_theme: (state, { payload }: PayloadAction<{ theme: ThemeType }>) => {
+    change_theme: (state, { payload }: PayloadAction<{ theme: Themes }>) => {
       state.theme = payload.theme;
-      // localStorage.setItem("theme", state.theme);
+      localStorage.setItem("theme", state.theme);
     },
   },
 });

@@ -6,4 +6,5 @@ export const themes = {
   dark,
 };
 
-export type ThemeType = typeof light;
+export type ThemeInterface = typeof light;
+export type Themes = keyof typeof themes;
