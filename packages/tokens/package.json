@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "prepare": "npm run clean && npm run build",
-    "dev": "npm run build",
+    "dev": "npm run clean && npm run build",
     "build": "style-dictionary build",
     "clean": "rm -rf dist"
   },

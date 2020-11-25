@@ -43,12 +43,17 @@ StyleDictionary.registerFormat({
   },
 });
 
+StyleDictionary.registerTransformGroup({
+  name: "system-ui",
+  transforms: ["attribute/cti", "name/cti/pascal"],
+});
+
 // We will need to change this as more tokens are created
 module.exports = {
   source: ["./properties/**/*.json"],
   platforms: {
     web: {
-      transformGroup: "js",
+      transformGroup: "system-ui",
       buildPath: "./dist/",
       files: [
         {
