@@ -1,75 +1,29 @@
+import { merge } from "lodash";
 import { tokens } from "@dsstudio/tokens";
+import { theme as light } from "./light";
 
-export const theme = {
-  // typography
-  fonts: tokens.fonts,
-  fontSizes: tokens.fontSizes,
-  fontWeights: tokens.fontWeights,
-  lineHeights: tokens.lineHeights,
-  letterSpacings: tokens.letterSpacings,
-
+export const theme = merge({}, light, {
   // skins
   colors: {
-    background: tokens.colors.neutrals["800"],
-    backgroundInverse: tokens.colors.neutrals["10"],
-    text: tokens.colors.neutrals["10"],
-    textInverse: tokens.colors.neutrals["800"],
+    backgroundLight: tokens.colors.neutrals[700],
+    background: tokens.colors.neutrals[800],
+    backgroundDark: tokens.colors.neutrals[900],
+    text: tokens.colors.neutrals[10],
+    textInverse: tokens.colors.neutrals[800],
+    borderColor: tokens.colors.neutrals[40],
   },
-  shadows: tokens.shadows,
-
-  // layout
-  space: tokens.space,
-  size: tokens.size,
-
-  // borders
-  borderWidths: tokens.borderWidths,
-  borderStyles: tokens.borderStyles,
-  radii: tokens.radii,
-
-  // media queries
-  breakpoints: tokens.breakpoints,
-
   // components
   text: {
     base: {
-      fontFamily: tokens.fonts.body,
-      fontSize: tokens.fontSizes.body,
-      fontWeight: tokens.fontWeights.normal,
-      color: tokens.colors.neutrals["10"],
+      color: tokens.colors.neutrals[10],
     },
     variants: {
       heading: {
-        fontSize: tokens.fontSizes.heading,
-        fontFamily: tokens.fonts.heading,
-        fontWeight: tokens.fontWeights.medium,
-        color: tokens.colors.neutrals["10"],
+        color: tokens.colors.neutrals[10],
       },
     },
   },
   buttons: {
-    base: {
-      // Fonts
-      fontFamily: tokens.fonts.body,
-      fontSize: tokens.fontSizes.body,
-      lineHeight: tokens.lineHeights.body,
-      fontWeight: tokens.fontWeights.normal,
-      // Borders
-      borderStyle: tokens.borderStyles.solid,
-      borderTopLeftRadius: tokens.radii.sm,
-      borderTopRightRadius: tokens.radii.sm,
-      borderBottomLeftRadius: tokens.radii.sm,
-      borderBottomRightRadius: tokens.radii.sm,
-      borderTopWidth: tokens.borderWidths.normal,
-      borderLeftWidth: tokens.borderWidths.normal,
-      borderRightWidth: tokens.borderWidths.normal,
-      borderBottomWidth: tokens.borderWidths.normal,
-      // Spacing
-      paddingTop: tokens.space.sm,
-      paddingBottom: tokens.space.sm,
-      paddingLeft: tokens.space.md,
-      paddingRight: tokens.space.md,
-    },
-    sizes: {},
     variants: {
       basic: {
         color: tokens.colors.neutrals[800],
@@ -117,4 +71,4 @@ export const theme = {
       },
     },
   },
-};
+});

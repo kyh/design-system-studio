@@ -10,8 +10,9 @@ export const theme = {
 
   // skins
   colors: {
-    background: tokens.colors.neutrals[10],
-    backgroundInverse: tokens.colors.neutrals[800],
+    backgroundLight: tokens.colors.neutrals[0],
+    background: tokens.colors.neutrals[20],
+    backgroundDark: tokens.colors.neutrals[800],
     text: tokens.colors.neutrals[800],
     textInverse: tokens.colors.neutrals[10],
     borderColor: tokens.colors.neutrals[40],
@@ -21,6 +22,7 @@ export const theme = {
   // layout
   space: tokens.space,
   size: tokens.size,
+  maxWidth: "1280px",
 
   // borders
   borderWidths: tokens.borderWidths,

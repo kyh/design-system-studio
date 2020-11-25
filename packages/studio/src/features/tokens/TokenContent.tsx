@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Box, Text } from "@dsstudio/proto";
 import { tokensActions } from "features/tokens/tokensSlice";
 
