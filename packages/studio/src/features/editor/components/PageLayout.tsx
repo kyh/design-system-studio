@@ -22,8 +22,8 @@ export const Sidebar = styled.section<{ side: "left" | "right" }>`
   grid-area: ${({ side }) => (side === "left" ? "lSidebar" : "rSidebar")};
   ${({ side, theme }) => {
     return side === "left"
-      ? `border-left: ${theme.borderWidths.regular} ${theme.borderStyles.regular} ${theme.colors.borderColor};`
-      : `border-right: ${theme.borderWidths.regular} ${theme.borderStyles.regular} ${theme.colors.borderColor};`;
+      ? `border-left: ${theme.borderWidths.normal} ${theme.borderStyles.solid} ${theme.colors.borderColor};`
+      : `border-right: ${theme.borderWidths.normal} ${theme.borderStyles.solid} ${theme.colors.borderColor};`;
   }}
 `;
 

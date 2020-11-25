@@ -17,4 +17,6 @@ const Navigation = styled.nav`
   height: ${({ theme }) => theme.size.md};
 `;
 
-const Logo = styled.img``;
+const Logo = styled.img`
+  height: 100%;
+`;
