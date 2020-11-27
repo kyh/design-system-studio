@@ -10,13 +10,14 @@ interface ComponentStylesApi {
 
 const templates = ["react-styled-components", "react-emotion"];
 class Proto extends Command {
-  static description = `
-Proto - A component library generator
-
-CLI tool to scaffold a component library from a simple JSON interface.
+  static description = `Proto - A component library generator
+CLI tool to scaffold a component library from a simple JSON interface
 `;
 
   static usage = `@dsstudio/proto [interface.json] -t=[${templates[0]}]`;
+  static examples = [
+    `@dsstudio/proto examples/components.json -t=${templates[0]}`,
+  ];
 
   static flags = {
     // add --version flag to show CLI version
@@ -53,7 +54,7 @@ CLI tool to scaffold a component library from a simple JSON interface.
       this.log(`No template specified, defaulting to [${templates[0]}]`);
     }
     if (!outputPath) {
-      outputPath = `${cwd}/lib`;
+      outputPath = `${cwd}/components`;
       this.log(`No output path specified, defaulting to [${outputPath}]`);
     }
 

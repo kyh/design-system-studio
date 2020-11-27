@@ -8,6 +8,7 @@ Proto - A component library generator
 <!-- toc -->
 * [Usage](#usage)
 * [Commands](#commands)
+* [Component Interface](#component-interface)
 <!-- tocstop -->
 # Usage
 <!-- usage -->
@@ -25,5 +26,26 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+```
+USAGE
+  $ proto @dsstudio/proto [interface.json] -t=[react-styled-components]
 
+ARGUMENTS
+  INTERFACEPATH  Component styles interface to use. Should be a .json file
+
+OPTIONS
+  -f, --force
+  -h, --help                   show CLI help
+  -o, --outputPath=outputPath  Output folder for your component library
+  -t, --template=template      Template to generate your component library with. Should be one of: [react-styled-components | react-emotion]
+  -v, --version                show CLI version
+
+DESCRIPTION
+  CLI tool to scaffold a component library from a simple JSON interface
+
+EXAMPLE
+  @dsstudio/proto examples/components.json -t=react-styled-components
+```
 <!-- commandsstop -->
+
+# Component Interface
