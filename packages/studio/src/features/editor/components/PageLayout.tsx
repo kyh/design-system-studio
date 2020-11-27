@@ -13,7 +13,7 @@ export const Page = styled.section`
 export const Navigation = styled.nav`
   display: flex;
   grid-area: header;
-  background-color: ${({ theme }) => theme.colors.backgroundInverse};
+  background-color: ${({ theme }) => theme.colors.backgroundDark};
 `;
 
 export const Sidebar = styled.section<{ side: "left" | "right" }>`

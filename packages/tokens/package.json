@@ -1,7 +1,15 @@
 {
   "name": "@dsstudio/tokens",
   "version": "0.0.4",
+  "keywords": [
+    "design tokens",
+    "design system studio"
+  ],
+  "homepage": "https://github.com/tehkaiyu/design-system-studio",
+  "bugs": "https://github.com/tehkaiyu/design-system-studio/issues",
+  "repository": "tehkaiyu/design-system-studio",
   "license": "MIT",
+  "author": "Kaiyu Hsu @tehkaiyu",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,10 +18,10 @@
     "dist/index.d.ts"
   ],
   "scripts": {
-    "prepare": "npm run clean && npm run build",
-    "dev": "npm run clean && npm run build",
     "build": "style-dictionary build",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "dev": "npm run clean && npm run build",
+    "prepare": "npm run clean && npm run build"
   },
   "devDependencies": {
     "json-to-ts": "^1.7.0",

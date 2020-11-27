@@ -2,19 +2,18 @@
   "name": "@dsstudio/studio",
   "version": "0.0.4",
   "private": true,
+  "homepage": "https://github.com/tehkaiyu/design-system-studio",
+  "bugs": "https://github.com/tehkaiyu/design-system-studio/issues",
+  "repository": "tehkaiyu/design-system-studio",
+  "license": "MIT",
+  "author": "Kaiyu Hsu @tehkaiyu",
   "scripts": {
-    "start": "react-scripts start",
-    "dev": "npm start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "clean": "rm -rf build",
+    "dev": "npm start",
     "eject": "react-scripts eject",
-    "clean": "rm -rf build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "start": "react-scripts start",
+    "test": "react-scripts test"
   },
   "browserslist": {
     "production": [
@@ -28,8 +27,13 @@
       "last 1 safari version"
     ]
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "dependencies": {
-    "@dsstudio/proto": "^0.0.4",
     "@dsstudio/tokens": "^0.0.4",
     "@reduxjs/toolkit": "^1.4.0",
     "lodash": "^4.17.20",
@@ -56,6 +60,8 @@
     "@types/react-router-dom": "^5.1.6",
     "@types/redux-logger": "^3.0.8",
     "@types/styled-components": "^5.1.4",
-    "react-scripts": "^4.0.1"
+    "@types/styled-system": "^5.1.10",
+    "react-scripts": "^4.0.1",
+    "typescript": "^4.1.2"
   }
 }

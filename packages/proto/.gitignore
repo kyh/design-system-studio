@@ -1,9 +1,10 @@
+/.nyc_output
 *.log
 .DS_Store
 node_modules
 .cache
 .eslintcache
 dist
+lib
+tmp
 build
-storybook-static
-src/components/icons/*.tsx

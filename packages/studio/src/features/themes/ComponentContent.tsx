@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import { Box, Text } from "@dsstudio/proto";
+import { Box, Text } from "components/library";
 import { themesActions } from "features/themes/themesSlice";
 import { parseTheme } from "./themeHelper";
 

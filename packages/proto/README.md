@@ -1,111 +1,29 @@
-# DS Studio - Proto
+DS Studio - Proto
+=====
 
-Proto is a primitive component library built on [styled-system](https://styled-system.com/) and with the DS Studio ecosystem. From the DS Studio web interface, you can export design tokens that Proto inherits from.
+[![Version](https://img.shields.io/npm/v/@dsstudio/proto.svg)](https://npmjs.org/package/@dsstudio/proto)
+[![Downloads/week](https://img.shields.io/npm/dw/@dsstudio/proto.svg)](https://npmjs.org/package/@dsstudio/proto)
+[![License](https://img.shields.io/npm/l/@dsstudio/proto.svg)](https://github.com/tehkaiyu/proto/blob/master/package.json)
 
-## Development
-
-### TSDX
-
-> This TSDX setup is meant for developing React components (not apps!) that can be published to NPM. If you’re looking to build an app, you should use `create-react-app`, `razzle`, `nextjs`, `gatsby`, or `react-static`.
-
-> If you’re new to TypeScript and React, checkout [this handy cheatsheet](https://github.com/sw-yx/react-typescript-cheatsheet/)
-
-#### Commands
-
-TSDX scaffolds your new library inside `/src`, and also sets up a [Parcel-based](https://parceljs.org) playground for it inside `/example`.
-
-The recommended workflow is to run TSDX in one terminal:
-
+<!-- toc -->
+* [Usage](#usage)
+* [Commands](#commands)
+<!-- tocstop -->
+# Usage
+<!-- usage -->
+```sh-session
+$ npm install -g @dsstudio/proto
+$ @dsstudio/proto COMMAND
+running command...
+$ @dsstudio/proto (-v|--version|version)
+@dsstudio/proto/0.0.0 darwin-x64 node-v15.2.1
+$ @dsstudio/proto --help [COMMAND]
+USAGE
+  $ @dsstudio/proto COMMAND
+...
 ```
-npm start # or yarn start
-```
+<!-- usagestop -->
+# Commands
+<!-- commands -->
 
-This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
-
-Then run either example playground or storybook:
-
-### Storybook
-
-Run inside another terminal:
-
-```
-yarn storybook
-```
-
-This loads the stories from `*.stories.mdx`.
-
-> NOTE: Stories should reference the components as if using the library, similar to the example playground. This means importing from the root project directory. This has been aliased in the tsconfig and the storybook webpack config as a helper.
-
-### Example
-
-Then run the example inside another:
-
-```
-cd example
-npm i # or yarn to install dependencies
-npm start # or yarn start
-```
-
-The default example imports and live reloads whatever is in `/dist`, so if you are seeing an out of date component, make sure TSDX is running in watch mode like we recommend above. **No symlinking required**, [we use Parcel's aliasing](https://github.com/palmerhq/tsdx/pull/88/files).
-
-To do a one-off build, use `npm run build` or `yarn build`.
-
-To run tests, use `npm test` or `yarn test`.
-
-## Configuration
-
-Code quality is [set up for you](https://github.com/palmerhq/tsdx/pull/45/files) with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
-
-### Jest
-
-Jest tests are set up to run with `npm test` or `yarn test`. This runs the test watcher (Jest) in an interactive mode. By default, runs tests related to files changed since the last commit.
-
-### Rollup
-
-TSDX uses [Rollup v1.x](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings. See [Optimizations](#optimizations) for details.
-
-### TypeScript
-
-`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
-
-## Continuous Integration
-
-### Travis
-
-_to be completed_
-
-### Circle
-
-_to be completed_
-
-## Optimizations
-
-Please see the main `tsdx` [optimizations docs](https://github.com/palmerhq/tsdx#optimizations). In particular, know that you can take advantage of development-only optimizations:
-
-```js
-// ./types/index.d.ts
-declare var __DEV__: boolean;
-
-// inside your code...
-if (__DEV__) {
-  console.log("foo");
-}
-```
-
-You can also choose to install and use [invariant](https://github.com/palmerhq/tsdx#invariant) and [warning](https://github.com/palmerhq/tsdx#warning) functions.
-
-## Module Formats
-
-CJS, ESModules, and UMD module formats are supported.
-
-The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
-
-## Named Exports
-
-Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
-
-## Including Styles
-
-There are many ways to ship styles, including with CSS-in-JS. TSDX has no opinion on this, configure how you like.
-
-For vanilla CSS, you can include it at the root directory and add it to the `files` section in your `package.json`, so that it can be imported separately by your users and run through their bundler's loader.
+<!-- commandsstop -->

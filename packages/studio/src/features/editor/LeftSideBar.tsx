@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Flex } from "@dsstudio/proto";
+import { Flex } from "components/library";
 import { useQueryParams } from "utils/queryUtils";
 import { useTokens, tokensActions } from "features/tokens/tokensSlice";
 import { useThemes, themesActions } from "features/themes/themesSlice";

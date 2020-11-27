@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Text, Button } from "@dsstudio/proto";
 import { Logo, Nav, NavContainer, PageContainer } from "components/Page";
 
 export const DiscoverPage: React.FC = () => {
@@ -13,7 +12,7 @@ export const DiscoverPage: React.FC = () => {
             <li>Discover</li>
             <li>GitHub</li>
           </ul>
-          <Button>Send Feedback</Button>
+          <button>Send Feedback</button>
         </NavContainer>
       </Nav>
       <PageContainer>Discover Page</PageContainer>

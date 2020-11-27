@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Text } from "@dsstudio/proto";
+import { Box, Text } from "components/library";
 import { tokensActions } from "features/tokens/tokensSlice";
 
 export const TokenContent = ({ tokenKey, token, dispatch }: any) => {
