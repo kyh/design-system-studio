@@ -1,6 +1,6 @@
 import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
-import { useTheme } from "styled-components";
-import { getVariantScales } from 'utils/theme-helpers';
+import { useTheme } from "@xstyled/styled-components";
+import { getVariantScales } from "utils/theme-helpers";
 import { Button } from "./button";
 import { Box, Text, Flex } from "../";
 
@@ -11,7 +11,9 @@ export const ButtonStories = () => {
   const scales = getVariantScales(theme, "buttons");
   return scales.map((scale) => (
     <Flex flexDirection="column" key={scale.name} mb={3}>
-      <Text variant="heading" as="h1" mb={2}>{scale.name}</Text>
+      <Text variant="heading" as="h1" mb={2}>
+        {scale.name}
+      </Text>
       <Flex flexDirection="column">
         {scale.variants.map((v) => (
           <Flex mb={2}>

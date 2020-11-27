@@ -1,7 +1,7 @@
-export * from "./box";
+export { Box } from "@xstyled/styled-components";
+export * from "./button";
 export * from "./flex";
 export * from "./text";
-export * from "./button";
 
 // export * from "./aspect-ratio";
 // export * from "./aspect-image";

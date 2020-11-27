@@ -4,20 +4,20 @@ import {
   SpaceProps,
   layout,
   LayoutProps,
-  flexbox,
-  FlexboxProps,
+  flexboxes,
+  FlexboxesProps,
   position,
   PositionProps,
   color,
   ColorProps,
   typography,
   TypographyProps,
-} from "styled-system";
+} from "@xstyled/system";
 
 export type TypographyFunctionsProps = SpaceProps &
   ColorProps &
   LayoutProps &
-  FlexboxProps &
+  FlexboxesProps &
   PositionProps &
   TypographyProps;
 
@@ -25,7 +25,7 @@ export const typographyFunctions = compose(
   space,
   color,
   layout,
-  flexbox,
+  flexboxes,
   position,
   typography
 );

@@ -1,5 +1,5 @@
 import styledNormalize from "styled-normalize";
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "@xstyled/styled-components";
 
 export const GlobalStyle = createGlobalStyle<any>`
   ${styledNormalize}
@@ -15,8 +15,11 @@ export const GlobalStyle = createGlobalStyle<any>`
   }
 
   body {
-    ${({ theme }) => theme.text.base};
-    background-color: ${({ theme }) => theme.colors.background};
+    font-family: body;
+    font-size: body;
+    font-weight: normal;
+    color: text;
+    background-color: background;
     text-rendering: optimizeLegibility;
   }
 

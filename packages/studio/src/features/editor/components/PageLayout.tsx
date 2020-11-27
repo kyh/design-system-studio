@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@xstyled/styled-components";
 
 export const Page = styled.section`
   display: grid;
@@ -13,7 +13,7 @@ export const Page = styled.section`
 export const Navigation = styled.nav`
   display: flex;
   grid-area: header;
-  background-color: ${({ theme }) => theme.colors.backgroundDark};
+  background-color: background;
 `;
 
 export const Sidebar = styled.section<{ side: "left" | "right" }>`
@@ -29,6 +29,6 @@ export const Sidebar = styled.section<{ side: "left" | "right" }>`
 
 export const Content = styled.main`
   grid-area: content;
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: background;
   overflow: auto;
 `;

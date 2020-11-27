@@ -1,21 +1,39 @@
-import styled, { css } from "styled-components";
-import { variant } from "styled-system";
+import styled, { css } from "@xstyled/styled-components";
+import { variant } from "@xstyled/system";
 import {
   TypographyFunctionsProps,
   typographyFunctions,
 } from "../system-functions";
 
 export type TextProps = {
-  variant?: string;
+  variant?: "body" | "heading" | string; // generated
 } & TypographyFunctionsProps;
 
-const base = ({ theme }: any) =>
-  css`
-    margin: 0;
-    ${theme.text.base}
-  `;
+const base = css`
+  margin: 0;
+`;
 
-const variants = variant({ scale: "text.variants" });
+// generated
+const textVariants = {
+  body: css`
+    font-family: body;
+    font-size: body;
+    font-weight: body;
+    color: text;
+  `,
+  heading: css`
+    font-size: heading;
+    font-family: heading;
+    font-weight: medium;
+    color: text;
+  `,
+};
+
+const variants = variant({
+  key: "text",
+  default: "body",
+  variants: textVariants,
+});
 
 export const Text = styled.p<TextProps>`
   ${base}

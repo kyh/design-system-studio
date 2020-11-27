@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "@xstyled/styled-components";
 
 export const PageContainer = styled.section`
   margin-left: auto;
@@ -8,14 +8,13 @@ export const PageContainer = styled.section`
 `;
 
 export const Logo = styled.img`
-  height: ${({ theme }) => theme.size.sm};
+  height: sm;
 `;
 
 export const Nav = styled.nav`
-  padding: ${({ theme }) => `0 ${theme.space.md}`};
-  height: ${({ theme }) => theme.size.md};
-  box-shadow: ${({ theme }) => theme.shadows[100]};
-  background-color: ${({ theme }) => theme.colors.backgroundLight};
+  padding: 0 md;
+  height: md;
+  box-shadow: xs;
 `;
 
 export const NavContainer = styled(PageContainer)`

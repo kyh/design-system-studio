@@ -1,67 +1,131 @@
 import React, { forwardRef } from "react";
-import styled, { css, StyledComponentProps } from "styled-components";
+import styled, { css, StyledComponentProps } from "@xstyled/styled-components";
 import {
   compose,
   variant,
-  flexbox,
-  FlexboxProps,
+  flexboxes,
+  FlexboxesProps,
   layout,
   LayoutProps,
   position,
   PositionProps,
   space,
   SpaceProps,
-} from "styled-system";
+} from "@xstyled/system";
 import { Flex } from "../flex";
 
 type DefaultProps = {
   loading?: boolean;
   disabled?: boolean;
-  variant?: string;
+  variant?: "basic" | "primary" | string; // generated
 };
 
 export type StyledButtonProps = SpaceProps &
   LayoutProps &
-  FlexboxProps &
+  FlexboxesProps &
   PositionProps &
   DefaultProps;
 
-const base = ({ theme }: any) =>
-  css`
-    position: relative;
-    white-space: nowrap;
-    vertical-align: middle;
-    display: inline-block;
-    cursor: pointer;
-    user-select: none;
-    appearance: none;
-    text-decoration: none;
-    text-align: center;
+// generated
+const buttonBase = css`
+  font-family: body;
+  font-size: body;
+  line-height: body;
+  font-weight: normal;
+  border-style: solid;
+  border-radius: sm;
+  border-width: normal;
+  padding: sm md;
+`;
 
+const base = css`
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  text-decoration: none;
+  text-align: center;
+  ${buttonBase}
+
+  &:hover {
+    text-decoration: none;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    cursor: default;
+  }
+  &:disabled svg {
+    opacity: 0.6;
+  }
+`;
+
+// generated
+const buttonVariants = {
+  basic: css`
+    color: text;
+    background-color: background;
+    border-color: borderColor;
+    box-shadow: 0px 1px 0px rgba(27, 31, 35, 0.04),
+      inset 0px 2px 0px rgba(255, 255, 255, 0.25);
     &:hover {
-      text-decoration: none;
+      background-color: backgroundDark;
+      border-color: borderColor;
+      box-shadow: 0px 1px 0px rgba(209, 213, 218, 0.2),
+        inset 0px 2px 0px rgba(255, 255, 255, 0.1);
+    }
+    &:active {
+      background-color: backgroundDarker;
+      border-color: borderColor;
+      box-shadow: inset 0px 2px 0px rgba(149, 157, 165, 0.1);
     }
     &:focus {
-      outline: none;
+      box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
     }
     &:disabled {
-      cursor: default;
+      background-color: background;
+      border-color: borderColor;
+      cursor: not-allowed;
     }
-    &:disabled svg {
-      opacity: 0.6;
+  `,
+  primary: css`
+    color: textInverse;
+    background-color: primary;
+    border-color: primaryDark;
+    &:hover {
+      background-color: primaryDark;
+      border-color: primaryDarker;
     }
+    &:active {
+      background-color: primaryDarker;
+      border-color: primaryDarker;
+    }
+    &:focus {
+      background-color: primary;
+      border-color: primaryDarker;
+    }
+    &:disabled {
+      background-color: primaryLighter;
+      border-color: primaryLight;
+      cursor: not-allowed;
+    }
+  `,
+};
 
-    ${theme.buttons.base}
-  `;
-
-const variants = variant({ scale: "buttons.variants" });
-const sizes = variant({ scale: "buttons.sizes " });
+const variants = variant({
+  key: "buttons.variants",
+  default: "basic", // generated
+  variants: buttonVariants, // generated
+});
 
 const StyledButton = styled.button<ButtonProps>`
   ${base}
-  ${compose(space, layout, flexbox, position)}
+  ${compose(space, layout, flexboxes, position)}
   ${variants}
-  ${sizes}
 `;
 
 export type ButtonProps = StyledComponentProps<

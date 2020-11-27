@@ -1,5 +1,5 @@
 import { Switch, Route, Redirect } from "react-router-dom";
-import { DefaultTheme, ThemeProvider } from "styled-components";
+import { DefaultTheme, ThemeProvider } from "@xstyled/styled-components";
 
 import { DiscoverPage } from "features/discover/DiscoverPage";
 import { EditorPage } from "features/editor/EditorPage";

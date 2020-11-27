@@ -1,18 +1,17 @@
-import styled from "styled-components";
+import styled, { Box } from "@xstyled/styled-components";
 import {
   SpaceProps,
   ColorProps,
   LayoutProps,
-  FlexboxProps,
+  FlexboxesProps,
   BorderProps,
   PositionProps,
-} from "styled-system";
-import { Box } from "../box";
+} from "@xstyled/system";
 
 export type FlexProps = SpaceProps &
   ColorProps &
   LayoutProps &
-  FlexboxProps &
+  FlexboxesProps &
   BorderProps &
   PositionProps;
 

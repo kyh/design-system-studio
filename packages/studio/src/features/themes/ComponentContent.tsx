@@ -1,4 +1,4 @@
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "@xstyled/styled-components";
 import { Box, Text } from "components/library";
 import { themesActions } from "features/themes/themesSlice";
 import { parseTheme } from "./themeHelper";
