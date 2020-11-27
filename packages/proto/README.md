@@ -13,13 +13,13 @@ DS Studio - Proto
 <!-- usage -->
 ```sh-session
 $ npm install -g @dsstudio/proto
-$ @dsstudio/proto COMMAND
+$ proto COMMAND
 running command...
-$ @dsstudio/proto (-v|--version|version)
-@dsstudio/proto/0.0.0 darwin-x64 node-v15.2.1
-$ @dsstudio/proto --help [COMMAND]
+$ proto (-v|--version|version)
+@dsstudio/proto/0.0.5 darwin-x64 node-v15.2.1
+$ proto --help [COMMAND]
 USAGE
-  $ @dsstudio/proto COMMAND
+  $ proto COMMAND
 ...
 ```
 <!-- usagestop -->
