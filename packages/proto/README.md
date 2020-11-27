@@ -1,4 +1,4 @@
-DS Studio - Proto
+Proto - A component library generator
 =====
 
 [![Version](https://img.shields.io/npm/v/@dsstudio/proto.svg)](https://npmjs.org/package/@dsstudio/proto)

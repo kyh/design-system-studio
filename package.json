@@ -1,18 +1,25 @@
 {
   "name": "dsstudio",
   "version": "0.0.0",
+  "keywords": [
+    "design tokens",
+    "design system studio"
+  ],
+  "homepage": "https://github.com/tehkaiyu/design-system-studio",
+  "bugs": "https://github.com/tehkaiyu/design-system-studio/issues",
+  "repository": "tehkaiyu/design-system-studio",
   "license": "MIT",
-  "private": true,
+  "author": "Kaiyu Hsu @tehkaiyu",
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "postinstall": "lerna bootstrap",
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
     "clean": "lerna clean && lerna run clean",
-    "update": "lerna exec -- npm update",
-    "publish": "npm run build && lerna publish -- --access public"
+    "postinstall": "lerna bootstrap",
+    "publish": "npm run build && lerna publish -- --access public",
+    "update": "lerna exec -- npm update"
   },
   "devDependencies": {
     "lerna": "^3.22.1",
