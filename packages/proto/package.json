@@ -3,6 +3,7 @@
   "version": "0.0.6",
   "keywords": [
     "design tokens",
+    "scaffold component library",
     "design system studio"
   ],
   "homepage": "https://github.com/tehkaiyu/design-system-studio",
@@ -17,11 +18,15 @@
   },
   "files": [
     "/bin",
-    "/lib"
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
   ],
   "scripts": {
-    "prepack": "rm -rf lib && tsc -b && oclif-dev readme",
-    "test": "echo NO TESTS",
+    "prepack": "npm run build",
+    "postpack": "rm -f oclif.manifest.json",
+    "build": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   },
   "dependencies": {
@@ -41,7 +46,11 @@
     "node": ">=8.0.0"
   },
   "oclif": {
-    "bin": "proto"
+    "commands": "./lib/commands",
+    "bin": "proto",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
   },
   "gitHead": "2167c9242e953f23674c6cf52bfaa5ef683cde38"
 }
