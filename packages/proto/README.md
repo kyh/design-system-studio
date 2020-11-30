@@ -7,7 +7,9 @@ Proto - A component library generator
 
 <!-- toc -->
 * [Usage](#usage)
+* [Quick Start](#quick-start)
 * [Commands](#commands)
+* [Available Templates](#available-templates)
 * [ComponentStyles Interface](#componentstyles-interface)
 <!-- tocstop -->
 # Usage
@@ -17,7 +19,7 @@ $ npm install -g @dsstudio/proto
 $ proto COMMAND
 running command...
 $ proto (-v|--version|version)
-@dsstudio/proto/0.0.7 darwin-x64 node-v15.2.1
+@dsstudio/proto/0.0.8 darwin-x64 node-v15.2.1
 $ proto --help [COMMAND]
 USAGE
   $ proto COMMAND
@@ -30,8 +32,32 @@ _to be completed_
 
 # Commands
 <!-- commands -->
+* [`proto commands`](#proto-commands)
 * [`proto generate [INTERFACE_PATH] -t=[TEMPLATE]`](#proto-generate-interface_path--ttemplate)
 * [`proto help [COMMAND]`](#proto-help-command)
+* [`proto update [CHANNEL]`](#proto-update-channel)
+
+## `proto commands`
+
+```
+USAGE
+  $ proto commands
+
+OPTIONS
+  -h, --help              show CLI help
+  -j, --json              display unfiltered api data in json format
+  -x, --extended          show extra columns
+  --columns=columns       only show provided columns (comma-separated)
+  --csv                   output is csv format [alias: --output=csv]
+  --filter=filter         filter property by partial string matching, ex: name=foo
+  --hidden                show hidden commands
+  --no-header             hide table header from output
+  --no-truncate           do not truncate output to fit screen
+  --output=csv|json|yaml  output in a more machine friendly format
+  --sort=sort             property to sort by (prepend '-' for descending)
+```
+
+_See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/v1.3.0/src/commands/commands.ts)_
 
 ## `proto generate [INTERFACE_PATH] -t=[TEMPLATE]`
 
@@ -56,7 +82,7 @@ EXAMPLE
   proto generate examples/components.json -t=react-styled-components
 ```
 
-_See code: [src/commands/generate.ts](https://github.com/tehkaiyu/design-system-studio/blob/v0.0.7/src/commands/generate.ts)_
+_See code: [src/commands/generate.ts](https://github.com/tehkaiyu/design-system-studio/blob/v0.0.8/src/commands/generate.ts)_
 
 ## `proto help [COMMAND]`
 
@@ -72,6 +98,15 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src/commands/help.ts)_
+
+## `proto update [CHANNEL]`
+
+```
+USAGE
+  $ proto update [CHANNEL]
+```
+
+_See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v1.3.10/src/commands/update.ts)_
 <!-- commandsstop -->
 
 # Available Templates
