@@ -23,8 +23,8 @@
     "/oclif.manifest.json"
   ],
   "scripts": {
-    "prepack": "npm run build",
-    "postpack": "rm -f oclif.manifest.json",
+    "prepare": "npm run build",
+    "postpublish": "rm -f oclif.manifest.json",
     "build": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
@@ -60,5 +60,5 @@
       "@oclif/plugin-warn-if-update-available"
     ]
   },
-  "gitHead": "2167c9242e953f23674c6cf52bfaa5ef683cde38"
+  "gitHead": "c6e4b4d2ce46642e8b316bbfaa26007860a4b8a9"
 }

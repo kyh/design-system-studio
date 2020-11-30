@@ -17,15 +17,25 @@
     "dist/index.js",
     "dist/index.d.ts"
   ],
+  "watch": {
+    "build": {
+      "patterns": [
+        "properties"
+      ],
+      "extensions": "json",
+      "quiet": false
+    }
+  },
   "scripts": {
-    "build": "style-dictionary build",
+    "build": "npm run clean && style-dictionary build",
     "clean": "rm -rf dist",
-    "dev": "npm run clean && npm run build",
-    "prepare": "npm run clean && npm run build"
+    "dev": "npm-watch",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "json-to-ts": "^1.7.0",
     "lodash": "^4.17.20",
+    "npm-watch": "^0.7.0",
     "style-dictionary": "^2.10.2"
   },
   "gitHead": "2167c9242e953f23674c6cf52bfaa5ef683cde38"
