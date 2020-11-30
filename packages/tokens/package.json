@@ -10,12 +10,12 @@
   "repository": "tehkaiyu/design-system-studio",
   "license": "MIT",
   "author": "Kaiyu Hsu @tehkaiyu",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "build/index.js",
+  "module": "build/index.js",
+  "types": "build/index.d.ts",
   "files": [
-    "dist/index.js",
-    "dist/index.d.ts"
+    "build/index.js",
+    "build/index.d.ts"
   ],
   "watch": {
     "build": {
@@ -28,7 +28,7 @@
   },
   "scripts": {
     "build": "npm run clean && style-dictionary build",
-    "clean": "rm -rf dist",
+    "clean": "rm -rf build",
     "dev": "npm-watch",
     "prepare": "npm run build"
   },

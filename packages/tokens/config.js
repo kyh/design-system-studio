@@ -54,7 +54,7 @@ module.exports = {
   platforms: {
     web: {
       transformGroup: "dss-transform",
-      buildPath: "./dist/",
+      buildPath: "./build/",
       files: [
         {
           destination: "index.js",

@@ -82,7 +82,7 @@ EXAMPLE
   proto generate examples/components.json -t=react-styled-components
 ```
 
-_See code: [src/commands/generate.ts](https://github.com/tehkaiyu/design-system-studio/blob/v0.0.9/src/commands/generate.ts)_
+_See code: [build/commands/generate.ts](https://github.com/tehkaiyu/design-system-studio/blob/v0.0.9/build/commands/generate.ts)_
 
 ## `proto help [COMMAND]`
 
