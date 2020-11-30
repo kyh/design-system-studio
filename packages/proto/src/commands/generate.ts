@@ -52,7 +52,7 @@ export default class Generate extends Command {
       this.log(`No template specified, defaulting to [${templates[0]}]`);
     }
     if (!outputPath) {
-      outputPath = `${cwd}/components`;
+      outputPath = `${cwd}/out`;
       this.log(`No output path specified, defaulting to [${outputPath}]`);
     }
 

@@ -3,5 +3,5 @@
 node_modules
 .cache
 .eslintcache
-dist
+tmp
 build

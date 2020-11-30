@@ -1,11 +1,10 @@
-/.nyc_output
 *.log
 .DS_Store
 node_modules
 .cache
 .eslintcache
-dist
-lib
 tmp
 build
-components
+
+/.nyc_output
+out
