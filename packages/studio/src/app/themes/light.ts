@@ -40,4 +40,7 @@ export const theme = {
   borderWidths: tokens.borderWidths,
   borderStyles: tokens.borderStyles,
   radii: tokens.radii,
+
+  // transitions
+  transitions: tokens.transitions,
 };

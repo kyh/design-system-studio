@@ -1,6 +1,7 @@
 import React, { forwardRef } from "react";
 import styled, { css, StyledComponentProps } from "@xstyled/styled-components";
 import {
+  th,
   compose,
   variant,
   flexboxes,
@@ -36,6 +37,8 @@ const buttonBase = css`
   border-radius: sm;
   border-width: normal;
   padding: sm md;
+  transition: ${th("transitions.fast")};
+  transition-property: color, border-color, box-shadow;
 `;
 
 const base = css`
@@ -68,27 +71,30 @@ const base = css`
 const buttonVariants = {
   basic: css`
     color: text;
-    background-color: background;
+    background-color: backgroundLighter;
+    background-image: ${th("gradients.light")};
     border-color: borderColor;
-    box-shadow: 0px 1px 0px rgba(27, 31, 35, 0.04),
-      inset 0px 2px 0px rgba(255, 255, 255, 0.25);
     &:hover {
-      background-color: backgroundDark;
+      background-color: background;
+      background-image: none;
       border-color: borderColor;
-      box-shadow: 0px 1px 0px rgba(209, 213, 218, 0.2),
-        inset 0px 2px 0px rgba(255, 255, 255, 0.1);
     }
     &:active {
-      background-color: backgroundDarker;
-      border-color: borderColor;
-      box-shadow: inset 0px 2px 0px rgba(149, 157, 165, 0.1);
+      background-color: background;
+      background-image: none;
+      border-color: primary;
     }
     &:focus {
-      box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
+      background-color: background;
+      background-image: none;
+      border-color: primary;
+      box-shadow: 0 0 0 1px ${th("colors.primary")};
     }
     &:disabled {
-      background-color: background;
+      background-color: backgroundLighter;
+      background-image: ${th("gradients.light")};
       border-color: borderColor;
+      box-shadow: none;
       cursor: not-allowed;
     }
   `,

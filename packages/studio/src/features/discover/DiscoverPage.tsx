@@ -6,7 +6,7 @@ export const DiscoverPage: React.FC = () => {
     <>
       <Nav>
         <NavContainer>
-          <Logo src="/logo.svg" />
+          <Logo src={`${process.env.PUBLIC_URL}/logo.svg`} />
           <ul>
             <li>My Projects</li>
             <li>Discover</li>

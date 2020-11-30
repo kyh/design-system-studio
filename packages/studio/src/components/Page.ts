@@ -15,6 +15,7 @@ export const Nav = styled.nav`
   padding: 0 md;
   height: md;
   box-shadow: xs;
+  background-color: backgroundLighter;
 `;
 
 export const NavContainer = styled(PageContainer)`
