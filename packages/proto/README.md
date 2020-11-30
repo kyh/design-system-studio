@@ -19,7 +19,7 @@ $ npm install -g @dsstudio/proto
 $ proto COMMAND
 running command...
 $ proto (-v|--version|version)
-@dsstudio/proto/0.0.8 darwin-x64 node-v15.2.1
+@dsstudio/proto/0.0.9 darwin-x64 node-v15.2.1
 $ proto --help [COMMAND]
 USAGE
   $ proto COMMAND
@@ -82,7 +82,7 @@ EXAMPLE
   proto generate examples/components.json -t=react-styled-components
 ```
 
-_See code: [src/commands/generate.ts](https://github.com/tehkaiyu/design-system-studio/blob/v0.0.8/src/commands/generate.ts)_
+_See code: [src/commands/generate.ts](https://github.com/tehkaiyu/design-system-studio/blob/v0.0.9/src/commands/generate.ts)_
 
 ## `proto help [COMMAND]`
 
