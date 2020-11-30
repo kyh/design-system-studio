@@ -12,14 +12,12 @@ This project is using [lerna](https://github.com/lerna/lerna). Lerna will instal
 npm install
 ```
 
-**Run in development mode**
+**Local development**
 
 ```sh
+cd packages/[package-to-work-on]
 npm run dev
 ```
-
-- `Studio` is now running at `http://localhost:3000/`
-- `Proto` Storybook is now running at `http://localhost:6006/`
 
 ### Resources
 
