@@ -32,7 +32,11 @@
   "dependencies": {
     "@oclif/command": "^1.8.0",
     "@oclif/config": "^1.17.0",
+    "@oclif/plugin-commands": "^1.3.0",
     "@oclif/plugin-help": "^3.2.0",
+    "@oclif/plugin-not-found": "^1.2.4",
+    "@oclif/plugin-update": "^1.3.10",
+    "@oclif/plugin-warn-if-update-available": "^1.7.0",
     "cli-ux": "^5.5.1",
     "tslib": "^2.0.3"
   },
@@ -49,7 +53,11 @@
     "commands": "./lib/commands",
     "bin": "proto",
     "plugins": [
-      "@oclif/plugin-help"
+      "@oclif/plugin-commands",
+      "@oclif/plugin-help",
+      "@oclif/plugin-not-found",
+      "@oclif/plugin-update",
+      "@oclif/plugin-warn-if-update-available"
     ]
   },
   "gitHead": "2167c9242e953f23674c6cf52bfaa5ef683cde38"

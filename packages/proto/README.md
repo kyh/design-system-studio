@@ -24,6 +24,10 @@ USAGE
 ...
 ```
 <!-- usagestop -->
+
+# Quick Start
+_to be completed_
+
 # Commands
 <!-- commands -->
 * [`proto generate [INTERFACE_PATH] -t=[TEMPLATE]`](#proto-generate-interface_path--ttemplate)
@@ -69,6 +73,9 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src/commands/help.ts)_
 <!-- commandsstop -->
+
+# Available Templates
+_to be completed_
 
 # ComponentStyles Interface
 _to be completed_
