@@ -33,9 +33,9 @@
     ]
   },
   "dependencies": {
-    "@dsstudio/tokens": "^0.0.10",
-    "@reduxjs/toolkit": "^1.4.0",
-    "@types/xstyled__styled-components": "^1.19.0",
+    "@dsstudio/tokens": "0.0.10",
+    "@reduxjs/toolkit": "^1.5.0",
+    "@types/xstyled__styled-components": "^1.19.1",
     "@xstyled/styled-components": "^1.19.1",
     "lodash": "^4.17.20",
     "react": "^17.0.1",
