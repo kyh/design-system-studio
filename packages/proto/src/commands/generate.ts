@@ -12,9 +12,9 @@ const templates = ["react-styled-components", "react-emotion"];
 
 export default class Generate extends Command {
   static description = `scaffold a component library from your ComponentStyles interface`;
-  static usage = `@dsstudio/proto generate [interface.json] -t=[${templates[0]}]`;
+  static usage = `generate [INTERFACE_PATH] -t=[TEMPLATE]`;
   static examples = [
-    `@dsstudio/proto generate examples/components.json -t=${templates[0]}`,
+    `proto generate examples/components.json -t=${templates[0]}`,
   ];
 
   static flags = {
@@ -25,7 +25,7 @@ export default class Generate extends Command {
     // flag with a value (-t, --t=VALUE)
     template: flags.string({
       char: "t",
-      description: `Template to generate your component library with. Should be one of: [${templates.join(
+      description: `Template to use in order to generate your component library. Should be one of: [${templates.join(
         " | "
       )}]`,
     }),
