@@ -16,7 +16,7 @@ export const App: React.FC = () => {
     <ThemeProvider theme={currentTheme}>
       <GlobalStyle />
       <Switch>
-        <Route exact path="/">
+        <Route path="/">
           <DiscoverPage />
         </Route>
         <Route exact path="/new">

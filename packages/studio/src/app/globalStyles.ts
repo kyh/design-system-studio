@@ -23,6 +23,11 @@ export const GlobalStyle = createGlobalStyle<any>`
     text-rendering: optimizeLegibility;
   }
 
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+
   .sr-only {
     position: absolute;
     clip: rect(1px,1px,1px,1px);
