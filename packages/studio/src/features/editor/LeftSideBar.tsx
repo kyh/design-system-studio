@@ -3,7 +3,6 @@ import { Flex } from "components/library";
 import { useQueryParams } from "utils/queryUtils";
 import { useTokens, tokensActions } from "features/tokens/tokensSlice";
 import { useThemes, themesActions } from "features/themes/themesSlice";
-import { Sidebar } from "./components/PageLayout";
 
 export const LeftSidebar = () => {
   const { state: tokensState, dispatch } = useTokens();
@@ -25,7 +24,7 @@ export const LeftSidebar = () => {
   const componentKeys = Object.keys(components);
 
   return (
-    <Sidebar side="left">
+    <>
       <Flex>
         <Link to={{ search: `?t=${tokenKeys[0]}` }}>Tokens</Link>
         <Link to={{ search: `?c=${componentKeys[0]}` }}>Components</Link>
@@ -50,6 +49,6 @@ export const LeftSidebar = () => {
           <button>Add new component</button>
         </>
       )}
-    </Sidebar>
+    </>
   );
 };

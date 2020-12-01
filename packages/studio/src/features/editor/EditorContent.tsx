@@ -1,6 +1,4 @@
 import { useQueryParams } from "utils/queryUtils";
-import { Content } from "features/editor/components/PageLayout";
-
 import { useTokens } from "features/tokens/tokensSlice";
 import { TokenContent } from "features/tokens/TokenContent";
 import { useThemes } from "features/themes/themesSlice";
@@ -15,7 +13,7 @@ export const EditorContent = () => {
   const componentKey = params.get("c");
 
   return (
-    <Content>
+    <>
       {!!tokenKey && (
         <TokenContent
           tokenKey={tokenKey}
@@ -31,6 +29,6 @@ export const EditorContent = () => {
           dispatch={dispatch}
         />
       )}
-    </Content>
+    </>
   );
 };
