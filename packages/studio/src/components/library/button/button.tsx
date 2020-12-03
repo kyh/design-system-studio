@@ -18,7 +18,7 @@ import { Flex } from "../flex";
 type DefaultProps = {
   loading?: boolean;
   disabled?: boolean;
-  variant?: "basic" | "primary" | string; // generated
+  variant?: keyof typeof buttonVariants; // generated
 };
 
 export type StyledButtonProps = SpaceProps &

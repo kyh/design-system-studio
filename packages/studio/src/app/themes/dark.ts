@@ -6,6 +6,7 @@ export const theme = merge({}, light, {
   // skins
   colors: {
     // Page
+    pageBackground: tokens.colors.neutrals[800],
     backgroundLight: tokens.colors.neutrals[700],
     background: tokens.colors.neutrals[800],
     backgroundDark: tokens.colors.neutrals[900],

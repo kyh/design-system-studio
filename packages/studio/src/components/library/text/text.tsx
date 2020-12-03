@@ -6,7 +6,7 @@ import {
 } from "../system-functions";
 
 export type TextProps = {
-  variant?: "body" | "heading" | string; // generated
+  variant?: keyof typeof textVariants; // generated
 } & TypographyFunctionsProps;
 
 const base = css`
@@ -18,7 +18,7 @@ const textVariants = {
   body: css`
     font-family: body;
     font-size: body;
-    font-weight: body;
+    font-weight: normal;
     color: text;
   `,
   heading: css`

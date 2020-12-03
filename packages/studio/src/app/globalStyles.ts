@@ -19,7 +19,7 @@ export const GlobalStyle = createGlobalStyle<any>`
     font-size: body;
     font-weight: normal;
     color: text;
-    background-color: background;
+    background-color: pageBackground;
     text-rendering: optimizeLegibility;
   }
 

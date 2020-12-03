@@ -1,19 +1,8 @@
 import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
 import { Box, Heading, Flex } from "../";
-import { Text } from "./text";
+import { Text } from "./Text";
 
 <Meta title="Components/Text" component={Text} />
-
-export const Variant = (props) => (
-  <Text
-    variant="hint"
-    fontSize="body"
-    color="text.secondary"
-    width={3}
-    my={0}
-    {...props}
-  />
-);
 
 # Text
 
@@ -22,21 +11,29 @@ Primitive typographic component, defaults to `<p>`. Use the `as` prop to set the
 <Preview withToolbar>
   <Story name="text">
     <Box>
-      <Flex alignItems="baseline" mb={3}>
-        <Variant>body</Variant>{" "}
-        <Text variant="body">You know nothing, Jon Snow</Text>{" "}
+      <Flex alignItems="baseline" mb="md">
+        <Text variant="hint" width="lg">
+          body
+        </Text>
+        <Text variant="body">You know nothing, Jon Snow</Text>
       </Flex>
-      <Flex alignItems="baseline" mb={3}>
-        <Variant>caption</Variant>{" "}
-        <Text variant="caption">You know nothing, Jon Snow</Text>{" "}
+      <Flex alignItems="baseline" mb="md">
+        <Text variant="hint" width="lg">
+          caption
+        </Text>
+        <Text variant="caption">You know nothing, Jon Snow</Text>
       </Flex>
-      <Flex alignItems="baseline" mb={3}>
-        <Variant>hint</Variant>{" "}
-        <Text variant="hint">You know nothing, Jon Snow</Text>{" "}
+      <Flex alignItems="baseline" mb="md">
+        <Text variant="hint" width="lg">
+          hint
+        </Text>
+        <Text variant="hint">You know nothing, Jon Snow</Text>
       </Flex>
-      <Flex alignItems="baseline" mb={3}>
-        <Variant>label</Variant>{" "}
-        <Text variant="label">You know nothing, Jon Snow</Text>{" "}
+      <Flex alignItems="baseline" mb="md">
+        <Text variant="hint" width="lg">
+          label
+        </Text>
+        <Text variant="label">You know nothing, Jon Snow</Text>
       </Flex>
     </Box>
   </Story>

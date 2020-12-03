@@ -11,6 +11,7 @@ export const theme = {
   // skins
   colors: {
     // Page
+    pageBackground: tokens.colors.neutrals[0],
     backgroundLighter: tokens.colors.neutrals[0],
     backgroundLight: tokens.colors.neutrals[10],
     background: tokens.colors.neutrals[20],
