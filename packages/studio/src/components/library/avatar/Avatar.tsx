@@ -4,6 +4,8 @@ import {
   th,
   compose,
   variant as createVariants,
+  flexboxes,
+  FlexboxesProps,
   position,
   PositionProps,
   space,
@@ -18,7 +20,10 @@ type DefaultProps = {
   size?: "sm" | "md" | "lg"; // generated
 };
 
-export type StyledProps = SpaceProps & PositionProps & DefaultProps;
+export type StyledProps = FlexboxesProps &
+  PositionProps &
+  SpaceProps &
+  DefaultProps;
 
 const base = css`
   display: inline-block;
@@ -80,7 +85,7 @@ const StyledContainer = styled.div<Props>`
   /* generated */
   ${shape}
   ${size}
-  ${compose(space, position)}
+  ${compose(flexboxes, position, space)}
 `;
 
 export type Props = StyledComponentProps<"div", any, StyledProps, never>;
