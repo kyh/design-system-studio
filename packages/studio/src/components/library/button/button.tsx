@@ -3,7 +3,7 @@ import styled, { css, StyledComponentProps } from "@xstyled/styled-components";
 import {
   th,
   compose,
-  variant,
+  variant as createVariants,
   flexboxes,
   FlexboxesProps,
   layout,
@@ -18,28 +18,15 @@ import { Flex } from "../flex";
 type DefaultProps = {
   loading?: boolean;
   disabled?: boolean;
-  variant?: keyof typeof buttonVariants; // generated
+  variant?: "default" | "primary"; // generated
+  size?: "sm" | "md" | "lg"; // generated
 };
 
-export type StyledButtonProps = SpaceProps &
+export type StyledProps = SpaceProps &
   LayoutProps &
   FlexboxesProps &
   PositionProps &
   DefaultProps;
-
-// generated
-const buttonBase = css`
-  font-family: body;
-  font-size: body;
-  line-height: body;
-  font-weight: normal;
-  border-style: solid;
-  border-radius: sm;
-  border-width: normal;
-  padding: sm md;
-  transition: ${th("transitions.fast")};
-  transition-property: color, border-color, box-shadow;
-`;
 
 const base = css`
   position: relative;
@@ -51,8 +38,6 @@ const base = css`
   appearance: none;
   text-decoration: none;
   text-align: center;
-  ${buttonBase}
-
   &:hover {
     text-decoration: none;
   }
@@ -65,79 +50,90 @@ const base = css`
   &:disabled svg {
     opacity: 0.6;
   }
+
+  /* generated */
+  font-family: body;
+  font-size: body;
+  line-height: body;
+  font-weight: normal;
+  border-style: solid;
+  border-radius: sm;
+  border-width: normal;
+  padding: sm md;
+  transition: ${th("transitions.fast")};
+  transition-property: color, border-color, box-shadow;
 `;
 
-// generated
-const buttonVariants = {
-  basic: css`
-    color: text;
-    background-color: backgroundLighter;
-    background-image: ${th("gradients.light")};
-    border-color: borderColor;
-    &:hover {
-      background-color: background;
-      background-image: none;
-      border-color: borderColor;
-    }
-    &:active {
-      background-color: background;
-      background-image: none;
-      border-color: primary;
-    }
-    &:focus {
-      background-color: background;
-      background-image: none;
-      border-color: primary;
-      box-shadow: 0 0 0 1px ${th("colors.primary")};
-    }
-    &:disabled {
+const variant = createVariants({
+  key: "buttons.variant",
+  prop: "variant",
+  default: "basic", // generated
+  variants: {
+    basic: css`
+      color: text;
       background-color: backgroundLighter;
       background-image: ${th("gradients.light")};
       border-color: borderColor;
-      box-shadow: none;
-      cursor: not-allowed;
-    }
-  `,
-  primary: css`
-    color: textInverse;
-    background-color: primary;
-    border-color: primaryDark;
-    &:hover {
-      background-color: primaryDark;
-      border-color: primaryDarker;
-    }
-    &:active {
-      background-color: primaryDarker;
-      border-color: primaryDarker;
-    }
-    &:focus {
+      &:hover {
+        background-color: background;
+        background-image: none;
+        border-color: borderColor;
+      }
+      &:active {
+        background-color: background;
+        background-image: none;
+        border-color: primary;
+      }
+      &:focus {
+        background-color: background;
+        background-image: none;
+        border-color: primary;
+        box-shadow: 0 0 0 1px ${th("colors.primary")};
+      }
+      &:disabled {
+        background-color: backgroundLighter;
+        background-image: ${th("gradients.light")};
+        border-color: borderColor;
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+    `,
+    primary: css`
+      color: textInverse;
       background-color: primary;
-      border-color: primaryDarker;
-    }
-    &:disabled {
-      background-color: primaryLighter;
-      border-color: primaryLight;
-      cursor: not-allowed;
-    }
-  `,
-};
-
-const variants = variant({
-  key: "buttons.variants",
-  default: "basic", // generated
-  variants: buttonVariants, // generated
+      border-color: primaryDark;
+      &:hover {
+        background-color: primaryDark;
+        border-color: primaryDarker;
+      }
+      &:active {
+        background-color: primaryDarker;
+        border-color: primaryDarker;
+      }
+      &:focus {
+        background-color: primary;
+        border-color: primaryDarker;
+      }
+      &:disabled {
+        background-color: primaryLighter;
+        border-color: primaryLight;
+        cursor: not-allowed;
+      }
+    `,
+  },
 });
 
 const StyledButton = styled.button<ButtonProps>`
   ${base}
+  /* generated */
+  ${variant}
   ${compose(space, layout, flexboxes, position)}
-  ${variants}
 `;
 
 export type ButtonProps = StyledComponentProps<
   "button",
   any,
-  StyledButtonProps,
+  StyledProps,
   never
 >;
 

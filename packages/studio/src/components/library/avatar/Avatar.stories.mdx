@@ -1,0 +1,35 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { Avatar } from "./Avatar";
+
+<Meta title="Components/Avatar" component={Avatar} />
+
+# Avatars
+
+Use round avatars to quickly identify users. Use rounded square avatars to help identify non-user entities or objects, such as products, tools, spaces, etc.
+
+<Preview withToolbar>
+  <Story name="shapes">
+    <Avatar src="https://i.pravatar.cc/100" shape="round" mr="md" />
+    <Avatar src="https://i.pravatar.cc/200" shape="square" mr="md" />
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="sizes">
+    <Avatar src="https://i.pravatar.cc/300" size="lg" mr="md" />
+    <Avatar src="https://i.pravatar.cc/400" size="md" mr="md" />
+    <Avatar src="https://i.pravatar.cc/500" size="sm" mr="md" />
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="states">
+    <Avatar loading mr="md" />
+    <Avatar username="Kaiyu Hsu" mr="md" />
+    <Avatar src="https://i.pravatar.cc/600" mr="md" />
+  </Story>
+</Preview>
+
+## Component Props
+
+<Props of={Avatar} />

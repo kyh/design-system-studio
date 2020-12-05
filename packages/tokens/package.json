@@ -36,6 +36,7 @@
     "json-to-ts": "^1.7.0",
     "lodash": "^4.17.20",
     "npm-watch": "^0.7.0",
+    "react-refresh": "^0.9.0",
     "style-dictionary": "^2.10.2"
   },
   "gitHead": "2167c9242e953f23674c6cf52bfaa5ef683cde38"

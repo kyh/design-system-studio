@@ -1,0 +1,77 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { Badge } from "./Badge";
+import { Flex } from "../";
+
+<Meta title="Components/Badge" component={Badge} />
+
+# Badges
+
+Badges are used exclusively to display a numeric value, indicating a quantitative summary or running tally.
+
+Pills highlight an item's status to allow for easier recognition. Pills are not used for tallies or quantitative summaries, but can be used to display units of time.
+
+<Preview withToolbar>
+  <Story name="shapes">
+    <Badge shape="badge" mr="md">
+      12
+    </Badge>
+    <Badge shape="pill" mr="md">
+      Default
+    </Badge>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="status">
+    <Flex mb="lg">
+      <Badge status="default" mr="md">
+        1
+      </Badge>
+      <Badge status="inverted" mr="md">
+        2
+      </Badge>
+      <Badge status="primary" mr="md">
+        3
+      </Badge>
+      <Badge status="warning" mr="md">
+        4
+      </Badge>
+      <Badge status="error" mr="md">
+        5
+      </Badge>
+      <Badge status="success" mr="md">
+        6
+      </Badge>
+      <Badge status="info" mr="md">
+        7
+      </Badge>
+    </Flex>
+    <Flex>
+      <Badge shape="pill" status="default" mr="md">
+        default
+      </Badge>
+      <Badge shape="pill" status="inverted" mr="md">
+        inverted
+      </Badge>
+      <Badge shape="pill" status="primary" mr="md">
+        primary
+      </Badge>
+      <Badge shape="pill" status="warning" mr="md">
+        warning
+      </Badge>
+      <Badge shape="pill" status="error" mr="md">
+        error
+      </Badge>
+      <Badge shape="pill" status="success" mr="md">
+        success
+      </Badge>
+      <Badge shape="pill" status="info" mr="md">
+        info
+      </Badge>
+    </Flex>
+  </Story>
+</Preview>
+
+## Component Props
+
+<Props of={Badge} />
