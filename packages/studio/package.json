@@ -1,6 +1,6 @@
 {
   "name": "@dsstudio/studio",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "private": true,
   "homepage": "https://github.com/tehkaiyu/design-system-studio",
   "bugs": "https://github.com/tehkaiyu/design-system-studio/issues",
@@ -35,7 +35,7 @@
     ]
   },
   "dependencies": {
-    "@dsstudio/tokens": "^0.0.11",
+    "@dsstudio/tokens": "^0.0.12",
     "@reduxjs/toolkit": "^1.5.0",
     "@xstyled/styled-components": "^1.19.1",
     "lodash": "^4.17.20",
