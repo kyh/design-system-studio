@@ -1,16 +1,16 @@
-import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
 import { Image } from "./Image";
 
 <Meta title="Components/Image" component={Image} />
 
 # Image
 
-<Preview withToolbar>
+<Canvas withToolbar>
   <Story name="default">
     <Image src="https://via.placeholder.com/1500" maxWidth={600} />
   </Story>
-</Preview>
+</Canvas>
 
 ## Component Props
 
-<Props of={Image} />
+<ArgsTable of={Image} />

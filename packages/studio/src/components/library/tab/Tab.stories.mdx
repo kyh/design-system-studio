@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
 import { Tabs } from "./Tabs";
 import { Tab } from "./Tab";
 
@@ -8,7 +8,7 @@ import { Tab } from "./Tab";
 
 Tabs allow for an easy way to organize similar information into groups, without having to use separate pages to do so.
 
-<Preview withToolbar>
+<Canvas withToolbar>
   <Story name="default">
     <Tabs>
       <Tab className="active">My Projects</Tab>
@@ -16,8 +16,8 @@ Tabs allow for an easy way to organize similar information into groups, without 
       <Tab>GitHub</Tab>
     </Tabs>
   </Story>
-</Preview>
+</Canvas>
 
 ## Component Props
 
-<Props of={Tab} />
+<ArgsTable of={Tab} />

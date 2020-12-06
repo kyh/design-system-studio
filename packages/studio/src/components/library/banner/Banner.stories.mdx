@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
 import { Banner } from "./Banner";
 
 <Meta title="Components/Banner" component={Banner} />
@@ -7,7 +7,7 @@ import { Banner } from "./Banner";
 
 Banners are used to display important information to the user, and will commonly appear at the top of the screen.
 
-<Preview withToolbar>
+<Canvas withToolbar>
   <Story name="status">
     <Banner status="warning" mb="lg">
       Our plan pricing was updated. Please take a moment to review the changes.
@@ -16,8 +16,8 @@ Banners are used to display important information to the user, and will commonly
       Your connection was disrupted. Please refresh the page.
     </Banner>
   </Story>
-</Preview>
+</Canvas>
 
 ## Component Props
 
-<Props of={Banner} />
+<ArgsTable of={Banner} />

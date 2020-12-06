@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
 import { Badge } from "./Badge";
 import { Flex } from "../";
 
@@ -10,7 +10,7 @@ Badges are used exclusively to display a numeric value, indicating a quantitativ
 
 Pills highlight an item's status to allow for easier recognition. Pills are not used for tallies or quantitative summaries, but can be used to display units of time.
 
-<Preview withToolbar>
+<Canvas withToolbar>
   <Story name="shapes">
     <Badge shape="badge" mr="md">
       12
@@ -19,9 +19,9 @@ Pills highlight an item's status to allow for easier recognition. Pills are not 
       Default
     </Badge>
   </Story>
-</Preview>
+</Canvas>
 
-<Preview withToolbar>
+<Canvas withToolbar>
   <Story name="status">
     <Flex mb="lg">
       <Badge status="default" mr="md">
@@ -70,8 +70,8 @@ Pills highlight an item's status to allow for easier recognition. Pills are not 
       </Badge>
     </Flex>
   </Story>
-</Preview>
+</Canvas>
 
 ## Component Props
 
-<Props of={Badge} />
+<ArgsTable of={Badge} />

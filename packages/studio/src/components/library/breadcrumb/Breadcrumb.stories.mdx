@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
 import { BreadcrumbGroup } from "./BreadcrumbGroup";
 import { Breadcrumb } from "./Breadcrumb";
 
@@ -10,7 +10,7 @@ Breadcrumbs help users navigate your product, by allowing them to see their curr
 
 To prevent breadcrumbs from becoming long and unwieldy, they can be truncated with ellipses.
 
-<Preview withToolbar>
+<Canvas withToolbar>
   <Story name="status">
     <BreadcrumbGroup mb="lg">
       <Breadcrumb>Shoes</Breadcrumb>
@@ -18,8 +18,8 @@ To prevent breadcrumbs from becoming long and unwieldy, they can be truncated wi
       <Breadcrumb active>Running</Breadcrumb>
     </BreadcrumbGroup>
   </Story>
-</Preview>
+</Canvas>
 
 ## Component Props
 
-<Props of={Breadcrumb} />
+<ArgsTable of={Breadcrumb} />

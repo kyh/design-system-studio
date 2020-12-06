@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
 import { Text } from "./Text";
 import { Heading } from "./Heading";
 
@@ -10,7 +10,7 @@ Our design system leverages a limited, purposeful set of typographic styles. The
 
 Primitive typographic component, defaults to `<p>` for `<Text>` and `<h1>` for `<Heading>`. Use the `as` prop to set the correct HTML element independent from styling.
 
-<Preview withToolbar>
+<Canvas withToolbar>
   <Story name="variants">
     <Text variant="heading" mb="md">
       Heading: You know nothing, Jon Snow
@@ -25,9 +25,9 @@ Primitive typographic component, defaults to `<p>` for `<Text>` and `<h1>` for `
       Caption: You know nothing, Jon Snow
     </Text>
   </Story>
-</Preview>
+</Canvas>
 
-<Preview withToolbar>
+<Canvas withToolbar>
   <Story name="sizes">
     <Heading dsize="xl" mb="md">
       You know nothing, Jon Snow
@@ -42,8 +42,8 @@ Primitive typographic component, defaults to `<p>` for `<Text>` and `<h1>` for `
       You know nothing, Jon Snow
     </Heading>
   </Story>
-</Preview>
+</Canvas>
 
 ## Component Props
 
-<Props of={Text} />
+<ArgsTable of={Text} />

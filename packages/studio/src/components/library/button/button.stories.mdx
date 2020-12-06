@@ -1,4 +1,4 @@
-import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
 import { Button } from "./Button";
 import { ButtonGroup } from "./ButtonGroup";
 import { Box, Flex } from "../";
@@ -9,7 +9,7 @@ import { Box, Flex } from "../";
 
 Buttons are used to initate an action or trigger a link. Buttons and links can contain combinations of clear, concise labels, and can be supplemented with an icon.
 
-<Preview withToolbar>
+<Canvas withToolbar>
   <Story name="variants">
     <Button variant="default" mr="sm">
       Default
@@ -27,13 +27,13 @@ Buttons are used to initate an action or trigger a link. Buttons and links can c
       Link
     </Button>
   </Story>
-</Preview>
+</Canvas>
 
 ## Button Groups
 
 Button Groups allow for easy access to related actions. Button Groups should only be used when there is a close relationship between a set of buttons.
 
-<Preview withToolbar>
+<Canvas withToolbar>
   <Story name="group">
     <ButtonGroup>
       <Button>Left</Button>
@@ -41,7 +41,7 @@ Button Groups allow for easy access to related actions. Button Groups should onl
       <Button>Right</Button>
     </ButtonGroup>
   </Story>
-</Preview>
+</Canvas>
 
 ### Accessibility
 
@@ -77,4 +77,4 @@ Click the attribute in the table below for more information.
 
 ## Component Props
 
-<Props of={Button} />
+<ArgsTable of={Button} />
