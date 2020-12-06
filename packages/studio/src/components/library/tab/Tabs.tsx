@@ -1,19 +1,16 @@
-import styled, { css, Box } from "@xstyled/styled-components";
-import {
-  SpaceProps,
-  LayoutProps,
-  BorderProps,
-  PositionProps,
-} from "@xstyled/system";
+import styled, { css } from "@xstyled/styled-components";
+import { system, SystemProps } from "../system-functions";
 
-export type TabsProps = SpaceProps & LayoutProps & BorderProps & PositionProps;
+type DefaultProps = {};
+type StyledProps = SystemProps & DefaultProps;
 
-// generated
-const tabsBase = css`
+const base = css<StyledProps>`
+  /** generated */
   display: flex;
   align-items: center;
 `;
 
-export const Tabs = styled(Box)<TabsProps>`
-  ${tabsBase}
+export const Tabs = styled.nav<StyledProps>`
+  ${base}
+  ${system}
 `;

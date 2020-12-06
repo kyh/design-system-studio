@@ -1,16 +1,6 @@
 import styled, { css } from "@xstyled/styled-components";
-import {
-  compose,
-  variant as createVariants,
-  flexboxes,
-  FlexboxesProps,
-  layout,
-  LayoutProps,
-  position,
-  PositionProps,
-  space,
-  SpaceProps,
-} from "@xstyled/system";
+import { variant as createVariants } from "@xstyled/system";
+import { system, SystemProps } from "../system-functions";
 
 type DefaultProps = {
   shape?: "badge" | "pill"; // generated
@@ -23,17 +13,11 @@ type DefaultProps = {
     | "success"
     | "info"; // generated
 };
+type StyledProps = SystemProps & DefaultProps;
 
-type StyledProps = FlexboxesProps &
-  LayoutProps &
-  SpaceProps &
-  PositionProps &
-  DefaultProps;
-
-const base = css`
+const base = css<StyledProps>`
   display: inline-block;
   vertical-align: top;
-
   /* generated */
   font-size: caption;
   line-height: 1;
@@ -104,8 +88,8 @@ const status = createVariants({
 
 export const Badge = styled.div<StyledProps>`
   ${base}
-  ${shape}
+  ${system}
   /* generated */
+  ${shape}
   ${status}
-  ${compose(flexboxes, layout, position, space)}
 `;

@@ -5,12 +5,15 @@ type DefaultProps = {};
 type StyledProps = SystemProps & DefaultProps;
 
 const base = css<StyledProps>`
-  max-width: 100%;
-  height: auto;
-  /* generated */
+  /** generated */
+  box-shadow: xs;
+  border-style: solid;
+  border-radius: sm;
+  border-width: normal;
+  border-color: borderColor;
 `;
 
-export const Image = styled.img<StyledProps>`
+export const Card = styled.section<StyledProps>`
   ${base}
   ${system}
 `;

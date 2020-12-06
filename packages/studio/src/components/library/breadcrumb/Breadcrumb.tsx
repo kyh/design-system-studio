@@ -1,32 +1,19 @@
 import styled, { css } from "@xstyled/styled-components";
-import {
-  th,
-  compose,
-  flexboxes,
-  FlexboxesProps,
-  layout,
-  LayoutProps,
-  position,
-  PositionProps,
-  space,
-  SpaceProps,
-} from "@xstyled/system";
+import { th } from "@xstyled/system";
+import { system, SystemProps } from "../system-functions";
 
 type DefaultProps = { active?: boolean };
+type StyledProps = SystemProps & DefaultProps;
 
-type StyledProps = FlexboxesProps &
-  LayoutProps &
-  PositionProps &
-  SpaceProps &
-  DefaultProps;
-
-export const Breadcrumb = styled.a<StyledProps>`
-  /** generated */
+const base = css<StyledProps>`
+  /* generated */
   position: relative;
   color: textLighter;
   padding: xs sm;
   border-radius: sm;
   margin-right: md;
+  transition: ${th("transitions.fast")};
+  transition-property: color, background-color;
   &:hover {
     color: primary;
     background-color: background;
@@ -46,5 +33,9 @@ export const Breadcrumb = styled.a<StyledProps>`
         cursor: text;
       }
     `}
-  ${compose(flexboxes, layout, position, space)}
+`;
+
+export const Breadcrumb = styled.a<StyledProps>`
+  ${base}
+  ${system}
 `;

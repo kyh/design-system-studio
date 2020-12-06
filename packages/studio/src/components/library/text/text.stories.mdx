@@ -1,41 +1,46 @@
 import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
-import { Box, Heading, Flex } from "../";
 import { Text } from "./Text";
+import { Heading } from "./Heading";
 
 <Meta title="Components/Text" component={Text} />
 
 # Text
 
-Primitive typographic component, defaults to `<p>`. Use the `as` prop to set the correct HTML element independent from styling.
+Our design system leverages a limited, purposeful set of typographic styles. These styles map as much as possible to functional roles so you know when each can be used.
+
+Primitive typographic component, defaults to `<p>` for `<Text>` and `<h1>` for `<Heading>`. Use the `as` prop to set the correct HTML element independent from styling.
 
 <Preview withToolbar>
-  <Story name="text">
-    <Box>
-      <Flex alignItems="baseline" mb="md">
-        <Text variant="hint" width="lg">
-          body
-        </Text>
-        <Text variant="body">You know nothing, Jon Snow</Text>
-      </Flex>
-      <Flex alignItems="baseline" mb="md">
-        <Text variant="hint" width="lg">
-          caption
-        </Text>
-        <Text variant="caption">You know nothing, Jon Snow</Text>
-      </Flex>
-      <Flex alignItems="baseline" mb="md">
-        <Text variant="hint" width="lg">
-          hint
-        </Text>
-        <Text variant="hint">You know nothing, Jon Snow</Text>
-      </Flex>
-      <Flex alignItems="baseline" mb="md">
-        <Text variant="hint" width="lg">
-          label
-        </Text>
-        <Text variant="label">You know nothing, Jon Snow</Text>
-      </Flex>
-    </Box>
+  <Story name="variants">
+    <Text variant="heading" mb="md">
+      Heading: You know nothing, Jon Snow
+    </Text>
+    <Text variant="subHeading" mb="md">
+      SubHeading: You know nothing, Jon Snow
+    </Text>
+    <Text variant="body" mb="md">
+      Body: You know nothing, Jon Snow
+    </Text>
+    <Text variant="caption" mb="md">
+      Caption: You know nothing, Jon Snow
+    </Text>
+  </Story>
+</Preview>
+
+<Preview withToolbar>
+  <Story name="sizes">
+    <Heading dsize="xl" mb="md">
+      You know nothing, Jon Snow
+    </Heading>
+    <Heading dsize="lg" mb="md">
+      You know nothing, Jon Snow
+    </Heading>
+    <Heading dsize="md" mb="md">
+      You know nothing, Jon Snow
+    </Heading>
+    <Heading dsize="sm" mb="md">
+      You know nothing, Jon Snow
+    </Heading>
   </Story>
 </Preview>
 

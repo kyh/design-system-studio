@@ -1,27 +1,12 @@
-import styled from "@xstyled/styled-components";
-import {
-  th,
-  compose,
-  flexboxes,
-  FlexboxesProps,
-  layout,
-  LayoutProps,
-  position,
-  PositionProps,
-  space,
-  SpaceProps,
-} from "@xstyled/system";
+import styled, { css } from "@xstyled/styled-components";
+import { th } from "@xstyled/system";
+import { system, SystemProps } from "../system-functions";
 import { Breadcrumb } from "./Breadcrumb";
 
 type DefaultProps = {};
+type StyledProps = SystemProps & DefaultProps;
 
-type StyledProps = FlexboxesProps &
-  LayoutProps &
-  PositionProps &
-  SpaceProps &
-  DefaultProps;
-
-export const BreadcrumbGroup = styled.div<StyledProps>`
+const base = css<StyledProps>`
   /** generated */
   ${Breadcrumb}:hover::after {
     color: textLighter;
@@ -34,5 +19,9 @@ export const BreadcrumbGroup = styled.div<StyledProps>`
   ${Breadcrumb}:last-child::after {
     display: none;
   }
-  ${compose(flexboxes, layout, position, space)}
+`;
+
+export const BreadcrumbGroup = styled.div<StyledProps>`
+  ${base}
+  ${system}
 `;

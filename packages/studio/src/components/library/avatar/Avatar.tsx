@@ -1,16 +1,7 @@
 import React, { forwardRef } from "react";
 import styled, { css, StyledComponentProps } from "@xstyled/styled-components";
-import {
-  th,
-  compose,
-  variant as createVariants,
-  flexboxes,
-  FlexboxesProps,
-  position,
-  PositionProps,
-  space,
-  SpaceProps,
-} from "@xstyled/system";
+import { th, variant as createVariants } from "@xstyled/system";
+import { system, SystemProps } from "../system-functions";
 
 type DefaultProps = {
   loading?: boolean;
@@ -19,10 +10,9 @@ type DefaultProps = {
   shape?: "round" | "square"; // generated
   size?: "sm" | "md" | "lg"; // generated
 };
+type StyledProps = SystemProps & DefaultProps;
 
-type StyledProps = FlexboxesProps & PositionProps & SpaceProps & DefaultProps;
-
-const base = css`
+const base = css<StyledProps>`
   display: inline-block;
   vertical-align: top;
   overflow: hidden;
@@ -31,7 +21,6 @@ const base = css`
     height: auto;
     display: block;
   }
-
   /* generated */
   background-color: background;
   text-transform: uppercase;
@@ -79,10 +68,10 @@ const size = createVariants({
 
 const StyledContainer = styled.div<Props>`
   ${base}
+  ${system}
   /* generated */
   ${shape}
   ${size}
-  ${compose(flexboxes, position, space)}
 `;
 
 type Props = StyledComponentProps<"div", any, StyledProps, never>;

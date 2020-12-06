@@ -1,28 +1,13 @@
 import styled, { css } from "@xstyled/styled-components";
-import {
-  compose,
-  variant as createVariants,
-  flexboxes,
-  FlexboxesProps,
-  layout,
-  LayoutProps,
-  position,
-  PositionProps,
-  space,
-  SpaceProps,
-} from "@xstyled/system";
+import { variant as createVariants } from "@xstyled/system";
+import { system, SystemProps } from "../system-functions";
 
 type DefaultProps = {
   status?: "warning" | "error"; // generated
 };
+type StyledProps = SystemProps & DefaultProps;
 
-type StyledProps = FlexboxesProps &
-  LayoutProps &
-  PositionProps &
-  SpaceProps &
-  DefaultProps;
-
-const base = css`
+const base = css<StyledProps>`
   display: flex;
   width: 100%;
   /* generated */
@@ -48,7 +33,7 @@ const status = createVariants({
 
 export const Banner = styled.div<StyledProps>`
   ${base}
+  ${system}
   /* generated */
   ${status}
-  ${compose(flexboxes, layout, position, space)}
 `;

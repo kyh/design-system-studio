@@ -1,0 +1,122 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { Card } from "./Card";
+import { CardSection, CardHeader, CardBody, CardFooter } from "./CardSection";
+import { Flex, Heading, Button } from "../";
+
+<Meta title="Components/Card" component={Card} />
+
+# Card
+
+Cards are flexible, rectangular containers for text, images, or actions. Cards can contain multple of these elements at any given time.
+
+Cards are intended to be flexible across device widths, and are fully responsive.
+
+<Preview withToolbar>
+  <Story name="variations">
+    <Flex mb="xl">
+      <Card mr="xl">
+        <CardHeader>
+          <Heading color="textDarker">Default</Heading>
+        </CardHeader>
+        <CardBody>
+          This is the body text of a card. It can be used to describe its
+          content or associated action.
+        </CardBody>
+      </Card>
+      <Card mr="xl">
+        <CardHeader>
+          <Heading color="textDarker">Header action</Heading>
+          <Button variant="link">Action</Button>
+        </CardHeader>
+        <CardBody>
+          Cards can have actions in their footer and their header, or even both
+          at the same time.
+        </CardBody>
+      </Card>
+      <Card mr="xl">
+        <CardHeader>
+          <Heading color="textDarker">Footer action</Heading>
+        </CardHeader>
+        <CardBody>
+          Cards can have actions in their footer and their header, or even both
+          at the same time.
+        </CardBody>
+        <CardFooter>
+          <Button mr="md">Cancel</Button>
+          <Button variant="primary">Confirm</Button>
+        </CardFooter>
+      </Card>
+    </Flex>
+    <Flex mb="xl">
+      <Card height="fit-content" mr="xl">
+        <CardHeader>
+          <Heading color="textDarker">Sections</Heading>
+        </CardHeader>
+        <CardBody divider>
+          Cards can be split up into multiple sections, to seperate each piece
+          of content into its own, distinct section.
+        </CardBody>
+        <CardBody>
+          This makes it easier to scan the individual parts of a card.
+        </CardBody>
+      </Card>
+      <Card mr="xl">
+        <CardHeader>
+          <Heading color="textDarker">Titled sections</Heading>
+        </CardHeader>
+        <CardBody divider>
+          <Heading variant="subHeading" color="textLighter" mb="md">
+            Section title
+          </Heading>
+          Card sections can also appear with a section title.
+        </CardBody>
+        <CardBody>
+          <Heading variant="subHeading" color="textLighter" mb="md">
+            Section title
+          </Heading>
+          Thus making it easier to regonize the function of each individual section.
+        </CardBody>
+      </Card>
+    </Flex>
+    <Flex mb="xl">
+      <Card mr="xl">
+        <CardHeader>
+          <Heading color="textDarker">Section actions</Heading>
+        </CardHeader>
+        <CardBody divider>
+          <Flex mb="md" justifyContent="space-between" alignItems="center">
+            <Heading variant="subHeading" color="textLighter">
+              Section title
+            </Heading>
+            <Button variant="link" fontSize="subHeading">
+              Action
+            </Button>
+          </Flex>
+          Much like card headers, section headers can also contain actions.
+        </CardBody>
+        <CardBody>
+          <Heading variant="subHeading" color="textLighter" mb="md">
+            Section title
+          </Heading>
+          However, not every section needs to have an associated action.
+        </CardBody>
+      </Card>
+      <Card height="fit-content" mr="xl">
+        <CardHeader>
+          <Heading color="textDarker">Subdued sections</Heading>
+        </CardHeader>
+        <CardBody divider>
+          Cards can contain subdued sections for less important, or disabled
+          content.
+        </CardBody>
+        <CardBody bg="backgroundLight">
+          Subdued sections can contain brief descriptions or helpful links.
+        </CardBody>
+      </Card>
+    </Flex>
+  </Story>
+</Preview>
+
+## Component Props
+
+<Props of={Card} />

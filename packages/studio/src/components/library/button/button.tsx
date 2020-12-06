@@ -1,16 +1,7 @@
 import React, { forwardRef } from "react";
 import styled, { css, StyledComponentProps } from "@xstyled/styled-components";
-import {
-  th,
-  compose,
-  variant as createVariants,
-  flexboxes,
-  FlexboxesProps,
-  position,
-  PositionProps,
-  space,
-  SpaceProps,
-} from "@xstyled/system";
+import { th, variant as createVariants } from "@xstyled/system";
+import { system, SystemProps } from "../system-functions";
 import { Flex } from "../flex";
 
 type DefaultProps = {
@@ -19,10 +10,9 @@ type DefaultProps = {
   selected?: boolean;
   variant?: "default" | "primary" | "important" | "transparent" | "link";
 };
+type StyledProps = SystemProps & DefaultProps;
 
-type StyledProps = FlexboxesProps & PositionProps & SpaceProps & DefaultProps;
-
-const base = css`
+const base = css<StyledProps>`
   position: relative;
   white-space: nowrap;
   vertical-align: middle;
@@ -44,7 +34,6 @@ const base = css`
   &:disabled svg {
     opacity: 0.6;
   }
-
   /* generated */
   font-family: body;
   font-size: body;
@@ -68,6 +57,7 @@ const variant = createVariants({
       background-color: backgroundLighter;
       background-image: ${th("gradients.light")};
       border-color: borderColor;
+      transition-property: color, border-color, box-shadow;
       &:hover {
         background-color: background;
         background-image: none;
@@ -192,9 +182,9 @@ type Props = StyledComponentProps<"button", any, StyledProps, never>;
 
 export const StyledButton = styled.button<Props>`
   ${base}
+  ${system}
   /* generated */
   ${variant}
-  ${compose(space, flexboxes, position)}
 `;
 
 export const Button = forwardRef<HTMLButtonElement, Props>(

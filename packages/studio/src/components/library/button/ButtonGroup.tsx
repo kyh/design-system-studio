@@ -1,25 +1,10 @@
-import styled from "@xstyled/styled-components";
-import {
-  compose,
-  flexboxes,
-  FlexboxesProps,
-  layout,
-  LayoutProps,
-  position,
-  PositionProps,
-  space,
-  SpaceProps,
-} from "@xstyled/system";
+import styled, { css } from "@xstyled/styled-components";
+import { system, SystemProps } from "../system-functions";
 
 type DefaultProps = {};
+type StyledProps = SystemProps & DefaultProps;
 
-type StyledProps = FlexboxesProps &
-  LayoutProps &
-  PositionProps &
-  SpaceProps &
-  DefaultProps;
-
-export const ButtonGroup = styled.div<StyledProps>`
+const base = css<StyledProps>`
   /** generated */
   > button {
     border-radius: 0;
@@ -35,5 +20,9 @@ export const ButtonGroup = styled.div<StyledProps>`
       z-index: 1;
     }
   }
-  ${compose(flexboxes, layout, position, space)}
+`;
+
+export const ButtonGroup = styled.div<StyledProps>`
+  ${base}
+  ${system}
 `;

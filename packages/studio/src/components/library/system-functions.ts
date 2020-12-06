@@ -12,20 +12,28 @@ import {
   ColorProps,
   typography,
   TypographyProps,
+  backgrounds,
+  BackgroundProps,
+  border,
+  BorderProps,
 } from "@xstyled/system";
 
-export type TypographyFunctionsProps = SpaceProps &
+export type SystemProps = SpaceProps &
   ColorProps &
   LayoutProps &
   FlexboxesProps &
   PositionProps &
-  TypographyProps;
+  TypographyProps &
+  BackgroundProps &
+  BorderProps;
 
-export const typographyFunctions = compose(
+export const system = compose(
   space,
   color,
   layout,
   flexboxes,
   position,
-  typography
+  typography,
+  backgrounds,
+  border
 );
