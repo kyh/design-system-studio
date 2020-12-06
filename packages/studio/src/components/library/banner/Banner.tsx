@@ -16,7 +16,7 @@ type DefaultProps = {
   status?: "warning" | "error"; // generated
 };
 
-export type StyledProps = FlexboxesProps &
+type StyledProps = FlexboxesProps &
   LayoutProps &
   PositionProps &
   SpaceProps &

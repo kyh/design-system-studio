@@ -20,10 +20,7 @@ type DefaultProps = {
   size?: "sm" | "md" | "lg"; // generated
 };
 
-export type StyledProps = FlexboxesProps &
-  PositionProps &
-  SpaceProps &
-  DefaultProps;
+type StyledProps = FlexboxesProps & PositionProps & SpaceProps & DefaultProps;
 
 const base = css`
   display: inline-block;
@@ -88,7 +85,7 @@ const StyledContainer = styled.div<Props>`
   ${compose(flexboxes, position, space)}
 `;
 
-export type Props = StyledComponentProps<"div", any, StyledProps, never>;
+type Props = StyledComponentProps<"div", any, StyledProps, never>;
 
 export const Avatar = forwardRef<HTMLDivElement, Props>(
   ({ loading = false, username = "", src = "", ...props }, ref) => {

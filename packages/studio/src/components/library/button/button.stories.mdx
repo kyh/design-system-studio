@@ -1,16 +1,45 @@
 import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
 import { Button } from "./Button";
+import { ButtonGroup } from "./ButtonGroup";
 import { Box, Flex } from "../";
 
 <Meta title="Components/Button" component={Button} />
 
-# Button component
+# Buttons
 
-Primitive button component
+Buttons are used to initate an action or trigger a link. Buttons and links can contain combinations of clear, concise labels, and can be supplemented with an icon.
 
 <Preview withToolbar>
   <Story name="variants">
-    <Button mr={2}>Hello world</Button>
+    <Button variant="default" mr="sm">
+      Default
+    </Button>
+    <Button variant="primary" mr="sm">
+      Primary
+    </Button>
+    <Button variant="important" mr="sm">
+      Important
+    </Button>
+    <Button variant="transparent" mr="sm">
+      Transparent
+    </Button>
+    <Button variant="link" mr="sm">
+      Link
+    </Button>
+  </Story>
+</Preview>
+
+## Button Groups
+
+Button Groups allow for easy access to related actions. Button Groups should only be used when there is a close relationship between a set of buttons.
+
+<Preview withToolbar>
+  <Story name="group">
+    <ButtonGroup>
+      <Button>Left</Button>
+      <Button>Middle</Button>
+      <Button>Right</Button>
+    </ButtonGroup>
   </Story>
 </Preview>
 

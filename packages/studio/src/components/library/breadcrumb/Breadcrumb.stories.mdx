@@ -1,0 +1,25 @@
+import { Meta, Story, Props, Preview } from "@storybook/addon-docs/blocks";
+import { BreadcrumbGroup } from "./BreadcrumbGroup";
+import { Breadcrumb } from "./Breadcrumb";
+
+<Meta title="Components/Breadcrumb" component={Breadcrumb} />
+
+# Breadcrumbs
+
+Breadcrumbs help users navigate your product, by allowing them to see their current location in relation to the rest of the product. By displaying the page hierarchy, user can understand the path they’ve taken to their current location.
+
+To prevent breadcrumbs from becoming long and unwieldy, they can be truncated with ellipses.
+
+<Preview withToolbar>
+  <Story name="status">
+    <BreadcrumbGroup mb="lg">
+      <Breadcrumb>Shoes</Breadcrumb>
+      <Breadcrumb>Mens</Breadcrumb>
+      <Breadcrumb active>Running</Breadcrumb>
+    </BreadcrumbGroup>
+  </Story>
+</Preview>
+
+## Component Props
+
+<Props of={Breadcrumb} />

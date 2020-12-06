@@ -24,7 +24,7 @@ type DefaultProps = {
     | "info"; // generated
 };
 
-export type StyledProps = FlexboxesProps &
+type StyledProps = FlexboxesProps &
   LayoutProps &
   SpaceProps &
   PositionProps &

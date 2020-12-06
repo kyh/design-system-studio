@@ -1,0 +1,50 @@
+import styled, { css } from "@xstyled/styled-components";
+import {
+  th,
+  compose,
+  flexboxes,
+  FlexboxesProps,
+  layout,
+  LayoutProps,
+  position,
+  PositionProps,
+  space,
+  SpaceProps,
+} from "@xstyled/system";
+
+type DefaultProps = { active?: boolean };
+
+type StyledProps = FlexboxesProps &
+  LayoutProps &
+  PositionProps &
+  SpaceProps &
+  DefaultProps;
+
+export const Breadcrumb = styled.a<StyledProps>`
+  /** generated */
+  position: relative;
+  color: textLighter;
+  padding: xs sm;
+  border-radius: sm;
+  margin-right: md;
+  &:hover {
+    color: primary;
+    background-color: background;
+    cursor: pointer;
+  }
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 2px ${th("colors.primary")};
+  }
+  ${({ active }) =>
+    active &&
+    css`
+      color: text;
+      &:hover {
+        color: text;
+        background-color: transparent;
+        cursor: text;
+      }
+    `}
+  ${compose(flexboxes, layout, position, space)}
+`;

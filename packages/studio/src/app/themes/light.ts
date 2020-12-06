@@ -26,6 +26,7 @@ export const theme = {
     backgroundInverseDarker: tokens.colors.neutrals[800],
     // Typography
     text: tokens.colors.neutrals[800],
+    textLighter: tokens.colors.neutrals[100],
     textInverse: tokens.colors.neutrals[10],
     // Borders
     borderColor: tokens.colors.neutrals[40],

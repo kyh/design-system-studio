@@ -6,8 +6,6 @@ import {
   variant as createVariants,
   flexboxes,
   FlexboxesProps,
-  layout,
-  LayoutProps,
   position,
   PositionProps,
   space,
@@ -18,15 +16,11 @@ import { Flex } from "../flex";
 type DefaultProps = {
   loading?: boolean;
   disabled?: boolean;
-  variant?: "default" | "primary"; // generated
-  size?: "sm" | "md" | "lg"; // generated
+  selected?: boolean;
+  variant?: "default" | "primary" | "important" | "transparent" | "link";
 };
 
-export type StyledProps = SpaceProps &
-  LayoutProps &
-  FlexboxesProps &
-  PositionProps &
-  DefaultProps;
+type StyledProps = FlexboxesProps & PositionProps & SpaceProps & DefaultProps;
 
 const base = css`
   position: relative;
@@ -61,15 +55,15 @@ const base = css`
   border-width: normal;
   padding: sm md;
   transition: ${th("transitions.fast")};
-  transition-property: color, border-color, box-shadow;
+  transition-property: color, background-color, border-color, box-shadow;
 `;
 
 const variant = createVariants({
   key: "buttons.variant",
   prop: "variant",
-  default: "basic", // generated
+  default: "default",
   variants: {
-    basic: css`
+    default: css`
       color: text;
       background-color: backgroundLighter;
       background-image: ${th("gradients.light")};
@@ -113,31 +107,97 @@ const variant = createVariants({
       &:focus {
         background-color: primary;
         border-color: primaryDarker;
+        box-shadow: 0 0 0 1px ${th("colors.primaryDarker")};
       }
       &:disabled {
         background-color: primaryLighter;
         border-color: primaryLight;
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+    `,
+    important: css`
+      color: textInverse;
+      background-color: error;
+      border-color: errorDark;
+      &:hover {
+        background-color: errorDark;
+        border-color: errorDarker;
+      }
+      &:active {
+        background-color: errorDarker;
+        border-color: errorDarker;
+      }
+      &:focus {
+        background-color: error;
+        border-color: errorDarker;
+        box-shadow: 0 0 0 1px ${th("colors.errorDarker")};
+      }
+      &:disabled {
+        background-color: errorLighter;
+        border-color: errorLight;
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+    `,
+    transparent: css`
+      color: text;
+      background-color: transparent;
+      border-color: transparent;
+      &:hover {
+        color: primary;
+        background-color: background;
+      }
+      &:active {
+        color: primary;
+      }
+      &:focus {
+        border-color: primaryDarker;
+        box-shadow: 0 0 0 1px ${th("colors.primaryDarker")};
+      }
+      &:disabled {
+        color: textLighter;
+        background-color: transparent;
+        border-color: transparent;
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+    `,
+    link: css`
+      color: primary;
+      background-color: transparent;
+      border-color: transparent;
+      padding: 0 2px;
+      &:hover {
+        color: primaryDark;
+      }
+      &:active {
+        color: primary;
+      }
+      &:focus {
+        border-color: primary;
+      }
+      &:disabled {
+        color: textLighter;
+        background-color: transparent;
+        border-color: transparent;
+        box-shadow: none;
         cursor: not-allowed;
       }
     `,
   },
 });
 
-const StyledButton = styled.button<ButtonProps>`
+type Props = StyledComponentProps<"button", any, StyledProps, never>;
+
+export const StyledButton = styled.button<Props>`
   ${base}
   /* generated */
   ${variant}
-  ${compose(space, layout, flexboxes, position)}
+  ${compose(space, flexboxes, position)}
 `;
 
-export type ButtonProps = StyledComponentProps<
-  "button",
-  any,
-  StyledProps,
-  never
->;
-
-export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = forwardRef<HTMLButtonElement, Props>(
   ({ disabled, loading, children, ...props }, ref) => (
     <StyledButton
       ref={ref}
