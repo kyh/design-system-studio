@@ -1,0 +1,111 @@
+import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
+import { Checkbox } from "./Checkbox";
+import { Radio } from "./Radio";
+import { Flex, Box } from "../";
+
+<Meta title="Components/Checkbox" component={Checkbox} />
+
+# Checkbox & Radio
+
+Checkbox's are input controls for making selections that are not mutually exclusive. Radio buttons are input control for making selections that are mutually exclusive, allowing for only a single input.
+
+<Canvas withToolbar>
+  <Story name="states">
+    <Flex>
+      <Box mr="xl">
+        <Box mb="md">
+          <Checkbox
+            id="example-checkbox1"
+            name="example-checkbox1"
+            label="Unchecked"
+          />
+        </Box>
+        <Box mb="md">
+          <Checkbox
+            id="example-checkbox2"
+            name="example-checkbox2"
+            label="Disabled"
+            disabled
+          />
+        </Box>
+        <Box mb="md">
+          <Checkbox
+            id="example-checkbox3"
+            name="example-checkbox3"
+            label="Checked & Disabled"
+            disabled
+            checked
+          />
+        </Box>
+        <Box mb="md">
+          <Checkbox
+            id="example-checkbox4"
+            name="example-checkbox4"
+            label="Checked"
+            checked
+          />
+        </Box>
+        <Box mb="md">
+          <Checkbox
+            id="example-checkbox5"
+            name="example-checkbox5"
+            label="Hidden label"
+            hideLabel
+          />
+        </Box>
+      </Box>
+      <Box>
+        <Box mb="md">
+          <Radio id="example-radio1" name="example-radio" label="Unchecked" />
+        </Box>
+        <Box mb="md">
+          <Radio
+            id="example-radio2"
+            name="example-radio"
+            label="Disabled"
+            disabled
+          />
+        </Box>
+        <Box mb="md">
+          <Radio
+            id="example-radio3"
+            name="example-radio2"
+            label="Checked & Disabled"
+            disabled
+            checked
+          />
+        </Box>
+        <Box mb="md">
+          <Radio
+            id="example-radio4"
+            name="example-radio3"
+            label="Checked"
+            checked
+          />
+        </Box>
+        <Box mb="md">
+          <Radio
+            id="example-radio5"
+            name="example-radio"
+            label="Hidden label"
+            hideLabel
+          />
+        </Box>
+      </Box>
+    </Flex>
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={Checkbox} />
+
+<!-- # Toggles
+
+Toggles provides users with an easy way to switch a particular functionality on or off. The response should ideally be instant.
+
+<Canvas withToolbar>
+  <Story name="toggle">
+
+  </Story>
+</Canvas> -->

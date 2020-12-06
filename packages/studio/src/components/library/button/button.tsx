@@ -11,6 +11,7 @@ type DefaultProps = {
   variant?: "default" | "primary" | "important" | "transparent" | "link";
 };
 type StyledProps = SystemProps & DefaultProps;
+type Props = StyledComponentProps<"button", any, StyledProps, never>;
 
 const base = css<StyledProps>`
   position: relative;
@@ -177,8 +178,6 @@ const variant = createVariants({
     `,
   },
 });
-
-type Props = StyledComponentProps<"button", any, StyledProps, never>;
 
 export const StyledButton = styled.button<Props>`
   ${base}

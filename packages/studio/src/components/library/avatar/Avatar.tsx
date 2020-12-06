@@ -11,6 +11,7 @@ type DefaultProps = {
   size?: "sm" | "md" | "lg"; // generated
 };
 type StyledProps = SystemProps & DefaultProps;
+type Props = StyledComponentProps<"div", any, StyledProps, never>;
 
 const base = css<StyledProps>`
   display: inline-block;
@@ -49,19 +50,19 @@ const size = createVariants({
   default: "md",
   variants: {
     sm: css`
-      width: xs;
-      height: xs;
-      line-height: ${th("sizes.xs")};
+      width: lg;
+      height: lg;
+      line-height: ${th("sizes.lg")};
     `,
     md: css`
-      width: sm;
-      height: sm;
-      line-height: ${th("sizes.sm")};
+      width: xl;
+      height: xl;
+      line-height: ${th("sizes.xl")};
     `,
     lg: css`
-      width: md;
-      height: md;
-      line-height: ${th("sizes.md")};
+      width: xl40;
+      height: xl40;
+      line-height: ${th("sizes.xl40")};
     `,
   },
 });
@@ -73,8 +74,6 @@ const StyledContainer = styled.div<Props>`
   ${shape}
   ${size}
 `;
-
-type Props = StyledComponentProps<"div", any, StyledProps, never>;
 
 export const Avatar = forwardRef<HTMLDivElement, Props>(
   ({ loading = false, username = "", src = "", ...props }, ref) => {

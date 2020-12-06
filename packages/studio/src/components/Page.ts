@@ -8,12 +8,12 @@ export const PageContainer = styled.section`
 `;
 
 export const Logo = styled.img`
-  height: sm;
+  height: xl40;
 `;
 
 export const Nav = styled.nav`
   padding: 0 md;
-  height: md;
+  height: xl60;
   box-shadow: xs;
   background-color: backgroundLighter;
   position: relative;
