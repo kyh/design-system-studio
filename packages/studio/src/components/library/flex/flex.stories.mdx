@@ -9,19 +9,19 @@ import { Flex } from "./Flex";
 Flex component helps you create flexbox layouts.
 
 <Canvas withToolbar>
-  <Story name="flex">
-    <Flex flexDirection="column" p={4}>
-      <Box bg="page.backgroundInverse" p={3} mb={2}>
-        <Text color="page.colorInverse" textAlign="center">
-          This is a flex box item
+  <Story name="default">
+    <Flex flexDirection="column" p="lg">
+      <Flex bg="backgroundInverse" justifyContent="center" p="md" mb="sm">
+        <Text color="textInverse">
+          This is a flexbox item, justified center
         </Text>
-      </Box>
+      </Flex>
       <Flex justifyContent="space-between">
-        <Box bg="page.backgroundInverse" p={3}>
-          <Text color="page.colorInverse">Left Side</Text>
+        <Box bg="backgroundInverse" p="md">
+          <Text color="textInverse">Left Side</Text>
         </Box>
-        <Box bg="page.backgroundInverse" p={3}>
-          <Text color="page.colorInverse">Right Side</Text>
+        <Box bg="backgroundInverse" p="md">
+          <Text color="textInverse">Right Side</Text>
         </Box>
       </Flex>
     </Flex>

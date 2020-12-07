@@ -11,6 +11,12 @@ Our design system leverages a limited, purposeful set of typographic styles. The
 Primitive typographic component, defaults to `<p>` for `<Text>` and `<h1>` for `<Heading>`. Use the `as` prop to set the correct HTML element independent from styling.
 
 <Canvas withToolbar>
+  <Story name="default">
+    <Text>Lorem ipsum?</Text>
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
   <Story name="variants">
     <Text variant="heading" mb="md">
       Heading: You know nothing, Jon Snow
@@ -28,17 +34,17 @@ Primitive typographic component, defaults to `<p>` for `<Text>` and `<h1>` for `
 </Canvas>
 
 <Canvas withToolbar>
-  <Story name="appearances">
-    <Heading appearance="xl" mb="md">
+  <Story name="display sizes">
+    <Heading displaySize="xl" mb="md">
       You know nothing, Jon Snow
     </Heading>
-    <Heading appearance="lg" mb="md">
+    <Heading displaySize="lg" mb="md">
       You know nothing, Jon Snow
     </Heading>
-    <Heading appearance="md" mb="md">
+    <Heading displaySize="md" mb="md">
       You know nothing, Jon Snow
     </Heading>
-    <Heading appearance="sm" mb="md">
+    <Heading displaySize="sm" mb="md">
       You know nothing, Jon Snow
     </Heading>
   </Story>

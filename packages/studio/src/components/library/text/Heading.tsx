@@ -39,9 +39,9 @@ const variant = createVariant({
 });
 
 /* generated */
-const appearance = createVariant({
-  key: "heading.appearance",
-  prop: "appearance",
+const displaySize = createVariant({
+  key: "heading.displaySize",
+  prop: "displaySize",
   default: "default",
   variants: {
     default: css<Props>``,
@@ -69,5 +69,5 @@ export const Heading = styled.h1<Props>`
   ${system}
   /* generated */
   ${variant}
-  ${appearance}
+  ${displaySize}
 `;

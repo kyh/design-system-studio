@@ -12,17 +12,22 @@ Cards are flexible, rectangular containers for text, images, or actions. Cards c
 Cards are intended to be flexible across device widths, and are fully responsive.
 
 <Canvas withToolbar>
-  <Story name="variations">
+  <Story name="default">
+    <Card>
+      <CardHeader>
+        <Heading color="textDarker">Default</Heading>
+      </CardHeader>
+      <CardBody>
+        This is the body text of a card. It can be used to describe its content
+        or associated action.
+      </CardBody>
+    </Card>
+  </Story>
+</Canvas>
+
+<Canvas withToolbar>
+  <Story name="compositions">
     <Flex mb="xl">
-      <Card mr="xl">
-        <CardHeader>
-          <Heading color="textDarker">Default</Heading>
-        </CardHeader>
-        <CardBody>
-          This is the body text of a card. It can be used to describe its
-          content or associated action.
-        </CardBody>
-      </Card>
       <Card mr="xl">
         <CardHeader>
           <Heading color="textDarker">Header action</Heading>

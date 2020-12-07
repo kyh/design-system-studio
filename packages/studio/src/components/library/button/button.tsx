@@ -10,7 +10,7 @@ import styled, {
 import { th, variant as createVariants } from "@xstyled/system";
 
 type DefaultProps = {
-  loading?: boolean;
+  isLoading?: boolean;
   disabled?: boolean;
   active?: boolean;
   variant?: "default" | "primary" | "important" | "transparent" | "link";
@@ -210,15 +210,15 @@ export const StyledButton = styled.button<Props>`
 `;
 
 export const Button = forwardRef<HTMLButtonElement, Props>(
-  ({ loading, disabled, active, children, ...props }, ref) => (
+  ({ isLoading, disabled, active, children, ...props }, ref) => (
     <StyledButton
       ref={ref}
-      disabled={loading || disabled}
-      loading={loading}
+      disabled={isLoading || disabled}
+      isLoading={isLoading}
       active={active}
       {...props}
     >
-      {loading && (
+      {isLoading && (
         <Box
           display="flex"
           alignItems="center"
@@ -238,7 +238,7 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
         alignItems="center"
         position="relative"
         justifyContent="center"
-        opacity={loading ? 0 : 1}
+        opacity={isLoading ? 0 : 1}
       >
         {children}
       </Box>

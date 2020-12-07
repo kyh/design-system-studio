@@ -2,7 +2,7 @@ import styled, { css, system, SystemProps } from "@xstyled/styled-components";
 import { th } from "@xstyled/system";
 
 type DefaultProps = {
-  loading?: boolean;
+  isLoading?: boolean;
   disabled?: boolean;
 };
 type Props = SystemProps & DefaultProps;
