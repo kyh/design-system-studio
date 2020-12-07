@@ -1,16 +1,15 @@
-import styled, { css } from "@xstyled/styled-components";
-import { system, SystemProps } from "../system-functions";
+import styled, { css, system, SystemProps } from "@xstyled/styled-components";
 
 type DefaultProps = {};
-type StyledProps = SystemProps & DefaultProps;
+type Props = SystemProps & DefaultProps;
 
-const base = css<StyledProps>`
+const base = css<Props>`
   max-width: 100%;
   height: auto;
   /* generated */
 `;
 
-export const Image = styled.img<StyledProps>`
+export const Image = styled.img<Props>`
   ${base}
   ${system}
 `;

@@ -1,11 +1,10 @@
-import styled, { css } from "@xstyled/styled-components";
+import styled, { css, system, SystemProps } from "@xstyled/styled-components";
 import { variant as createVariant } from "@xstyled/system";
-import { system, SystemProps } from "../system-functions";
 
 type DefaultProps = {};
-type StyledProps = SystemProps & DefaultProps;
+type Props = SystemProps & DefaultProps;
 
-const base = css<StyledProps>`
+const base = css<Props>`
   font-family: body;
   margin: 0;
 `;
@@ -39,7 +38,7 @@ const variant = createVariant({
   },
 });
 
-export const Text = styled.p<StyledProps>`
+export const Text = styled.p<Props>`
   ${base}
   ${system}
   /* generated */

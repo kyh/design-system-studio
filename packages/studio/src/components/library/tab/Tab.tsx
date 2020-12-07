@@ -1,14 +1,13 @@
-import styled, { css } from "@xstyled/styled-components";
+import styled, { css, system, SystemProps } from "@xstyled/styled-components";
 import { th } from "@xstyled/system";
-import { system, SystemProps } from "../system-functions";
 
 type DefaultProps = {
   loading?: boolean;
   disabled?: boolean;
 };
-type StyledProps = SystemProps & DefaultProps;
+type Props = SystemProps & DefaultProps;
 
-const base = css<StyledProps>`
+const base = css<Props>`
   display: flex;
   align-items: center;
   height: 100%;
@@ -31,7 +30,7 @@ const base = css<StyledProps>`
   }
 `;
 
-export const Tab = styled.a<StyledProps>`
+export const Tab = styled.a<Props>`
   ${base}
   ${system}
 `;

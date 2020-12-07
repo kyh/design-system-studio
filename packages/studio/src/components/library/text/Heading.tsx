@@ -1,11 +1,10 @@
-import styled, { css } from "@xstyled/styled-components";
+import styled, { css, system, SystemProps } from "@xstyled/styled-components";
 import { variant as createVariant } from "@xstyled/system";
-import { system, SystemProps } from "../system-functions";
 
 type DefaultProps = {};
-type StyledProps = SystemProps & DefaultProps;
+type Props = SystemProps & DefaultProps;
 
-const base = css<StyledProps>`
+const base = css<Props>`
   font-family: heading;
   margin: 0;
 `;
@@ -16,22 +15,22 @@ const variant = createVariant({
   prop: "variant",
   default: "heading",
   variants: {
-    heading: css`
+    heading: css<Props>`
       font-size: heading;
       line-height: heading;
       font-weight: normal;
     `,
-    subHeading: css`
+    subHeading: css<Props>`
       font-size: subHeading;
       line-height: subHeading;
       font-weight: medium;
     `,
-    caption: css`
+    caption: css<Props>`
       font-size: caption;
       line-height: caption;
       font-weight: normal;
     `,
-    body: css`
+    body: css<Props>`
       font-size: body;
       line-height: body;
       font-weight: normal;
@@ -40,35 +39,35 @@ const variant = createVariant({
 });
 
 /* generated */
-const dsize = createVariant({
-  key: "heading.dsize",
-  prop: "dsize",
+const appearance = createVariant({
+  key: "heading.appearance",
+  prop: "appearance",
   default: "default",
   variants: {
-    default: css``,
-    xl: css`
+    default: css<Props>``,
+    xl: css<Props>`
       font-size: displayXl;
       line-height: displayXl;
     `,
-    lg: css`
+    lg: css<Props>`
       font-size: displayLg;
       line-height: displayLg;
     `,
-    md: css`
+    md: css<Props>`
       font-size: displayMd;
       line-height: displayMd;
     `,
-    sm: css`
+    sm: css<Props>`
       font-size: displaySm;
       line-height: displaySm;
     `,
   },
 });
 
-export const Heading = styled.h1<StyledProps>`
+export const Heading = styled.h1<Props>`
   ${base}
   ${system}
   /* generated */
   ${variant}
-  ${dsize}
+  ${appearance}
 `;

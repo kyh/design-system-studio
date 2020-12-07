@@ -1,19 +1,28 @@
 import React, { forwardRef } from "react";
-import styled, { css, StyledComponentProps } from "@xstyled/styled-components";
+import styled, {
+  system,
+  css,
+  StyledComponentProps,
+  SystemProps,
+  DefaultTheme,
+} from "@xstyled/styled-components";
 import { th, variant as createVariants } from "@xstyled/system";
-import { system, SystemProps } from "../system-functions";
 
 type DefaultProps = {
-  loading?: boolean;
+  isLoading?: boolean;
   username?: string;
   src?: string;
   shape?: "round" | "square"; // generated
   size?: "sm" | "md" | "lg"; // generated
 };
-type StyledProps = SystemProps & DefaultProps;
-type Props = StyledComponentProps<"div", any, StyledProps, never>;
+type Props = StyledComponentProps<
+  "div",
+  DefaultTheme,
+  SystemProps & DefaultProps,
+  never
+>;
 
-const base = css<StyledProps>`
+const base = css<Props>`
   display: inline-block;
   vertical-align: top;
   overflow: hidden;
@@ -34,10 +43,10 @@ const shape = createVariants({
   prop: "shape",
   default: "round",
   variants: {
-    round: css`
+    round: css<Props>`
       border-radius: round;
     `,
-    square: css`
+    square: css<Props>`
       border-radius: none;
     `,
   },
@@ -49,17 +58,17 @@ const size = createVariants({
   prop: "size",
   default: "md",
   variants: {
-    sm: css`
+    sm: css<Props>`
       width: lg;
       height: lg;
       line-height: ${th("sizes.lg")};
     `,
-    md: css`
+    md: css<Props>`
       width: xl;
       height: xl;
       line-height: ${th("sizes.xl")};
     `,
-    lg: css`
+    lg: css<Props>`
       width: xl40;
       height: xl40;
       line-height: ${th("sizes.xl40")};
@@ -76,13 +85,13 @@ const StyledContainer = styled.div<Props>`
 `;
 
 export const Avatar = forwardRef<HTMLDivElement, Props>(
-  ({ loading = false, username = "", src = "", ...props }, ref) => {
+  ({ isLoading = false, username = "", src = "", ...props }, ref) => {
     let avatarFigure = <div />;
     const a11yProps: Record<string, any> = {};
 
-    if (loading) {
+    if (isLoading) {
       a11yProps["aria-busy"] = true;
-      a11yProps["aria-label"] = "Loading avatar...";
+      a11yProps["aria-label"] = "isLoading avatar...";
     } else if (src) {
       avatarFigure = <img src={src} alt={username} />;
     } else {
@@ -91,7 +100,12 @@ export const Avatar = forwardRef<HTMLDivElement, Props>(
     }
 
     return (
-      <StyledContainer ref={ref} loading={loading} {...a11yProps} {...props}>
+      <StyledContainer
+        ref={ref}
+        isLoading={isLoading}
+        {...a11yProps}
+        {...props}
+      >
         {avatarFigure}
       </StyledContainer>
     );

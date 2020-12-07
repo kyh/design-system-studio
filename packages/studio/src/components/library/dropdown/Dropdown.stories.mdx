@@ -1,0 +1,116 @@
+import { Meta, Story, ArgsTable, Canvas } from "@storybook/addon-docs/blocks";
+import { Dropdown } from "./Dropdown";
+import {
+  MenuItemContainer,
+  MenuItemHeader,
+  MenuItem,
+  DropdownBody,
+} from "./DropdownSection";
+import { Box, Flex, Heading, Text, Button } from "../";
+
+<Meta title="Components/Dropdown" component={Dropdown} />
+
+# Dropdown
+
+Dropdowns are multi-functional elements that overlay other content. They can contain both actions as well as informational dialogs or controls.
+
+## Dropdown Menu
+
+A dropdown menu displays a list of actions.
+
+<Canvas withToolbar>
+  <Story name="menu">
+    <Flex>
+      <Dropdown minWidth="210px" mr="xl">
+        <MenuItemContainer>
+          <MenuItemHeader>SECTION Header</MenuItemHeader>
+          <MenuItem>Default</MenuItem>
+          <MenuItem>Hover</MenuItem>
+          <MenuItem>Focus</MenuItem>
+          <MenuItem>Notification</MenuItem>
+          <MenuItem disabled>Disabled</MenuItem>
+        </MenuItemContainer>
+      </Dropdown>
+      <Dropdown minWidth="130px" mr="xl">
+        <MenuItemContainer>
+          <MenuItem>Preview</MenuItem>
+          <MenuItem>Edit</MenuItem>
+          <MenuItem color="errorDark">Remove</MenuItem>
+        </MenuItemContainer>
+      </Dropdown>
+      <Dropdown minWidth="210px" mr="xl">
+        <MenuItemContainer divider>
+          <MenuItemHeader>Help</MenuItemHeader>
+          <MenuItem>Knowledge base</MenuItem>
+          <MenuItem>Tutorials</MenuItem>
+          <MenuItem>Support</MenuItem>
+        </MenuItemContainer>
+        <MenuItemContainer>
+          <MenuItemHeader>Options</MenuItemHeader>
+          <MenuItem>Watch for changes</MenuItem>
+        </MenuItemContainer>
+      </Dropdown>
+    </Flex>
+  </Story>
+</Canvas>
+
+## Inline Dialogs
+
+Inline dialogs are overlaying containers for small amounts of information or controls.
+
+<Canvas withToolbar>
+  <Story name="dialog">
+    <Button variant="transparent" active>
+      Dropdown Trigger
+    </Button>
+    <Flex>
+      <Dropdown maxWidth="290px" mr="xl">
+        <DropdownBody>
+          <Heading color="textDarker" mb="md">
+            Watch for changes
+          </Heading>
+          <Text mb="md">
+            Receive updates about any changes made to this section.
+          </Text>
+          <Box as="ul" p="sm">
+            <Flex as="li" mb="md" alignItems="center">
+              <input type="checkbox" id="notification" />
+              <Text as="label" ml="xs" htmlFor="notification">
+                Send notification
+              </Text>
+            </Flex>
+            <Flex as="li" mb="md" alignItems="center">
+              <input type="checkbox" id="email" />
+              <Text as="label" ml="xs" htmlFor="email">
+                Send email message
+              </Text>
+            </Flex>
+            <Flex as="li" alignItems="center">
+              <input type="checkbox" id="daily" />
+              <Text as="label" ml="xs" htmlFor="daily">
+                Send daily summary
+              </Text>
+            </Flex>
+          </Box>
+        </DropdownBody>
+      </Dropdown>
+      <Dropdown maxWidth="290px" mr="xl">
+        <DropdownBody divider>
+          <Heading color="textDarker" mb="lg">
+            Automated updates
+          </Heading>
+          Automatically receive updates whenever anyone makes changes to or archives
+          this page.
+        </DropdownBody>
+        <DropdownBody bg="backgroundLight">
+          Learn more about automated updates and related features in our
+          Knowledge Base.
+        </DropdownBody>
+      </Dropdown>
+    </Flex>
+  </Story>
+</Canvas>
+
+## Component Props
+
+<ArgsTable of={Dropdown} />

@@ -1,12 +1,11 @@
-import styled, { css } from "@xstyled/styled-components";
+import styled, { css, system, SystemProps } from "@xstyled/styled-components";
 import { th } from "@xstyled/system";
-import { system, SystemProps } from "../system-functions";
 import { Breadcrumb } from "./Breadcrumb";
 
 type DefaultProps = {};
-type StyledProps = SystemProps & DefaultProps;
+type Props = SystemProps & DefaultProps;
 
-const base = css<StyledProps>`
+const base = css<Props>`
   /** generated */
   ${Breadcrumb}:hover::after {
     color: textLighter;
@@ -21,7 +20,7 @@ const base = css<StyledProps>`
   }
 `;
 
-export const BreadcrumbGroup = styled.div<StyledProps>`
+export const BreadcrumbGroup = styled.div<Props>`
   ${base}
   ${system}
 `;

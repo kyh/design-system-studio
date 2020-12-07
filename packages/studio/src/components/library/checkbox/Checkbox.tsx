@@ -1,32 +1,42 @@
 import React, { forwardRef } from "react";
-import styled, { css, StyledComponentProps } from "@xstyled/styled-components";
+import styled, {
+  css,
+  system,
+  SystemProps,
+  StyledComponentProps,
+  DefaultTheme,
+} from "@xstyled/styled-components";
 import { th } from "@xstyled/system";
-import { system, SystemProps, hidden } from "../system-functions";
+import { srOnly } from "../system-utils";
 
 type DefaultProps = {
   label?: string;
   hideLabel?: boolean;
   disabled?: boolean;
 };
-type StyledProps = SystemProps & DefaultProps;
-type Props = StyledComponentProps<"input", any, StyledProps, never>;
+type Props = StyledComponentProps<
+  "input",
+  DefaultTheme,
+  SystemProps & DefaultProps,
+  never
+>;
 
-const Label = styled.label<StyledProps>`
+const Label = styled.label<Props>`
   display: inline-flex;
   align-items: center;
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};
 `;
 
-const LabelText = styled.span<StyledProps>`
+const LabelText = styled.span<Props>`
   margin-left: sm;
-  ${({ hideLabel }) => hideLabel && hidden}
+  ${({ hideLabel }) => hideLabel && srOnly}
 `;
 
 const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
-  ${hidden}
+  ${srOnly}
 `;
 
-const base = css<StyledProps>`
+const base = css<Props>`
   display: inline-block;
   /* generated */
   width: md;
@@ -72,7 +82,7 @@ const StyledCheckbox = styled.div<Props>`
   ${system}
 `;
 
-export const Checkbox = forwardRef<HTMLLabelElement, Props>(
+export const Checkbox = forwardRef<any, Props>(
   (
     {
       id,

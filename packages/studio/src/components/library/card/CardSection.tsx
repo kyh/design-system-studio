@@ -1,17 +1,16 @@
-import styled, { css } from "@xstyled/styled-components";
-import { system, SystemProps } from "../system-functions";
+import styled, { css, system, SystemProps } from "@xstyled/styled-components";
 
 type DefaultProps = {};
-type StyledProps = SystemProps & DefaultProps;
+type Props = SystemProps & DefaultProps;
 
-export const CardHeader = styled.header<StyledProps>`
+export const CardHeader = styled.header<Props>`
   display: flex;
   justify-content: space-between;
   padding: xl xl 0;
   ${system}
 `;
 
-export const CardBody = styled.section<{ divider?: boolean } & StyledProps>`
+export const CardBody = styled.section<{ divider?: boolean } & Props>`
   padding: xl;
   ${({ divider }) =>
     divider &&
@@ -23,13 +22,8 @@ export const CardBody = styled.section<{ divider?: boolean } & StyledProps>`
   ${system}
 `;
 
-export const CardFooter = styled.footer<StyledProps>`
+export const CardFooter = styled.footer<Props>`
   display: flex;
   padding: 0 xl xl;
-  ${system}
-`;
-
-export const CardSection = styled.section<StyledProps>`
-  padding: xl;
   ${system}
 `;

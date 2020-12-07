@@ -1,13 +1,12 @@
-import styled, { css } from "@xstyled/styled-components";
+import styled, { css, system, SystemProps } from "@xstyled/styled-components";
 import { variant as createVariants } from "@xstyled/system";
-import { system, SystemProps } from "../system-functions";
 
 type DefaultProps = {
   status?: "warning" | "error"; // generated
 };
-type StyledProps = SystemProps & DefaultProps;
+type Props = SystemProps & DefaultProps;
 
-const base = css<StyledProps>`
+const base = css<Props>`
   display: flex;
   width: 100%;
   /* generated */
@@ -20,18 +19,18 @@ const status = createVariants({
   prop: "status",
   default: "warning",
   variants: {
-    warning: css`
+    warning: css<Props>`
       color: text;
       background-color: warning;
     `,
-    error: css`
+    error: css<Props>`
       color: textInverse;
       background-color: errorDarker;
     `,
   },
 });
 
-export const Banner = styled.div<StyledProps>`
+export const Banner = styled.div<Props>`
   ${base}
   ${system}
   /* generated */

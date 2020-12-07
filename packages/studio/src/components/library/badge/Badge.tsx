@@ -1,6 +1,5 @@
-import styled, { css } from "@xstyled/styled-components";
+import styled, { css, system, SystemProps } from "@xstyled/styled-components";
 import { variant as createVariants } from "@xstyled/system";
-import { system, SystemProps } from "../system-functions";
 
 type DefaultProps = {
   shape?: "badge" | "pill"; // generated
@@ -13,9 +12,9 @@ type DefaultProps = {
     | "success"
     | "info"; // generated
 };
-type StyledProps = SystemProps & DefaultProps;
+type Props = SystemProps & DefaultProps;
 
-const base = css<StyledProps>`
+const base = css<Props>`
   display: inline-block;
   vertical-align: top;
   /* generated */
@@ -33,10 +32,10 @@ const shape = createVariants({
   prop: "shape",
   default: "badge",
   variants: {
-    badge: css`
+    badge: css<Props>`
       border-radius: 30px;
     `,
-    pill: css`
+    pill: css<Props>`
       border-radius: sm;
     `,
   },
@@ -48,37 +47,37 @@ const status = createVariants({
   prop: "status",
   default: "default",
   variants: {
-    default: css`
+    default: css<Props>`
       color: text;
       background-color: backgroundLight;
       border-color: borderColor;
     `,
-    inverted: css`
+    inverted: css<Props>`
       color: textInverse;
       background-color: backgroundInverse;
       border-color: backgroundInverseDark;
     `,
-    primary: css`
+    primary: css<Props>`
       color: primaryDarker;
       background-color: primaryBackground;
       border-color: primaryLighter;
     `,
-    warning: css`
+    warning: css<Props>`
       color: text;
       background-color: warningBackground;
       border-color: warningLighter;
     `,
-    error: css`
+    error: css<Props>`
       color: errorDarker;
       background-color: errorBackground;
       border-color: errorLighter;
     `,
-    success: css`
+    success: css<Props>`
       color: successDarker;
       background-color: successBackground;
       border-color: successLighter;
     `,
-    info: css`
+    info: css<Props>`
       color: infoDarker;
       background-color: infoBackground;
       border-color: infoLighter;
@@ -86,7 +85,7 @@ const status = createVariants({
   },
 });
 
-export const Badge = styled.div<StyledProps>`
+export const Badge = styled.div<Props>`
   ${base}
   ${system}
   /* generated */

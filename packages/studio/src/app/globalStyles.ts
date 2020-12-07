@@ -1,7 +1,7 @@
 import styledNormalize from "styled-normalize";
-import { createGlobalStyle } from "@xstyled/styled-components";
+import { createGlobalStyle, DefaultTheme } from "@xstyled/styled-components";
 
-export const GlobalStyle = createGlobalStyle<any>`
+export const GlobalStyle = createGlobalStyle<DefaultTheme>`
   ${styledNormalize}
 
   html {
@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle<any>`
     font-family: body;
     font-size: body;
     font-weight: normal;
+    line-height: body;
     color: text;
     background-color: pageBackground;
     text-rendering: optimizeLegibility;
@@ -28,16 +29,24 @@ export const GlobalStyle = createGlobalStyle<any>`
     text-decoration: inherit;
   }
 
-  .sr-only {
-    position: absolute;
-    clip: rect(1px,1px,1px,1px);
-    -webkit-clip-path: inset(50%);
-    clip-path: inset(50%);
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
+  button {
+    border: none;
+    margin: 0;
     padding: 0;
-    border: 0;
-    white-space: nowrap;
+    width: auto;
+    overflow: visible;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: normal;
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+  }
+
+  ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
 `;

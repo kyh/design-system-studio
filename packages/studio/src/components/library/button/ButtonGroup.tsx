@@ -1,10 +1,9 @@
-import styled, { css } from "@xstyled/styled-components";
-import { system, SystemProps } from "../system-functions";
+import styled, { css, system, SystemProps } from "@xstyled/styled-components";
 
 type DefaultProps = {};
-type StyledProps = SystemProps & DefaultProps;
+type Props = SystemProps & DefaultProps;
 
-const base = css<StyledProps>`
+const base = css<Props>`
   /** generated */
   > button {
     border-radius: 0;
@@ -22,7 +21,7 @@ const base = css<StyledProps>`
   }
 `;
 
-export const ButtonGroup = styled.div<StyledProps>`
+export const ButtonGroup = styled.div<Props>`
   ${base}
   ${system}
 `;

@@ -1,19 +1,28 @@
 import React, { forwardRef } from "react";
-import styled, { css, StyledComponentProps } from "@xstyled/styled-components";
+import styled, {
+  Box,
+  css,
+  system,
+  SystemProps,
+  StyledComponentProps,
+  DefaultTheme,
+} from "@xstyled/styled-components";
 import { th, variant as createVariants } from "@xstyled/system";
-import { system, SystemProps } from "../system-functions";
-import { Flex } from "../flex";
 
 type DefaultProps = {
   loading?: boolean;
   disabled?: boolean;
-  selected?: boolean;
+  active?: boolean;
   variant?: "default" | "primary" | "important" | "transparent" | "link";
 };
-type StyledProps = SystemProps & DefaultProps;
-type Props = StyledComponentProps<"button", any, StyledProps, never>;
+type Props = StyledComponentProps<
+  "button",
+  DefaultTheme,
+  SystemProps & DefaultProps,
+  never
+>;
 
-const base = css<StyledProps>`
+const base = css<Props>`
   position: relative;
   white-space: nowrap;
   vertical-align: middle;
@@ -53,7 +62,7 @@ const variant = createVariants({
   prop: "variant",
   default: "default",
   variants: {
-    default: css`
+    default: css<Props>`
       color: text;
       background-color: backgroundLighter;
       background-image: ${th("gradients.light")};
@@ -82,8 +91,16 @@ const variant = createVariants({
         box-shadow: none;
         cursor: not-allowed;
       }
+      ${({ active }) =>
+        active &&
+        css`
+          color: textInverse;
+          background-image: none;
+          background-color: primary;
+          border-color: primaryDarker;
+        `}
     `,
-    primary: css`
+    primary: css<Props>`
       color: textInverse;
       background-color: primary;
       border-color: primaryDark;
@@ -107,7 +124,7 @@ const variant = createVariants({
         cursor: not-allowed;
       }
     `,
-    important: css`
+    important: css<Props>`
       color: textInverse;
       background-color: error;
       border-color: errorDark;
@@ -131,7 +148,7 @@ const variant = createVariants({
         cursor: not-allowed;
       }
     `,
-    transparent: css`
+    transparent: css<Props>`
       color: text;
       background-color: transparent;
       border-color: transparent;
@@ -153,8 +170,14 @@ const variant = createVariants({
         box-shadow: none;
         cursor: not-allowed;
       }
+      ${({ active }) =>
+        active &&
+        css`
+          color: primary;
+          background-color: background;
+        `}
     `,
-    link: css`
+    link: css<Props>`
       color: primary;
       background-color: transparent;
       border-color: transparent;
@@ -187,15 +210,17 @@ export const StyledButton = styled.button<Props>`
 `;
 
 export const Button = forwardRef<HTMLButtonElement, Props>(
-  ({ disabled, loading, children, ...props }, ref) => (
+  ({ loading, disabled, active, children, ...props }, ref) => (
     <StyledButton
       ref={ref}
       disabled={loading || disabled}
       loading={loading}
+      active={active}
       {...props}
     >
       {loading && (
-        <Flex
+        <Box
+          display="flex"
           alignItems="center"
           justifyContent="center"
           position="absolute"
@@ -206,16 +231,17 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
           size="body"
         >
           Loading...
-        </Flex>
+        </Box>
       )}
-      <Flex
+      <Box
+        display="flex"
         alignItems="center"
         position="relative"
         justifyContent="center"
         opacity={loading ? 0 : 1}
       >
         {children}
-      </Flex>
+      </Box>
     </StyledButton>
   )
 );

@@ -1,11 +1,10 @@
-import styled, { css } from "@xstyled/styled-components";
+import styled, { css, system, SystemProps } from "@xstyled/styled-components";
 import { th } from "@xstyled/system";
-import { system, SystemProps } from "../system-functions";
 
 type DefaultProps = { active?: boolean };
-type StyledProps = SystemProps & DefaultProps;
+type Props = SystemProps & DefaultProps;
 
-const base = css<StyledProps>`
+const base = css<Props>`
   /* generated */
   position: relative;
   color: textLighter;
@@ -35,7 +34,7 @@ const base = css<StyledProps>`
     `}
 `;
 
-export const Breadcrumb = styled.a<StyledProps>`
+export const Breadcrumb = styled.a<Props>`
   ${base}
   ${system}
 `;
