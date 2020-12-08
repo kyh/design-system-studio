@@ -27,10 +27,10 @@ export const EditorPage: React.FC = () => {
       <Page>
         <Sidebar side="left">
           <Switch>
-            <Route path={`/editor/:systemId/tokens`}>
+            <Route path={`/editor/:systemId/tokens/:tokenKey?`}>
               <TokenNav />
             </Route>
-            <Route path={`/editor/:systemId/components`}>
+            <Route path={`/editor/:systemId/components/:componentKey?`}>
               <ComponentNav />
             </Route>
           </Switch>
@@ -50,10 +50,10 @@ export const EditorPage: React.FC = () => {
         </Content>
         <Sidebar side="right">
           <Switch>
-            <Route path={`/editor/:systemId/tokens`}>
+            <Route path={`/editor/:systemId/tokens/:tokenKey?`}>
               <TokenProperties />
             </Route>
-            <Route path={`/editor/:systemId/components`}>
+            <Route path={`/editor/:systemId/components/:componentKey?`}>
               <ComponentProperties />
             </Route>
           </Switch>
