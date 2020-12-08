@@ -31,6 +31,10 @@ const base = css<Props>`
         background-color: transparent;
         cursor: text;
       }
+      &:active,
+      &:focus {
+        box-shadow: none;
+      }
     `}
 `;
 

@@ -21,7 +21,9 @@ export const DiscoverPage: React.FC = () => {
       <NavContainer>
         <Nav>
           <Box>
-            <Logo src={`${process.env.PUBLIC_URL}/logo.svg`} />
+            <Box as={Link} to="/" display="inline-flex">
+              <Logo src={`${process.env.PUBLIC_URL}/logo.svg`} />
+            </Box>
           </Box>
           <Tabs>
             <Tab as={NavLink} to="/" exact>

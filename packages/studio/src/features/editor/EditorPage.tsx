@@ -93,7 +93,9 @@ const EditorPageNav = () => {
           <Breadcrumb as={NavLink} to="/">
             Projects
           </Breadcrumb>
-          <Breadcrumb active>Demo System</Breadcrumb>
+          <Breadcrumb as="span" active>
+            Demo System
+          </Breadcrumb>
         </BreadcrumbGroup>
         <Tabs as="section">
           <Tab as={NavLink} to={`/editor/${systemId}`} exact>
