@@ -16,13 +16,12 @@ export const App: React.FC = () => {
     <ThemeProvider theme={currentTheme}>
       <GlobalStyle />
       <Switch>
-        <Route exact path="/new">
+        <Route path="/editor/:systemId">
           <EditorPage />
         </Route>
         <Route path="/">
           <DiscoverPage />
         </Route>
-        <Redirect to="/" />
       </Switch>
     </ThemeProvider>
   );

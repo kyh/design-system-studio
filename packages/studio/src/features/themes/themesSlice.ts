@@ -19,5 +19,5 @@ export const themesReducer = themesSlice.reducer;
 export const useThemes = () => {
   const state = useSelector((state: RootState) => state.themes);
   const dispatch = useDispatch();
-  return { state, dispatch };
+  return { state, dispatch, components: state.currentTheme.components };
 };

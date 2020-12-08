@@ -1,7 +1,7 @@
 import styledNormalize from "styled-normalize";
-import { createGlobalStyle, DefaultTheme } from "@xstyled/styled-components";
+import { createGlobalStyle } from "@xstyled/styled-components";
 
-export const GlobalStyle = createGlobalStyle<DefaultTheme>`
+export const GlobalStyle = createGlobalStyle<any>`
   ${styledNormalize}
 
   html {

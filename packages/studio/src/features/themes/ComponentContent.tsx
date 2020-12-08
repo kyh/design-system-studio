@@ -1,15 +1,17 @@
 import { ThemeProvider } from "@xstyled/styled-components";
-import { Box, Text } from "components/library";
-import { themesActions } from "features/themes/themesSlice";
+import { Box, Heading, Text } from "components";
+import { useTokens } from "features/tokens/tokensSlice";
+import { useThemes } from "features/themes/themesSlice";
+import { useEditorParams } from "features/editor/editorHooks";
 import { parseTheme } from "./themeHelper";
 
-export const ComponentContent = ({
-  componentKey,
-  tokens,
-  themeComponents,
-  dispatch,
-}: any) => {
-  const theme = parseTheme(tokens, themeComponents);
+export const ComponentContent: React.FC = () => {
+  const { state: tokensState } = useTokens();
+  const { state: themesState } = useThemes();
+  const { componentKey } = useEditorParams();
+  const themeComponents = themesState.currentTheme.components;
+
+  const theme = parseTheme(tokensState, themeComponents);
   switch (componentKey) {
     case themeComponents.text.key:
       return (
@@ -26,15 +28,11 @@ export const ComponentContent = ({
 const TextContent = ({ theme, variants }: any) => {
   return (
     <Box>
-      <Text variant="heading" as="h1">
-        Typography
-      </Text>
+      <Heading as="h1">Typography</Heading>
       <Box>
-        <Text variant="heading" as="h2">
-          Variants
-        </Text>
+        <Heading as="h2">Variants</Heading>
         <ThemeProvider theme={theme}>
-          {variants.map((variantKey: string) => (
+          {variants.map((variantKey: any) => (
             <Text key={variantKey} variant={variantKey}>
               You know nothing, Jon Snow
             </Text>

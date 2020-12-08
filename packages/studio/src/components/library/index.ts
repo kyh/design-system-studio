@@ -1,13 +1,12 @@
-export { Box } from "@xstyled/styled-components";
 export * from "./avatar";
 export * from "./badge";
 export * from "./banner";
 export * from "./breadcrumb";
 export * from "./button";
 export * from "./card";
-export * from "./checkbox";
 export * from "./dropdown";
-export * from "./flex";
+export * from "./layout";
 export * from "./image";
 export * from "./tab";
 export * from "./text";
+export * from "./toggle";

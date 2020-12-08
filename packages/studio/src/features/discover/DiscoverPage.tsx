@@ -1,14 +1,29 @@
-import { Switch, Route, NavLink } from "react-router-dom";
-import { Flex, Button, Tabs, Tab } from "components/library";
-import { Logo, Nav, NavContainer, PageContainer } from "components/Page";
+import { Switch, Route, NavLink, Link } from "react-router-dom";
+import {
+  Box,
+  Grid,
+  Logo,
+  Nav,
+  NavContainer,
+  PageContainer,
+  Button,
+  Tabs,
+  Tab,
+  Heading,
+  Card,
+  CardHeader,
+  CardBody,
+} from "components";
 
 export const DiscoverPage: React.FC = () => {
   return (
     <>
-      <Nav>
-        <NavContainer>
-          <Logo src={`${process.env.PUBLIC_URL}/logo.svg`} />
-          <Tabs height="100%">
+      <NavContainer>
+        <Nav>
+          <Box>
+            <Logo src={`${process.env.PUBLIC_URL}/logo.svg`} />
+          </Box>
+          <Tabs>
             <Tab as={NavLink} to="/" exact>
               My Projects
             </Tab>
@@ -19,15 +34,17 @@ export const DiscoverPage: React.FC = () => {
               GitHub
             </Tab>
           </Tabs>
-          <Button>Send Feedback</Button>
-        </NavContainer>
-      </Nav>
+          <Box>
+            <Button>Send Feedback</Button>
+          </Box>
+        </Nav>
+      </NavContainer>
       <PageContainer>
         <Switch>
           <Route exact path="/">
             <Projects />
           </Route>
-          <Route exact path="/discover">
+          <Route path="/discover">
             <Discover />
           </Route>
         </Switch>
@@ -37,9 +54,24 @@ export const DiscoverPage: React.FC = () => {
 };
 
 const Projects = () => {
-  return <Flex pt="xl">Projects Page</Flex>;
+  return (
+    <Box pt="xl">
+      <Heading mb="xl">Projects Page</Heading>
+      <Grid gridTemplateColumns="1fr 1fr 1fr" gridColumnGap="lg">
+        <Card as={Link} to="/editor/demo-system">
+          <CardHeader>
+            <Heading color="textDarker">Demo System</Heading>
+          </CardHeader>
+          <CardBody>
+            This is the body text of a card. It can be used to describe its
+            content or associated action.
+          </CardBody>
+        </Card>
+      </Grid>
+    </Box>
+  );
 };
 
 const Discover = () => {
-  return <Flex pt="xl">Discover Page</Flex>;
+  return <Box pt="xl">Discover Page</Box>;
 };

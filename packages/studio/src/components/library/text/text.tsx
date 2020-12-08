@@ -1,7 +1,9 @@
 import styled, { css, system, SystemProps } from "@xstyled/styled-components";
 import { variant as createVariant } from "@xstyled/system";
 
-type DefaultProps = {};
+type DefaultProps = {
+  variant?: "heading" | "subHeading" | "caption" | "body";
+};
 type Props = SystemProps & DefaultProps;
 
 const base = css<Props>`
@@ -15,22 +17,22 @@ const variant = createVariant({
   prop: "variant",
   default: "body",
   variants: {
-    heading: css`
+    heading: css<Props>`
       font-size: heading;
       line-height: heading;
       font-weight: normal;
     `,
-    subHeading: css`
+    subHeading: css<Props>`
       font-size: subHeading;
       line-height: subHeading;
       font-weight: medium;
     `,
-    caption: css`
+    caption: css<Props>`
       font-size: caption;
       line-height: caption;
       font-weight: normal;
     `,
-    body: css`
+    body: css<Props>`
       font-size: body;
       line-height: body;
       font-weight: normal;

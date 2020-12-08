@@ -1,5 +1,9 @@
 import styled from "@xstyled/styled-components";
 
+export const Logo = styled.img`
+  height: xl40;
+`;
+
 export const PageContainer = styled.section`
   margin-left: auto;
   margin-right: auto;
@@ -7,21 +11,26 @@ export const PageContainer = styled.section`
   max-width: ${({ theme }) => theme.maxWidth};
 `;
 
-export const Logo = styled.img`
-  height: xl40;
+export const Nav = styled(PageContainer)`
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 2fr 1fr;
+  > * {
+    display: flex;
+    align-items: center;
+  }
+  *:nth-child(2) {
+    justify-content: center;
+  }
+  *:nth-child(3) {
+    justify-content: flex-end;
+  }
 `;
 
-export const Nav = styled.nav`
+export const NavContainer = styled.nav`
   padding: 0 md;
   height: xl60;
   box-shadow: xs;
   background-color: backgroundLighter;
   position: relative;
-`;
-
-export const NavContainer = styled(PageContainer)`
-  display: flex;
-  height: 100%;
-  justify-content: space-between;
-  align-items: center;
 `;
