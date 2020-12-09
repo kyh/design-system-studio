@@ -11,6 +11,18 @@ export const PageContainer = styled.section`
   max-width: ${({ theme }) => theme.maxWidth};
 `;
 
+export const Page = styled.main`
+  padding-top: xl;
+`;
+
+export const NavContainer = styled.nav`
+  padding: 0 md;
+  height: xl60;
+  box-shadow: xs;
+  background-color: backgroundLighter;
+  position: relative;
+`;
+
 export const Nav = styled(PageContainer)`
   display: grid;
   height: 100%;
@@ -25,12 +37,4 @@ export const Nav = styled(PageContainer)`
   *:nth-child(3) {
     justify-content: flex-end;
   }
-`;
-
-export const NavContainer = styled.nav`
-  padding: 0 md;
-  height: xl60;
-  box-shadow: xs;
-  background-color: backgroundLighter;
-  position: relative;
 `;

@@ -3,8 +3,7 @@ import { useTokens, tokensActions } from "features/tokens/tokensSlice";
 import { useEditorParams } from "features/editor/editorHooks";
 
 export const TokenNav: React.FC = () => {
-  const { systemId, tokenKey } = useEditorParams();
-  console.log("tid:", tokenKey);
+  const { systemId } = useEditorParams();
   const { state: tokensState, dispatch } = useTokens();
   const tokenKeys = Object.keys(tokensState);
   const addNewTokenSet = () => {

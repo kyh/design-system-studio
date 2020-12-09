@@ -7,6 +7,7 @@ import {
   Nav,
   NavContainer,
   Flex,
+  Grid,
   Button,
   Tabs,
   Tab,
@@ -36,50 +37,54 @@ export const EditorPage: React.FC = () => {
   return (
     <Flex flexDirection="column" height="100vh">
       <EditorPageNav />
-      <Split
-        gridTemplateColumns={columns}
-        onDrag={handleDrag}
-        cursor="col-resize"
-        render={({ getGridProps, getGutterProps }: any) => (
-          <Page {...getGridProps()}>
-            <Column>
-              <Switch>
-                <Route path={`/editor/:systemId/tokens/:tokenKey?`}>
-                  <TokenNav />
-                </Route>
-                <Route path={`/editor/:systemId/components/:componentKey?`}>
-                  <ComponentNav />
-                </Route>
-              </Switch>
-            </Column>
-            <Gutter {...getGutterProps("column", 1)} />
-            <Column bg="background">
-              <Switch>
-                <Route exact path={`/editor/:systemId`}>
-                  <HomeContent />
-                </Route>
-                <Route path={`/editor/:systemId/tokens/:tokenKey`}>
-                  <TokenContent />
-                </Route>
-                <Route path={`/editor/:systemId/components/:componentKey`}>
-                  <ComponentContent />
-                </Route>
-              </Switch>
-            </Column>
-            <Gutter {...getGutterProps("column", 3)} />
-            <Column>
-              <Switch>
-                <Route path={`/editor/:systemId/tokens/:tokenKey?`}>
-                  <TokenProperties />
-                </Route>
-                <Route path={`/editor/:systemId/components/:componentKey?`}>
-                  <ComponentProperties />
-                </Route>
-              </Switch>
-            </Column>
-          </Page>
-        )}
-      />
+      <Switch>
+        <Route exact path={`/editor/:systemId`}>
+          <HomeContent />
+        </Route>
+        <Route path={`/editor/:systemId/(tokens|components)`}>
+          <Split
+            gridTemplateColumns={columns}
+            onDrag={handleDrag}
+            cursor="col-resize"
+            render={({ getGridProps, getGutterProps }: any) => (
+              <Grid height="100%" {...getGridProps()}>
+                <Column>
+                  <Switch>
+                    <Route path={`/editor/:systemId/tokens/:tokenKey?`}>
+                      <TokenNav />
+                    </Route>
+                    <Route path={`/editor/:systemId/components/:componentKey?`}>
+                      <ComponentNav />
+                    </Route>
+                  </Switch>
+                </Column>
+                <Gutter {...getGutterProps("column", 1)} />
+                <Column bg="background">
+                  <Switch>
+                    <Route path={`/editor/:systemId/tokens/:tokenKey`}>
+                      <TokenContent />
+                    </Route>
+                    <Route path={`/editor/:systemId/components/:componentKey`}>
+                      <ComponentContent />
+                    </Route>
+                  </Switch>
+                </Column>
+                <Gutter {...getGutterProps("column", 3)} />
+                <Column>
+                  <Switch>
+                    <Route path={`/editor/:systemId/tokens/:tokenKey?`}>
+                      <TokenProperties />
+                    </Route>
+                    <Route path={`/editor/:systemId/components/:componentKey?`}>
+                      <ComponentProperties />
+                    </Route>
+                  </Switch>
+                </Column>
+              </Grid>
+            )}
+          />
+        </Route>
+      </Switch>
     </Flex>
   );
 };
@@ -99,7 +104,7 @@ const EditorPageNav = () => {
         </BreadcrumbGroup>
         <Tabs as="section">
           <Tab as={NavLink} to={`/editor/${systemId}`} exact>
-            Home
+            Preview
           </Tab>
           <Tab as={NavLink} to={`/editor/${systemId}/tokens`}>
             Tokens
@@ -115,11 +120,6 @@ const EditorPageNav = () => {
     </NavContainer>
   );
 };
-
-const Page = styled.section`
-  display: grid;
-  height: 100%;
-`;
 
 const Column = styled.sectionBox`
   overflow: auto;

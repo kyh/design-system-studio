@@ -5,6 +5,7 @@ import {
   Logo,
   Nav,
   NavContainer,
+  Page,
   PageContainer,
   Button,
   Tabs,
@@ -57,7 +58,7 @@ export const DiscoverPage: React.FC = () => {
 
 const Projects = () => {
   return (
-    <Box pt="xl">
+    <Page>
       <Heading mb="xl">Projects Page</Heading>
       <Grid gridTemplateColumns="1fr 1fr 1fr" gridColumnGap="lg">
         <Card as={Link} to="/editor/demo-system">
@@ -70,10 +71,10 @@ const Projects = () => {
           </CardBody>
         </Card>
       </Grid>
-    </Box>
+    </Page>
   );
 };
 
 const Discover = () => {
-  return <Box pt="xl">Discover Page</Box>;
+  return <Page>Discover Page</Page>;
 };
