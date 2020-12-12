@@ -56,20 +56,29 @@ export const DiscoverPage: React.FC = () => {
   );
 };
 
+const projects = [
+  {
+    name: "Demo System",
+    url: "demo-system",
+  },
+];
+
 const Projects = () => {
   return (
     <Page>
       <Heading mb="xl">Projects Page</Heading>
       <Grid gridTemplateColumns="1fr 1fr 1fr" gridColumnGap="lg">
-        <Card as={Link} to="/editor/demo-system">
-          <CardHeader>
-            <Heading color="textDarker">Demo System</Heading>
-          </CardHeader>
-          <CardBody>
-            This is the body text of a card. It can be used to describe its
-            content or associated action.
-          </CardBody>
-        </Card>
+        {projects.map((p) => (
+          <Card as={Link} to={`/system/${p.url}`}>
+            <CardHeader>
+              <Heading color="textDarker">{p.name}</Heading>
+            </CardHeader>
+            <CardBody>
+              This is the body text of a card. It can be used to describe its
+              content or associated action.
+            </CardBody>
+          </Card>
+        ))}
       </Grid>
     </Page>
   );

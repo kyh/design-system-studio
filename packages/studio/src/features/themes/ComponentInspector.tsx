@@ -1,3 +1,3 @@
-export const ComponentProperties = () => {
+export const ComponentInspector = () => {
   return <div>Selected Component</div>;
 };

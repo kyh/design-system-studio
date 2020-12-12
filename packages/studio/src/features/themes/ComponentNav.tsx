@@ -10,7 +10,7 @@ export const ComponentNav: React.FC = () => {
     <>
       {componentKeys.map((componentKey) => (
         <NavLink
-          to={`/editor/${systemId}/components/${componentKey}`}
+          to={`/system/${systemId}/components/${componentKey}`}
           key={componentKey}
         >
           {components[componentKey].name}

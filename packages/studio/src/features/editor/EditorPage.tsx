@@ -17,10 +17,10 @@ import {
 import { HomeContent } from "features/editor/HomeContent";
 import { TokenNav } from "features/tokens/TokenNav";
 import { TokenContent } from "features/tokens/TokenContent";
-import { TokenProperties } from "features/tokens/TokenProperties";
+import { TokenInspector } from "features/tokens/TokenInspector";
 import { ComponentNav } from "features/themes/ComponentNav";
 import { ComponentContent } from "features/themes/ComponentContent";
-import { ComponentProperties } from "features/themes/ComponentProperties";
+import { ComponentInspector } from "features/themes/ComponentInspector";
 import { useEditorParams } from "features/editor/editorHooks";
 
 export const EditorPage: React.FC = () => {
@@ -38,10 +38,10 @@ export const EditorPage: React.FC = () => {
     <Flex flexDirection="column" height="100vh">
       <EditorPageNav />
       <Switch>
-        <Route exact path={`/editor/:systemId`}>
+        <Route exact path={`/system/:systemId`}>
           <HomeContent />
         </Route>
-        <Route path={`/editor/:systemId/(tokens|components)`}>
+        <Route path={`/system/:systemId/(tokens|components)`}>
           <Split
             gridTemplateColumns={columns}
             onDrag={handleDrag}
@@ -50,10 +50,10 @@ export const EditorPage: React.FC = () => {
               <Grid height="100%" {...getGridProps()}>
                 <Column>
                   <Switch>
-                    <Route path={`/editor/:systemId/tokens/:tokenKey?`}>
+                    <Route path={`/system/:systemId/tokens/:tokenKey?`}>
                       <TokenNav />
                     </Route>
-                    <Route path={`/editor/:systemId/components/:componentKey?`}>
+                    <Route path={`/system/:systemId/components/:componentKey?`}>
                       <ComponentNav />
                     </Route>
                   </Switch>
@@ -61,10 +61,10 @@ export const EditorPage: React.FC = () => {
                 <Gutter {...getGutterProps("column", 1)} />
                 <Column bg="background">
                   <Switch>
-                    <Route path={`/editor/:systemId/tokens/:tokenKey`}>
+                    <Route path={`/system/:systemId/tokens/:tokenKey?`}>
                       <TokenContent />
                     </Route>
-                    <Route path={`/editor/:systemId/components/:componentKey`}>
+                    <Route path={`/system/:systemId/components/:componentKey?`}>
                       <ComponentContent />
                     </Route>
                   </Switch>
@@ -72,11 +72,11 @@ export const EditorPage: React.FC = () => {
                 <Gutter {...getGutterProps("column", 3)} />
                 <Column>
                   <Switch>
-                    <Route path={`/editor/:systemId/tokens/:tokenKey?`}>
-                      <TokenProperties />
+                    <Route path={`/system/:systemId/tokens/:tokenKey?`}>
+                      <TokenInspector />
                     </Route>
-                    <Route path={`/editor/:systemId/components/:componentKey?`}>
-                      <ComponentProperties />
+                    <Route path={`/system/:systemId/components/:componentKey?`}>
+                      <ComponentInspector />
                     </Route>
                   </Switch>
                 </Column>
@@ -103,13 +103,13 @@ const EditorPageNav = () => {
           </Breadcrumb>
         </BreadcrumbGroup>
         <Tabs as="section">
-          <Tab as={NavLink} to={`/editor/${systemId}`} exact>
-            Preview
+          <Tab as={NavLink} to={`/system/${systemId}`} exact>
+            Home
           </Tab>
-          <Tab as={NavLink} to={`/editor/${systemId}/tokens`}>
+          <Tab as={NavLink} to={`/system/${systemId}/tokens`}>
             Tokens
           </Tab>
-          <Tab as={NavLink} to={`/editor/${systemId}/components`}>
+          <Tab as={NavLink} to={`/system/${systemId}/components`}>
             Components
           </Tab>
         </Tabs>

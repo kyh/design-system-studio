@@ -16,7 +16,7 @@ export const App: React.FC = () => {
     <ThemeProvider theme={currentTheme}>
       <GlobalStyle />
       <Switch>
-        <Route path="/editor/:systemId">
+        <Route path="/system/:systemId">
           <EditorPage />
         </Route>
         <Route path="/">

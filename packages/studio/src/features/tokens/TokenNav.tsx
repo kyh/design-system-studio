@@ -12,7 +12,7 @@ export const TokenNav: React.FC = () => {
   return (
     <>
       {tokenKeys.map((tokenKey) => (
-        <NavLink to={`/editor/${systemId}/tokens/${tokenKey}`} key={tokenKey}>
+        <NavLink to={`/system/${systemId}/tokens/${tokenKey}`} key={tokenKey}>
           {tokensState[tokenKey].name}
         </NavLink>
       ))}
