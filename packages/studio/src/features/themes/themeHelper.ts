@@ -1,18 +1,12 @@
 import { cloneDeep } from "lodash";
 
-const get = (obj: any, path: string) => {
-  const paths = path.split(".");
-  let current = obj;
-  let i;
-
-  for (i = 0; i < paths.length; ++i) {
-    if (current[paths[i]] === undefined) {
-      return undefined;
-    } else {
-      current = current[paths[i]];
-    }
+const get = (obj: Record<string, any>, path: string) => {
+  var arr = path.split(".");
+  while (arr.length) {
+    const index = arr.shift();
+    if (index) obj = obj[index];
   }
-  return current;
+  return obj;
 };
 
 const iterate = (obj: any, cb: any) => {
