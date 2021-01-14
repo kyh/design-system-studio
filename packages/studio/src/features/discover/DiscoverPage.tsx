@@ -33,7 +33,7 @@ export const DiscoverPage: React.FC = () => {
             <Tab as={NavLink} to="/discover" exact>
               Discover
             </Tab>
-            <Tab as="a" href="https://github.com/tehkaiyu/design-system-studio">
+            <Tab as="a" href="https://github.com/kyh/design-system-studio">
               GitHub
             </Tab>
           </Tabs>

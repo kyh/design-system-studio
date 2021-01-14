@@ -6,11 +6,11 @@
     "scaffold component library",
     "design system studio"
   ],
-  "homepage": "https://github.com/tehkaiyu/design-system-studio",
-  "bugs": "https://github.com/tehkaiyu/design-system-studio/issues",
-  "repository": "tehkaiyu/design-system-studio",
+  "homepage": "https://github.com/kyh/design-system-studio",
+  "bugs": "https://github.com/kyh/design-system-studio/issues",
+  "repository": "kyh/design-system-studio",
   "license": "MIT",
-  "author": "Kaiyu Hsu @tehkaiyu",
+  "author": "Kaiyu Hsu @kyh",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "bin": {

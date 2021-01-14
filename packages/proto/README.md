@@ -1,19 +1,22 @@
-Proto - A component library generator
-=====
+# Proto - A component library generator
 
 [![Version](https://img.shields.io/npm/v/@dsstudio/proto.svg)](https://npmjs.org/package/@dsstudio/proto)
 [![Downloads/week](https://img.shields.io/npm/dw/@dsstudio/proto.svg)](https://npmjs.org/package/@dsstudio/proto)
-[![License](https://img.shields.io/npm/l/@dsstudio/proto.svg)](https://github.com/tehkaiyu/proto/blob/master/package.json)
+[![License](https://img.shields.io/npm/l/@dsstudio/proto.svg)](https://github.com/kyh/proto/blob/master/package.json)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Quick Start](#quick-start)
-* [Commands](#commands)
-* [Available Templates](#available-templates)
-* [ComponentStyles Interface](#componentstyles-interface)
+
+- [Usage](#usage)
+- [Quick Start](#quick-start)
+- [Commands](#commands)
+- [Available Templates](#available-templates)
+- [ComponentStyles Interface](#componentstyles-interface)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
+
 ```sh-session
 $ npm install -g @dsstudio/proto
 $ proto COMMAND
@@ -25,17 +28,21 @@ USAGE
   $ proto COMMAND
 ...
 ```
+
 <!-- usagestop -->
 
 # Quick Start
+
 _to be completed_
 
 # Commands
+
 <!-- commands -->
-* [`proto commands`](#proto-commands)
-* [`proto generate [INTERFACE_PATH] -t=[TEMPLATE]`](#proto-generate-interface_path--ttemplate)
-* [`proto help [COMMAND]`](#proto-help-command)
-* [`proto update [CHANNEL]`](#proto-update-channel)
+
+- [`proto commands`](#proto-commands)
+- [`proto generate [INTERFACE_PATH] -t=[TEMPLATE]`](#proto-generate-interface_path--ttemplate)
+- [`proto help [COMMAND]`](#proto-help-command)
+- [`proto update [CHANNEL]`](#proto-update-channel)
 
 ## `proto commands`
 
@@ -82,7 +89,7 @@ EXAMPLE
   proto generate examples/components.json -t=react-styled-components
 ```
 
-_See code: [build/commands/generate.ts](https://github.com/tehkaiyu/design-system-studio/blob/v0.0.12/build/commands/generate.ts)_
+_See code: [build/commands/generate.ts](https://github.com/kyh/design-system-studio/blob/v0.0.12/build/commands/generate.ts)_
 
 ## `proto help [COMMAND]`
 
@@ -107,10 +114,13 @@ USAGE
 ```
 
 _See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v1.3.10/src/commands/update.ts)_
+
 <!-- commandsstop -->
 
 # Available Templates
+
 _to be completed_
 
 # ComponentStyles Interface
+
 _to be completed_
