@@ -1,3 +1,3 @@
 # DS Studio - App
 
-Web interface to build your own Design System.
+Web interface to discover/customize your Design System.

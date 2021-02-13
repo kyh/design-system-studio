@@ -26,6 +26,7 @@ const NavLink = styled.a`
   margin-right: lg;
   color: textLighter;
   transition: 0.23s ease;
+  white-space: nowrap;
   &:hover {
     color: textInverse;
   }
@@ -60,7 +61,7 @@ export const HomePage: React.FC = () => {
         position="relative"
         top={-60}
       >
-        <Page p={0} position="relative" top={-10}>
+        <Page p="0 20px" position="relative" top={-10}>
           <Badge shape="badge" mb="md">
             Coming Soon
           </Badge>
