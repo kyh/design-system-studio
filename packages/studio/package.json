@@ -1,10 +1,10 @@
 {
   "name": "@dsstudio/studio",
-  "version": "0.0.12",
+  "version": "0.0.1",
   "private": true,
-  "homepage": "https://github.com/kyh/design-system-studio",
+  "homepage": "https://designsystem.studio",
   "bugs": "https://github.com/kyh/design-system-studio/issues",
-  "repository": "kyh/design-system-studio",
+  "repository": "https://github.com/kyh/design-system-studio",
   "license": "MIT",
   "author": "Kaiyu Hsu @kyh",
   "scripts": {
