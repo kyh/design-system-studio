@@ -95,7 +95,7 @@ const EditorPageNav = () => {
     <NavContainer>
       <Nav>
         <BreadcrumbGroup>
-          <Breadcrumb as={NavLink} to="/">
+          <Breadcrumb as={NavLink} to="/projects">
             Projects
           </Breadcrumb>
           <Breadcrumb as="span" active>

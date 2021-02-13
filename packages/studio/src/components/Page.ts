@@ -4,18 +4,18 @@ export const Logo = styled.img`
   height: xl40;
 `;
 
-export const PageContainer = styled.section`
+export const PageContainer = styled.sectionBox`
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   max-width: ${({ theme }) => theme.maxWidth};
 `;
 
-export const Page = styled.main`
+export const Page = styled.mainBox`
   padding-top: xl;
 `;
 
-export const NavContainer = styled.nav`
+export const NavContainer = styled.navBox`
   padding: 0 md;
   height: xl60;
   box-shadow: xs;

@@ -1,7 +1,10 @@
 import styled, { css, system, SystemProps } from "@xstyled/styled-components";
 import { variant as createVariant } from "@xstyled/system";
 
-type DefaultProps = {};
+type DefaultProps = {
+  variant?: "heading" | "subHeading" | "caption" | "body";
+  displaySize?: "xl" | "lg" | "md" | "sm";
+};
 type Props = SystemProps & DefaultProps;
 
 const base = css<Props>`

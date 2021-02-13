@@ -16,7 +16,7 @@ type DefaultProps = {
   variant?: "default" | "primary" | "important" | "transparent" | "link";
 };
 type Props = StyledComponentProps<
-  "button",
+  any,
   DefaultTheme,
   SystemProps & DefaultProps,
   never

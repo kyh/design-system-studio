@@ -1,6 +1,7 @@
 import { Switch, Route, Redirect } from "react-router-dom";
 import { DefaultTheme, ThemeProvider } from "@xstyled/styled-components";
 
+import { HomePage } from "features/home/HomePage";
 import { DiscoverPage } from "features/discover/DiscoverPage";
 import { EditorPage } from "features/editor/EditorPage";
 
@@ -19,8 +20,11 @@ export const App: React.FC = () => {
         <Route path="/system/:systemId">
           <EditorPage />
         </Route>
-        <Route path="/">
+        <Route path="/(discover|projects)">
           <DiscoverPage />
+        </Route>
+        <Route path="/">
+          <HomePage />
         </Route>
       </Switch>
     </ThemeProvider>

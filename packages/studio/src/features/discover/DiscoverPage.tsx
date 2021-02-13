@@ -22,16 +22,16 @@ export const DiscoverPage: React.FC = () => {
       <NavContainer>
         <Nav>
           <Box>
-            <Box as={Link} to="/" display="inline-flex">
+            <Box as={Link} to="/discover" display="inline-flex">
               <Logo src={`${process.env.PUBLIC_URL}/logo.svg`} />
             </Box>
           </Box>
           <Tabs>
-            <Tab as={NavLink} to="/" exact>
-              My Projects
-            </Tab>
             <Tab as={NavLink} to="/discover" exact>
               Discover
+            </Tab>
+            <Tab as={NavLink} to="/projects" exact>
+              My Projects
             </Tab>
             <Tab as="a" href="https://github.com/kyh/design-system-studio">
               GitHub
@@ -44,11 +44,11 @@ export const DiscoverPage: React.FC = () => {
       </NavContainer>
       <PageContainer>
         <Switch>
-          <Route exact path="/">
-            <Projects />
-          </Route>
-          <Route path="/discover">
+          <Route exact path="/discover">
             <Discover />
+          </Route>
+          <Route exact path="/projects">
+            <Projects />
           </Route>
         </Switch>
       </PageContainer>

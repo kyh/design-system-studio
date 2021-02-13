@@ -33,10 +33,10 @@ const shape = createVariants({
   default: "badge",
   variants: {
     badge: css<Props>`
-      border-radius: 30px;
+      border-radius: sm;
     `,
     pill: css<Props>`
-      border-radius: sm;
+      border-radius: 30px;
     `,
   },
 });
