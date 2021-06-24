@@ -5,18 +5,17 @@
 [![License](https://img.shields.io/npm/l/@dsstudio/proto.svg)](https://github.com/kyh/proto/blob/master/package.json)
 
 <!-- toc -->
-
-- [Usage](#usage)
-- [Quick Start](#quick-start)
-- [Commands](#commands)
-- [Available Templates](#available-templates)
-- [ComponentStyles Interface](#componentstyles-interface)
+* [Proto - A component library generator](#proto---a-component-library-generator)
+* [Usage](#usage)
+* [Quick Start](#quick-start)
+* [Commands](#commands)
+* [Available Templates](#available-templates)
+* [ComponentStyles Interface](#componentstyles-interface)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
 $ npm install -g @dsstudio/proto
 $ proto COMMAND
@@ -28,7 +27,6 @@ USAGE
   $ proto COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Quick Start
@@ -38,13 +36,14 @@ _to be completed_
 # Commands
 
 <!-- commands -->
-
-- [`proto commands`](#proto-commands)
-- [`proto generate [INTERFACE_PATH] -t=[TEMPLATE]`](#proto-generate-interface_path--ttemplate)
-- [`proto help [COMMAND]`](#proto-help-command)
-- [`proto update [CHANNEL]`](#proto-update-channel)
+* [`proto commands`](#proto-commands)
+* [`proto generate [INTERFACE_PATH] -t=[TEMPLATE]`](#proto-generate-interface_path--ttemplate)
+* [`proto help [COMMAND]`](#proto-help-command)
+* [`proto update [CHANNEL]`](#proto-update-channel)
 
 ## `proto commands`
+
+list all the commands
 
 ```
 USAGE
@@ -67,6 +66,8 @@ OPTIONS
 _See code: [@oclif/plugin-commands](https://github.com/oclif/plugin-commands/blob/v1.3.0/src/commands/commands.ts)_
 
 ## `proto generate [INTERFACE_PATH] -t=[TEMPLATE]`
+
+scaffold a component library from your ComponentStyles interface
 
 ```
 USAGE
@@ -93,6 +94,8 @@ _See code: [build/commands/generate.ts](https://github.com/kyh/design-system-stu
 
 ## `proto help [COMMAND]`
 
+display help for proto
+
 ```
 USAGE
   $ proto help [COMMAND]
@@ -104,9 +107,11 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.2/src/commands/help.ts)_
 
 ## `proto update [CHANNEL]`
+
+update the proto CLI
 
 ```
 USAGE
@@ -114,7 +119,6 @@ USAGE
 ```
 
 _See code: [@oclif/plugin-update](https://github.com/oclif/plugin-update/blob/v1.3.10/src/commands/update.ts)_
-
 <!-- commandsstop -->
 
 # Available Templates
